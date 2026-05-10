@@ -943,7 +943,8 @@
     /* ══════════════════════════════
        IMPRESSUM OVERLAY
     ══════════════════════════════ */
-    #impressum-overlay {
+    #impressum-overlay,
+    #datenschutz-overlay {
       position: fixed;
       inset: 0;
       background: var(--navy);
@@ -953,7 +954,8 @@
       padding: 6rem 2rem;
     }
 
-    #impressum-overlay.active { display: block; }
+    #impressum-overlay.active,
+    #datenschutz-overlay.active { display: block; }
 
     .impressum-content {
       max-width: 680px;
@@ -1315,6 +1317,7 @@
       <ul class="footer-nav">
         <li><a href="mailto:hallo@eckstein-podcast.de">Kontakt</a></li>
         <li><a href="javascript:void(0)" onclick="toggleImpressum(true)">Impressum</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleDatenschutz(true)">Datenschutz</a></li>
       </ul>
     </div>
     <p class="footer-bottom">© 2025 Eckstein Podcast · Kevin Ritz & Florian Spieß · Alle Rechte vorbehalten</p>
@@ -1348,19 +1351,70 @@
     </div>
   </div>
 
+  <!-- ══════════ DATENSCHUTZ OVERLAY ══════════ -->
+  <div id="datenschutz-overlay">
+    <div class="impressum-content">
+      <h2>Datenschutzerklärung</h2>
+      <div class="impressum-grid">
+
+        <div class="impressum-item">
+          <label>Verantwortlicher</label>
+          <p>Kevin Ritz & Florian Spieß<br>
+          [ADRESSE — wird manuell ergänzt]<br>
+          E-Mail: [EMAIL — wird manuell ergänzt]</p>
+        </div>
+
+        <div class="impressum-item">
+          <label>Hosting</label>
+          <p>Diese Website wird gehostet von Vercel Inc., 340 Pine Street, Suite 1201, San Francisco, CA 94104, USA. Beim Aufruf der Website verarbeitet Vercel technisch notwendige Verbindungsdaten (IP-Adresse, Zeitstempel, aufgerufene URL).<br><br>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.<br>
+          Datenschutzerklärung Vercel: vercel.com/legal/privacy-policy</p>
+        </div>
+
+        <div class="impressum-item">
+          <label>Keine Cookies · Kein Tracking</label>
+          <p>Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools. Es werden keine personenbezogenen Daten durch uns erhoben oder gespeichert.</p>
+        </div>
+
+        <div class="impressum-item">
+          <label>Externe Links</label>
+          <p>Die Website enthält Links zu YouTube, Rumble, X, Instagram und Telegram. Beim Anklicken dieser Links gelten die Datenschutzbestimmungen der jeweiligen Anbieter. Wir haben keinen Einfluss auf deren Datenverarbeitung.</p>
+        </div>
+
+        <div class="impressum-item">
+          <label>Eure Rechte gemäß DSGVO</label>
+          <p>Auskunft (Art. 15) · Berichtigung (Art. 16) · Löschung (Art. 17) · Einschränkung (Art. 18) · Widerspruch (Art. 21) · Beschwerde bei der zuständigen Aufsichtsbehörde (Art. 77).<br><br>
+          Zur Ausübung eurer Rechte: [EMAIL — wird manuell ergänzt]</p>
+        </div>
+
+        <div class="impressum-item">
+          <label>Stand</label>
+          <p>Mai 2026</p>
+        </div>
+
+      </div>
+      <button class="btn-back" onclick="toggleDatenschutz(false)">
+        <span>← Zurück</span>
+      </button>
+    </div>
+  </div>
+
   <script>
-    // ── IMPRESSUM TOGGLE ──
-    function toggleImpressum(show) {
-      const overlay = document.getElementById('impressum-overlay');
+    // ── OVERLAY TOGGLE ──
+    function toggleOverlay(id, show) {
+      const overlay = document.getElementById(id);
       if (show) {
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
-        window.scrollTo(0, 0);
+        overlay.scrollTop = 0;
       } else {
         overlay.classList.remove('active');
         document.body.style.overflow = '';
       }
     }
+
+    function toggleImpressum(show)   { toggleOverlay('impressum-overlay', show); }
+    function toggleDatenschutz(show) { toggleOverlay('datenschutz-overlay', show); }
 
     // ── SCROLL REVEAL ──
     const reveals = document.querySelectorAll('.reveal');
