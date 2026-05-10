@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eckstein Podcast — Das Fundament unter jedem Thema</title>
-  <meta name="description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.">
+  <meta name="description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Kevin Ritz, Maximilian Eckstein">
   <link rel="canonical" href="https://eckstein-podcast.de/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Eckstein Podcast — Das Fundament unter jedem Thema">
-  <meta property="og:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.">
+  <meta property="og:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.">
   <meta property="og:url" content="https://eckstein-podcast.de/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Eckstein_Pod">
   <meta name="twitter:title" content="Eckstein Podcast — Das Fundament unter jedem Thema">
-  <meta name="twitter:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.">
+  <meta name="twitter:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.">
   <meta name="twitter:image" content="https://eckstein-podcast.de/Logo.png">
 
   <!-- Structured Data -->
@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "PodcastSeries",
     "name": "Eckstein Podcast",
-    "description": "Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.",
+    "description": "Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.",
     "author": [
       {"@type": "Person", "name": "Kevin Ritz"},
       {"@type": "Person", "name": "Maximilian Eckstein"}
@@ -483,6 +483,17 @@
     .about-left p strong {
       color: var(--cream);
       font-weight: 500;
+    }
+
+    .about-cross {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 160px;
+      height: 240px;
+      pointer-events: none;
+      opacity: 1;
     }
 
     /* NO/YES MANIFEST */
@@ -1063,13 +1074,19 @@
 
   <!-- ══════════ WORUM GEHT'S ══════════ -->
   <section class="about">
+    <div class="about-cross" aria-hidden="true">
+      <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="0" width="12" height="120" fill="none" stroke="rgba(201,168,76,0.09)" stroke-width="1" rx="1"/>
+        <rect x="0" y="28" width="80" height="12" fill="none" stroke="rgba(201,168,76,0.09)" stroke-width="1" rx="1"/>
+      </svg>
+    </div>
     <div class="about-inner">
       <div class="about-layout">
         <div class="about-left">
           <p class="section-eyebrow reveal">Der Podcast</p>
-          <h2 class="reveal">Glaube und Ambition sind keine Gegensätze.<br><em>Sie brauchen einander.</em></h2>
-          <p class="reveal">Die meisten Gespräche enden da, wo es interessant wird. Hier fangen sie an.</p>
-          <p class="reveal"><strong>Wir zeigen woher unsere Stärke kommt.</strong> Ohne Entschuldigung. Ohne Bekehrungsversuch.</p>
+          <h2 class="reveal">Glaube und Ambition sind keine Gegensätze.<br><em>Sie schließen sich nicht aus, sie brauchen einander.</em></h2>
+          <p class="reveal">Eckstein ist der Beweis. Die meisten Gespräche enden da, wo es interessant wird. Hier fangen sie an.</p>
+          <p class="reveal">Wir reden über Gott. Über Geld. Über Scheitern. So wie es ist.</p>
         </div>
 
         <div class="reveal">
@@ -1084,18 +1101,18 @@
             </div>
             <div class="manifest-item">
               <span class="m-tag no">Keine</span>
-              <span class="m-text">Schaufrömmigkeit. Kein Doppelleben.</span>
+              <span class="m-text">Verklärung. Keine Ausreden.</span>
             </div>
             <div class="manifest-item">
-              <span class="m-tag yes">Ja —</span>
-              <span class="m-text">Klarheit über das, was wirklich trägt.</span>
+              <span class="m-tag yes">Ja,</span>
+              <span class="m-text">Klarheit, auch wenn sie wehtut.</span>
             </div>
             <div class="manifest-item">
-              <span class="m-tag yes">Ja —</span>
+              <span class="m-tag yes">Ja,</span>
               <span class="m-text">Haltung. Sichtbar, auch wenn es unbequem ist.</span>
             </div>
             <div class="manifest-item">
-              <span class="m-tag yes">Ja —</span>
+              <span class="m-tag yes">Ja,</span>
               <span class="m-text">Gespräche, die man nicht vergisst.</span>
             </div>
           </div>
@@ -1174,7 +1191,7 @@
     <div class="hosts-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Wir beide</p>
       <h2 class="reveal">Zwei Männer. Eine Haltung.</h2>
-      <p class="reveal">Keine Fassade. Keine Schonkost. Zwei Männer — wie sie wirklich sind.</p>
+      <p class="reveal">Zwei Männer. So wie sie sind.</p>
 
       <div class="hosts-grid">
         <div class="host-card reveal reveal-delay-1">
@@ -1183,7 +1200,7 @@
           <p class="host-name">Kevin Ritz</p>
           <p class="host-title">Co-Host · Gründer</p>
           <p class="host-quote">„Es kann kein Licht ohne Dunkelheit geben."</p>
-          <p class="host-bio">Unternehmer, Überzeugungstäter. Kevin trennt Karriere und Glaube nicht — er lebt beides, jeden Tag. Direkt, unbequem, ohne Kompromiss.</p>
+          <p class="host-bio">Angetrieben aus Dankbarkeit, und dem Drang, bedeutsam zu existieren, nach Gottes Vorbild. Unternehmer, Gründer, Brückenbauer. Er ist hier, um Gleichgesinnte zu finden, die dasselbe wollen.</p>
           <div class="host-links">
             <span>Kontaktiere mich</span>
             <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener">Telegram</a>
@@ -1196,7 +1213,7 @@
           <p class="host-name">Florian Spieß</p>
           <p class="host-title">Co-Host · Gründer</p>
           <p class="host-quote">„Eisen schärft Eisen, ebenso schärft ein Mensch den anderen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
-          <p class="host-bio">Florian redet über das, was viele denken und keiner ausspricht. Sport, Stärke, Überzeugung — klar positioniert, ohne Verklärung. Ehrlichkeit ist sein Handwerk.</p>
+          <p class="host-bio">Sport, Disziplin, Glaube, Florian trennt das nicht. Sagt was er denkt. Hält was er sagt.</p>
           <div class="host-links">
             <span>Kontaktiere mich</span>
             <a href="https://www.instagram.com/florian_fs67/" target="_blank" rel="noopener">Instagram</a>
@@ -1237,10 +1254,10 @@
     <div style="max-width: 700px; margin: 0 auto; position: relative; z-index: 1;">
       <p class="section-eyebrow reveal" style="justify-content:center;">Gemeinschaft</p>
       <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:300; color:var(--cream); margin-bottom:1.5rem; line-height:1.2;">
-        Werde Teil unserer<br><em style="color:var(--gold-light);">Gemeinschaft</em>
+        Du gehörst dazu.
       </h2>
       <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1.1rem; color:var(--cream-dim); line-height:1.8; margin-bottom:3.5rem;">
-        Junger christlicher Unternehmer, die Glaube und Ambition nicht trennen. Ein Kreis von Männern, die wissen worauf sie stehen — und füreinander einstehen.
+        Männer, die Gott und Ehrgeiz nicht gegeneinander ausspielen. Die sich gegenseitig fordern statt schonen.
       </p>
       <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener" class="btn-platform reveal">
         <span class="btn-icon">→</span>
