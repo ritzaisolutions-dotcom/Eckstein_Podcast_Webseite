@@ -2,6 +2,10 @@
   "version": 2,
   "routes": [
     {
+      "src": "/Logo.png",
+      "dest": "/Logo.png"
+    },
+    {
       "src": "/favicon.svg",
       "dest": "/favicon.svg"
     },
