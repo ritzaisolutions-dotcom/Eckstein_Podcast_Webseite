@@ -3,16 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eckstein Podcast — Erste Folge am Samstag</title>
-  <meta name="description" content="Eckstein startet am Samstag. Kein Bibelkurs. Keine Predigten. Zwei Männer. Offene Gespräche über Karriere, Männlichkeit, Geld — und das Fundament dahinter.">
-  <meta property="og:title" content="Eckstein Podcast startet am Samstag">
-  <meta property="og:description" content="Der Glaube ist nicht das Thema. Der Glaube ist das Fundament unter jedem Thema.">
+  <title>Eckstein Podcast — Das Fundament unter jedem Thema</title>
+  <meta name="description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Kevin Ritz, Maximilian Eckstein">
+  <link rel="canonical" href="https://eckstein-podcast.de/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Eckstein Podcast — Das Fundament unter jedem Thema">
+  <meta property="og:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.">
+  <meta property="og:url" content="https://eckstein-podcast.de/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Eckstein_Pod">
+  <meta name="twitter:title" content="Eckstein Podcast — Das Fundament unter jedem Thema">
+  <meta name="twitter:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "Eckstein Podcast",
+    "description": "Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld — und das Fundament dahinter.",
+    "author": [
+      {"@type": "Person", "name": "Kevin Ritz"},
+      {"@type": "Person", "name": "Maximilian Eckstein"}
+    ],
+    "url": "https://eckstein-podcast.de/"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -91,15 +118,24 @@
       position: absolute;
       top: 0;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) scaleY(0);
+      transform-origin: top;
       width: 2px;
-      height: 0;
+      height: 140px;
       background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: beamDrop 1.4s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+      animation: 
+        beamDrop 1.4s cubic-bezier(0.16,1,0.3,1) 0.2s forwards,
+        beamPulse 3s ease-in-out 1.6s infinite;
+      will-change: transform, opacity;
     }
 
     @keyframes beamDrop {
-      to { height: 140px; }
+      to { transform: translateX(-50%) scaleY(1); }
+    }
+
+    @keyframes beamPulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 0.4; }
     }
 
     /* Radial burst lines */
@@ -138,7 +174,7 @@
       padding: 0.5rem 1.4rem;
       margin-bottom: 3rem;
       opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
+      animation: fadeUp 0.8s 0.3s forwards;
     }
 
     .badge-dot {
@@ -177,7 +213,7 @@
       text-shadow: none;
       filter: drop-shadow(0 0 60px rgba(201,168,76,0.2));
       opacity: 0;
-      animation: titleReveal 1.2s cubic-bezier(0.16,1,0.3,1) 0.4s forwards;
+      animation: titleReveal 1.2s cubic-bezier(0.16,1,0.3,1) 0.55s forwards;
       margin-bottom: 0.6rem;
     }
 
@@ -194,7 +230,7 @@
       text-transform: uppercase;
       margin-bottom: 3.5rem;
       opacity: 0;
-      animation: fadeUp 0.8s 0.9s forwards;
+      animation: fadeUp 0.8s 0.75s forwards;
     }
 
     /* MANIFESTO LINE */
@@ -208,7 +244,7 @@
       max-width: 620px;
       margin: 0 auto 1.5rem;
       opacity: 0;
-      animation: fadeUp 0.8s 1.1s forwards;
+      animation: fadeUp 0.8s 0.9s forwards;
     }
 
     .manifesto-accent {
@@ -225,14 +261,14 @@
       margin: 0 auto 4rem;
       line-height: 1.65;
       opacity: 0;
-      animation: fadeUp 0.8s 1.3s forwards;
+      animation: fadeUp 0.8s 1.05s forwards;
     }
 
     /* ── COUNTDOWN ── */
     .countdown-wrap {
       margin-bottom: 3.5rem;
       opacity: 0;
-      animation: fadeUp 0.8s 1.5s forwards;
+      animation: fadeUp 0.8s 1.2s forwards;
     }
 
     .countdown-label {
@@ -278,7 +314,14 @@
       min-width: 2ch;
       text-align: center;
       transition: all 0.3s;
+      display: inline-block;
     }
+
+    @keyframes cdTick {
+      0% { transform: translateY(-10px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .cd-num.tick { animation: cdTick 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 
     .cd-unit {
       font-family: 'Cinzel', serif;
@@ -296,7 +339,7 @@
       justify-content: center;
       flex-wrap: wrap;
       opacity: 0;
-      animation: fadeUp 0.8s 1.7s forwards;
+      animation: fadeUp 0.8s 1.4s forwards;
     }
 
     .btn-platform {
@@ -513,6 +556,7 @@
       gap: 1.5rem;
       width: max-content;
       animation: marqueeScroll 28s linear infinite;
+      will-change: transform;
     }
 
     .marquee-track-rev {
@@ -813,7 +857,8 @@
     .reveal {
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -1196,6 +1241,30 @@
     </div>
   </section>
 
+  <!-- ══════════ KONTAKT ══════════ -->
+  <section class="contact" style="padding: 8rem 2rem; background: var(--navy); border-top: 1px solid rgba(201,168,76,0.08);">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <p class="section-eyebrow reveal" style="justify-content:center;">Kontakt</p>
+      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem, 4vw, 3rem); font-weight:300; color:var(--cream); margin-bottom:1.2rem;">Immer gerne.</h2>
+      <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1.1rem; color:var(--cream-dim); margin-bottom:4rem;">Kooperationen, Feedback, Gastanfragen — schreib uns direkt.</p>
+      
+      <div class="hosts-grid" style="max-width: 720px; margin: 0 auto;">
+        <a href="mailto:hallo@eckstein-podcast.de" class="host-card reveal" style="text-decoration:none; background:transparent;">
+          <div class="host-bg-letter">@</div>
+          <p class="host-name">E-Mail</p>
+          <p class="host-title">hallo@eckstein-podcast.de</p>
+          <p class="host-bio">Direkter Draht für alles Geschäftliche und Private.</p>
+        </a>
+        <a href="https://x.com/Eckstein_Pod" target="_blank" rel="noopener" class="host-card reveal reveal-delay-1" style="text-decoration:none; background:transparent;">
+          <div class="host-bg-letter">X</div>
+          <p class="host-name">X (Twitter)</p>
+          <p class="host-title">@Eckstein_Pod</p>
+          <p class="host-bio">Aktuelle Gedanken und schneller Austausch.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════ FOOTER ══════════ -->
   <footer>
     <div class="footer-row">
@@ -1271,10 +1340,22 @@
       const mins  = Math.floor((diff % 3600000) / 60000);
       const secs  = Math.floor((diff % 60000) / 1000);
 
-      document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
-      document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-      document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
-      document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+      const updateVal = (id, val) => {
+        const el = document.getElementById(id);
+        const current = el.textContent;
+        const formatted = String(val).padStart(2,'0');
+        if (current !== formatted) {
+          el.textContent = formatted;
+          el.classList.remove('tick');
+          void el.offsetWidth; // trigger reflow
+          el.classList.add('tick');
+        }
+      };
+
+      updateVal('cd-days', days);
+      updateVal('cd-hours', hours);
+      updateVal('cd-mins', mins);
+      updateVal('cd-secs', secs);
     }
 
     updateCountdown();
