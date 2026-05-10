@@ -485,15 +485,15 @@
       font-weight: 500;
     }
 
-    .about-cross {
+    .hosts-cross {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 320px;
-      height: 480px;
+      width: 340px;
+      height: 510px;
       pointer-events: none;
-      opacity: 0.2;
+      opacity: 0.12;
     }
 
     /* NO/YES MANIFEST */
@@ -616,6 +616,8 @@
     .hosts {
       padding: 8rem 2rem;
       background: var(--navy);
+      position: relative;
+      overflow: hidden;
     }
 
     .hosts-inner {
@@ -1074,12 +1076,6 @@
 
   <!-- ══════════ WORUM GEHT'S ══════════ -->
   <section class="about">
-    <div class="about-cross" aria-hidden="true">
-      <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
-        <rect x="34" y="0" width="12" height="120" fill="#c9a84c" rx="1"/>
-        <rect x="0" y="28" width="80" height="12" fill="#c9a84c" rx="1"/>
-      </svg>
-    </div>
     <div class="about-inner">
       <div class="about-layout">
         <div class="about-left">
@@ -1188,6 +1184,12 @@
 
   <!-- ══════════ HOSTS ══════════ -->
   <section class="hosts">
+    <div class="hosts-cross" aria-hidden="true">
+      <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="0" width="12" height="120" fill="#c9a84c" rx="1"/>
+        <rect x="0" y="28" width="80" height="12" fill="#c9a84c" rx="1"/>
+      </svg>
+    </div>
     <div class="hosts-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Wir beide</p>
       <h2 class="reveal">Zwei Männer. Eine Haltung.</h2>
