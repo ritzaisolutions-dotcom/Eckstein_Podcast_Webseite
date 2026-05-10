@@ -219,8 +219,8 @@
     .hero-title {
       font-family: 'Cinzel', serif;
       font-size: clamp(3rem, 12vw, 9rem);
-      font-weight: 900;
-      letter-spacing: 0.04em;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       line-height: 0.9;
       color: transparent;
       background: linear-gradient(170deg, var(--gold-pale) 0%, var(--gold-light) 40%, var(--gold) 80%);
@@ -717,6 +717,53 @@
       font-size: 0.97rem;
       color: var(--cream-dim);
       line-height: 1.65;
+    }
+
+    .host-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1.5;
+      margin-bottom: 1.1rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .host-links {
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .host-links span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      color: var(--cream-dim);
+      text-transform: uppercase;
+    }
+
+    .host-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(201,168,76,0.35);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .host-links a:hover {
+      color: var(--gold-pale);
+      border-color: var(--gold);
     }
 
     /* ══════════════════════════════
@@ -1223,44 +1270,27 @@
           <div class="host-avatar"><img src="pic_kevin.jpg" alt="Kevin Ritz" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
           <p class="host-name">Kevin Ritz</p>
           <p class="host-title">Co-Host · Gründer</p>
+          <p class="host-quote">„Es kann kein Licht ohne Dunkelheit geben."</p>
           <p class="host-bio">Unternehmer, Überzeugungstäter. Kevin trennt Karriere und Glaube nicht — er lebt beides, jeden Tag. Direkt, unbequem, ohne Kompromiss.</p>
+          <div class="host-links">
+            <span>Kontaktiere mich</span>
+            <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://x.com/kevin_ritz1" target="_blank" rel="noopener">X</a>
+          </div>
         </div>
         <div class="host-card reveal reveal-delay-2">
           <div class="host-bg-letter">F</div>
           <div class="host-avatar"><img src="pic_florian.png" alt="Florian Spieß" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
           <p class="host-name">Florian Spieß</p>
           <p class="host-title">Co-Host · Gründer</p>
+          <p class="host-quote">„Eisen schärft Eisen, ebenso schärft ein Mensch den anderen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
           <p class="host-bio">Florian redet über das, was viele denken und keiner ausspricht. Sport, Stärke, Überzeugung — klar positioniert, ohne Verklärung. Ehrlichkeit ist sein Handwerk.</p>
+          <div class="host-links">
+            <span>Kontaktiere mich</span>
+            <a href="https://www.instagram.com/florian_fs67/" target="_blank" rel="noopener">Instagram</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ══════════ MANTRA + PERSÖNLICHE LINKS ══════════ -->
-  <div class="mantra-divider">
-    <p class="mantra-text reveal">Es kann kein Licht ohne Dunkelheit geben.</p>
-  </div>
-
-  <section style="padding: 2rem 2rem 7rem; background: var(--navy); text-align: center;">
-    <div class="hosts-grid" style="max-width: 860px; margin: 0 auto; grid-template-columns: repeat(3, 1fr);">
-      <a href="https://www.instagram.com/florian_fs67/" target="_blank" rel="noopener"
-         class="host-card reveal" style="text-decoration:none; background:transparent;">
-        <div class="host-bg-letter">I</div>
-        <p class="host-name">Florian</p>
-        <p class="host-title">Instagram · @florian_fs67</p>
-      </a>
-      <a href="https://x.com/kevin_ritz1" target="_blank" rel="noopener"
-         class="host-card reveal reveal-delay-1" style="text-decoration:none; background:transparent;">
-        <div class="host-bg-letter">X</div>
-        <p class="host-name">Kevin</p>
-        <p class="host-title">X · @kevin_ritz1</p>
-      </a>
-      <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener"
-         class="host-card reveal reveal-delay-2" style="text-decoration:none; background:transparent;">
-        <div class="host-bg-letter">T</div>
-        <p class="host-name">Kevin</p>
-        <p class="host-title">Telegram · @Kevin_Ritz</p>
-      </a>
     </div>
   </section>
 
@@ -1286,6 +1316,24 @@
           X
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════ GEMEINSCHAFT ══════════ -->
+  <section style="padding: 9rem 2rem; background: var(--navy-3); border-top: 1px solid rgba(201,168,76,0.08); text-align: center; position: relative; overflow: hidden;">
+    <div style="position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="max-width: 700px; margin: 0 auto; position: relative; z-index: 1;">
+      <p class="section-eyebrow reveal" style="justify-content:center;">Gemeinschaft</p>
+      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:300; color:var(--cream); margin-bottom:1.5rem; line-height:1.2;">
+        Werde Teil unserer<br><em style="color:var(--gold-light);">Gemeinschaft</em>
+      </h2>
+      <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1.1rem; color:var(--cream-dim); line-height:1.8; margin-bottom:3.5rem;">
+        Junger christlicher Unternehmer, die Glaube und Ambition nicht trennen. Ein Kreis von Männern, die wissen worauf sie stehen — und füreinander einstehen.
+      </p>
+      <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener" class="btn-platform reveal">
+        <span class="btn-icon">→</span>
+        Jetzt beitreten
+      </a>
     </div>
   </section>
 
