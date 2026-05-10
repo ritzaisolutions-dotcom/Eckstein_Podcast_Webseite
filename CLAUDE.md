@@ -13,7 +13,7 @@ Kein christlicher Podcast. Ein Podcast von zwei Männern die ihren Glauben leben
 
 **Hosts:**
 - Kevin Ritz (Co-Founder)
-- Maximilian Eckstein (Co-Founder)
+- Florian Spieß (Co-Founder)
 
 ---
 

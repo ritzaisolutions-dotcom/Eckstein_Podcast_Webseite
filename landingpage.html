@@ -676,6 +676,7 @@
       font-weight: 700;
       color: var(--navy);
       margin-bottom: 1.5rem;
+      overflow: hidden;
     }
 
     .host-name {
@@ -1000,7 +1001,7 @@
     <div class="hero-inner">
       <div class="launch-badge">
         <div class="badge-dot"></div>
-        <span>Erste Folge — Samstag, 17. Mai 2025</span>
+        <span>Jetzt live — YouTube · Rumble · X</span>
       </div>
 
       <h1 class="hero-title">ECKSTEIN</h1>
@@ -1014,28 +1015,6 @@
       <p class="hero-sub-manifesto">
         Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer — offen über Karriere, Männlichkeit, Geld und die Kraft die dahinter steht. Auf YouTube, Rumble und X.
       </p>
-
-      <div class="countdown-wrap">
-        <p class="countdown-label">Startet in</p>
-        <div class="countdown">
-          <div class="cd-block">
-            <span class="cd-num" id="cd-days">--</span>
-            <span class="cd-unit">Tage</span>
-          </div>
-          <div class="cd-block">
-            <span class="cd-num" id="cd-hours">--</span>
-            <span class="cd-unit">Stunden</span>
-          </div>
-          <div class="cd-block">
-            <span class="cd-num" id="cd-mins">--</span>
-            <span class="cd-unit">Minuten</span>
-          </div>
-          <div class="cd-block">
-            <span class="cd-num" id="cd-secs">--</span>
-            <span class="cd-unit">Sekunden</span>
-          </div>
-        </div>
-      </div>
 
       <div class="cta-group">
         <a href="https://www.youtube.com/@Eckstein_Pod" class="btn-platform" target="_blank" rel="noopener">
@@ -1176,15 +1155,15 @@
 
       <div class="hosts-grid">
         <div class="host-card reveal reveal-delay-1">
-          <div class="host-bg-letter">M</div>
-          <div class="host-avatar">M</div>
-          <p class="host-name">Maximilian Eckstein</p>
+          <div class="host-bg-letter">K</div>
+          <div class="host-avatar"><img src="pic_kevin.jpg" alt="Kevin Ritz" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <p class="host-name">Kevin Ritz</p>
           <p class="host-title">Co-Host · Gründer</p>
           <p class="host-bio">Ambitioniert, direkt, ohne Filter. Glaubt daran dass echte Stärke aus echtem Fundament kommt — und redet offen darüber wie das im Alltag aussieht. In der Karriere, im Sport, in der Krise.</p>
         </div>
         <div class="host-card reveal reveal-delay-2">
           <div class="host-bg-letter">F</div>
-          <div class="host-avatar">F</div>
+          <div class="host-avatar"><img src="pic_florian.png" alt="Florian Spieß" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
           <p class="host-name">Florian Spieß</p>
           <p class="host-title">Co-Host · Gründer</p>
           <p class="host-bio">Kein Anspruch, jemanden zu bekehren. Nur der Anspruch, ehrlich zu sein. Über Glauben als Fundament — sichtbar gelebt, nicht versteckt. Für Menschen die mehr wollen und sich dabei nicht verstecken.</p>
@@ -1221,7 +1200,6 @@
   <!-- ══════════ FINAL CTA ══════════ -->
   <section class="final-cta">
     <div class="final-cta-inner">
-      <p class="launch-date-display reveal">Samstag, 17. Mai 2025</p>
       <h2 class="reveal">Bereit für <em>das erste Gespräch?</em></h2>
       <p class="reveal">Abonniere jetzt auf YouTube — damit du am Samstag als Erster dabei bist. Folge uns auf X und Rumble. Der Algorithmus belohnt die ersten 48 Stunden. Sei dabei.</p>
       <div class="final-cta-buttons reveal">
@@ -1277,7 +1255,7 @@
         <li><a href="javascript:void(0)" onclick="toggleImpressum(true)">Impressum</a></li>
       </ul>
     </div>
-    <p class="footer-bottom">© 2025 Eckstein Podcast · Maximilian Eckstein & Florian Spieß · Alle Rechte vorbehalten</p>
+    <p class="footer-bottom">© 2025 Eckstein Podcast · Kevin Ritz & Florian Spieß · Alle Rechte vorbehalten</p>
   </footer>
 
   <!-- ══════════ IMPRESSUM OVERLAY ══════════ -->
@@ -1287,7 +1265,7 @@
       <div class="impressum-grid">
         <div class="impressum-item">
           <label>Verantwortlich</label>
-          <p>Kevin Ritz & Maximilian Eckstein</p>
+          <p>Kevin Ritz & Florian Spieß</p>
         </div>
         <div class="impressum-item">
           <label>Anschrift</label>
@@ -1299,7 +1277,7 @@
         </div>
         <div class="impressum-item">
           <label>Inhaltlich Verantwortlich</label>
-          <p>Gemäß § 5 TMG sind Kevin Ritz und Maximilian Eckstein für die Inhalte dieser Website verantwortlich.</p>
+          <p>Gemäß § 5 TMG sind Kevin Ritz und Florian Spieß für die Inhalte dieser Website verantwortlich.</p>
         </div>
       </div>
       <button class="btn-back" onclick="toggleImpressum(false)">
@@ -1321,45 +1299,6 @@
         document.body.style.overflow = '';
       }
     }
-
-    // ── COUNTDOWN to Saturday 17 May 2025 at 08:00 ──
-    const launch = new Date('2025-05-17T08:00:00');
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = launch - now;
-
-      if (diff <= 0) {
-        document.querySelector('.countdown-wrap').innerHTML =
-          '<p style="font-family:Cinzel,serif;font-size:1rem;letter-spacing:0.2em;color:var(--gold-light)">🎙 JETZT LIVE — Jetzt reinhören!</p>';
-        return;
-      }
-
-      const days  = Math.floor(diff / 86400000);
-      const hours = Math.floor((diff % 86400000) / 3600000);
-      const mins  = Math.floor((diff % 3600000) / 60000);
-      const secs  = Math.floor((diff % 60000) / 1000);
-
-      const updateVal = (id, val) => {
-        const el = document.getElementById(id);
-        const current = el.textContent;
-        const formatted = String(val).padStart(2,'0');
-        if (current !== formatted) {
-          el.textContent = formatted;
-          el.classList.remove('tick');
-          void el.offsetWidth; // trigger reflow
-          el.classList.add('tick');
-        }
-      };
-
-      updateVal('cd-days', days);
-      updateVal('cd-hours', hours);
-      updateVal('cd-mins', mins);
-      updateVal('cd-secs', secs);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
 
     // ── SCROLL REVEAL ──
     const reveals = document.querySelectorAll('.reveal');

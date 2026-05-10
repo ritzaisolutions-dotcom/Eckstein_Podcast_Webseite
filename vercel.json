@@ -2,12 +2,16 @@
   "version": 2,
   "routes": [
     {
-      "src": "/",
-      "dest": "/landingpage.html"
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
     },
     {
-      "src": "/ueber",
-      "dest": "/index.html"
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/",
+      "dest": "/landingpage.html"
     }
   ],
   "headers": [
