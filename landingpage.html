@@ -896,6 +896,51 @@
     }
 
     /* ══════════════════════════════
+       MANTRA DIVIDER
+    ══════════════════════════════ */
+    .mantra-divider {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--navy);
+      position: relative;
+    }
+
+    .mantra-divider::before,
+    .mantra-divider::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.15), transparent);
+    }
+
+    .mantra-divider::before { top: 0; }
+    .mantra-divider::after  { bottom: 0; }
+
+    .mantra-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-light);
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .mantra-text::before,
+    .mantra-text::after {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: rgba(201,168,76,0.4);
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════
        IMPRESSUM OVERLAY
     ══════════════════════════════ */
     #impressum-overlay {
@@ -1081,6 +1126,11 @@
     </div>
   </section>
 
+  <!-- ══════════ MANTRA ══════════ -->
+  <div class="mantra-divider">
+    <p class="mantra-text reveal">Es kann kein Licht ohne Dunkelheit geben.</p>
+  </div>
+
   <!-- ══════════ THEMEN MARQUEE ══════════ -->
   <div class="topics-strip">
     <h3 class="reveal">Worüber wir reden. <em>Alles was zählt.</em></h3>
@@ -1226,18 +1276,24 @@
       <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem, 4vw, 3rem); font-weight:300; color:var(--cream); margin-bottom:1.2rem;">Immer gerne.</h2>
       <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1.1rem; color:var(--cream-dim); margin-bottom:4rem;">Kooperationen, Feedback, Gastanfragen — schreib uns direkt.</p>
       
-      <div class="hosts-grid" style="max-width: 720px; margin: 0 auto;">
+      <div class="hosts-grid" style="max-width: 1000px; margin: 0 auto; grid-template-columns: repeat(3, 1fr);">
         <a href="mailto:hallo@eckstein-podcast.de" class="host-card reveal" style="text-decoration:none; background:transparent;">
           <div class="host-bg-letter">@</div>
           <p class="host-name">E-Mail</p>
           <p class="host-title">hallo@eckstein-podcast.de</p>
           <p class="host-bio">Direkter Draht für alles Geschäftliche und Private.</p>
         </a>
-        <a href="https://x.com/Eckstein_Pod" target="_blank" rel="noopener" class="host-card reveal reveal-delay-1" style="text-decoration:none; background:transparent;">
+        <a href="https://x.com/kevin_ritz1" target="_blank" rel="noopener" class="host-card reveal reveal-delay-1" style="text-decoration:none; background:transparent;">
           <div class="host-bg-letter">X</div>
-          <p class="host-name">X (Twitter)</p>
-          <p class="host-title">@Eckstein_Pod</p>
-          <p class="host-bio">Aktuelle Gedanken und schneller Austausch.</p>
+          <p class="host-name">X · Kevin</p>
+          <p class="host-title">@kevin_ritz1</p>
+          <p class="host-bio">Aktuelle Gedanken, direkt und ungefiltert.</p>
+        </a>
+        <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener" class="host-card reveal reveal-delay-2" style="text-decoration:none; background:transparent;">
+          <div class="host-bg-letter">T</div>
+          <p class="host-name">Telegram · Kevin</p>
+          <p class="host-title">@Kevin_Ritz</p>
+          <p class="host-bio">DM immer offen — schreib direkt.</p>
         </a>
       </div>
     </div>
