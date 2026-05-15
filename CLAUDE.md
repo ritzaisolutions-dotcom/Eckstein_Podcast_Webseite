@@ -2,14 +2,14 @@
 
 ## Wer wir sind
 
-**Eckstein Podcast** — gegründet von Kevin Ritz & Maximilian Eckstein.
+**Eckstein Podcast** — gegründet von Kevin Ritz & Florian Spieß.
 
 Kein christlicher Podcast. Ein Podcast von zwei Männern die ihren Glauben leben — in der Karriere, im Sport, in Beziehungen, in der Krise. Der Glaube ist nicht das Thema. Der Glaube ist das Fundament unter jedem Thema.
 
 **Positionierung:**
 - Kein Bibelkurs. Keine Predigten. Keine Schuldgefühle.
 - Für ambitionierte Menschen die mehr wollen — und dafür beschämt werden.
-- Offene Gespräche über Karriere, Männlichkeit, Geld, Geopolitik, Dankbarkeit, Angst.
+- Offene Gespräche über Glaube, Männlichkeit, Selbstverbesserung, Geopolitik, Selbstständingkeit, Dankbarkeit, Angst.
 
 **Hosts:**
 - Kevin Ritz (Co-Founder)
