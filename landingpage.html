@@ -1229,42 +1229,20 @@
   <section class="latest-episode" style="padding: 8rem 2rem; background: var(--navy-2); border-top: 1px solid rgba(201,168,76,0.08);">
     <div style="max-width: 900px; margin: 0 auto; text-align: center;">
       <p class="section-eyebrow reveal" style="justify-content:center;">Neueste Folge</p>
-      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem, 4vw, 3rem); font-weight:300; color:var(--cream); margin-bottom:1.5rem;">[EPISODE_TITLE]</h2>
-      <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1.1rem; color:var(--cream-dim); margin-bottom:1rem; line-height:1.7; max-width:700px; margin-left:auto; margin-right:auto;">[EPISODE_DESC]</p>
-      <p class="reveal" style="font-family:'Cinzel',serif; font-size:0.65rem; color:var(--gold); letter-spacing:0.2em; margin-bottom:3.5rem;">[EPISODE_DATE]</p>
-      
-      <div class="episode-buttons reveal" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-        <a href="[YOUTUBE_URL]" class="btn-platform" target="_blank" rel="noopener">
-          <span class="btn-icon">▶</span>
-          YouTube
-        </a>
-        <a href="[RUMBLE_URL]" class="btn-platform" target="_blank" rel="noopener">
-          <span class="btn-icon">◈</span>
-          Rumble
-        </a>
-        <a href="[X_CLIP_URL]" class="btn-platform" target="_blank" rel="noopener">
-          <span class="btn-icon">𝕏</span>
-          X
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ GEMEINSCHAFT ══════════ -->
-  <section style="padding: 9rem 2rem; background: var(--navy-3); border-top: 1px solid rgba(201,168,76,0.08); text-align: center; position: relative; overflow: hidden;">
-    <div style="position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none;"></div>
-    <div style="max-width: 700px; margin: 0 auto; position: relative; z-index: 1;">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Gemeinschaft</p>
-      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:300; color:var(--cream); margin-bottom:1.5rem; line-height:1.2;">
-        Du gehörst dazu.
+      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem, 4vw, 3rem); font-weight:300; color:var(--cream); margin-bottom:1.5rem;">
+        Folge 1 erscheint Sonntag, 18. Mai
       </h2>
-      <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1.1rem; color:var(--cream-dim); line-height:1.8; margin-bottom:3.5rem;">
-        Männer, die Gott und Ehrgeiz nicht gegeneinander ausspielen. Die sich gegenseitig fordern statt schonen.
-      </p>
-      <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener" class="btn-platform reveal">
-        <span class="btn-icon">→</span>
-        Jetzt beitreten
-      </a>
+      <p class="reveal" style="font-family:'Cinzel',serif; font-size:0.65rem; color:var(--gold); letter-spacing:0.2em; margin-bottom:3rem;">ECKSTEIN PODCAST</p>
+
+      <div class="countdown-wrap reveal" style="animation:none;">
+        <p class="countdown-label">Erscheint in</p>
+        <div class="countdown">
+          <div class="cd-block"><div class="cd-num" id="cd-days">00</div><div class="cd-unit">Tage</div></div>
+          <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-unit">Stunden</div></div>
+          <div class="cd-block"><div class="cd-num" id="cd-mins">00</div><div class="cd-unit">Minuten</div></div>
+          <div class="cd-block"><div class="cd-num" id="cd-secs">00</div><div class="cd-unit">Sekunden</div></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1492,6 +1470,44 @@
 
     function toggleImpressum(show)   { toggleOverlay('impressum-overlay', show); }
     function toggleDatenschutz(show) { toggleOverlay('datenschutz-overlay', show); }
+
+    // ── COUNTDOWN ──
+    (function() {
+      const target = new Date('2025-05-18T08:00:00');
+      const els = {
+        d: document.getElementById('cd-days'),
+        h: document.getElementById('cd-hours'),
+        m: document.getElementById('cd-mins'),
+        s: document.getElementById('cd-secs')
+      };
+      if (!els.d) return;
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        const diff = target - Date.now();
+        if (diff <= 0) {
+          ['d','h','m','s'].forEach(k => els[k].textContent = '00');
+          return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const mn = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        [['d',d],['h',h],['m',mn],['s',s]].forEach(([k, v]) => {
+          const str = pad(v);
+          if (els[k].textContent !== str) {
+            els[k].textContent = str;
+            els[k].classList.remove('tick');
+            void els[k].offsetWidth;
+            els[k].classList.add('tick');
+          }
+        });
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
 
     // ── SCROLL REVEAL ──
     const reveals = document.querySelectorAll('.reveal');
