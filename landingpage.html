@@ -1543,9 +1543,92 @@
     @media (max-width: 480px) {
       .episode-duration { margin-left: 0; }
     }
+
+    /* ══════════════════════════════
+       STICKY NAV
+    ══════════════════════════════ */
+    #sticky-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 2rem;
+      background: rgba(5,16,31,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      transform: translateY(-100%);
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+    #sticky-nav.visible { transform: translateY(0); }
+    .snav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .snav-links { display: flex; gap: 2rem; }
+    .snav-link {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      color: var(--cream-dim);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .snav-link:hover { color: var(--gold); }
+    @media (max-width: 600px) {
+      .snav-links { display: none; }
+    }
+
+    /* ══════════════════════════════
+       DAS FUNDAMENT TEASER
+    ══════════════════════════════ */
+    .fundament-teaser {
+      padding: 7rem 2rem;
+      background: var(--navy-3);
+      border-top: 1px solid rgba(201,168,76,0.08);
+      text-align: center;
+    }
+    .fundament-teaser-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .fundament-teaser-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+      line-height: 1.15;
+    }
+    .fundament-teaser-inner p {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--cream-dim);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+    }
+
   </style>
 </head>
 <body>
+
+  <nav id="sticky-nav" aria-label="Seitennavigation">
+    <a href="/" class="snav-logo">ECKSTEIN</a>
+    <div class="snav-links">
+      <a href="#episodes" class="snav-link">Episoden</a>
+      <a href="#fundament-teaser" class="snav-link">Das Fundament</a>
+      <a href="#about" class="snav-link">Uns</a>
+      <a href="#gemeinschaft-teaser" class="snav-link">Gemeinde</a>
+    </div>
+  </nav>
 
   <!-- ══════════ HERO ══════════ -->
   <section class="hero">
@@ -1620,7 +1703,7 @@
   </section>
 
   <!-- ══════════ WORUM GEHT'S ══════════ -->
-  <section class="about">
+  <section class="about" id="about">
     <div class="about-inner">
       <div class="about-layout">
         <div class="about-left">
@@ -1817,7 +1900,7 @@
   </section>
 
   <!-- ══════════ EPISODEN ══════════ -->
-  <section class="episodes">
+  <section class="episodes" id="episodes">
     <div class="episodes-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Folgen</p>
       <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--navy); margin-bottom:4rem; text-align:center;">
@@ -1862,8 +1945,18 @@
     </div>
   </section>
 
+  <!-- ══════════ DAS FUNDAMENT TEASER ══════════ -->
+  <section class="fundament-teaser" id="fundament-teaser">
+    <div class="fundament-teaser-inner">
+      <p class="section-eyebrow reveal" style="justify-content:center;">Das Fundament</p>
+      <h2 class="reveal">Wöchentlich. Ein Gedanke. Der trägt.</h2>
+      <p class="reveal">Jeden Sonntag ein Artikel — kein Bibelkurs, keine Predigt. Ein Gedanke, der dich durch die Woche trägt.</p>
+      <a href="fundament/der-sinn-des-lebens.html" class="btn-platform reveal">Zum Blog →</a>
+    </div>
+  </section>
+
   <!-- ══════════ GEMEINSCHAFT TEASER ══════════ -->
-  <section class="community-teaser">
+  <section class="community-teaser" id="gemeinschaft-teaser">
     <div class="community-teaser-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Die Gemeinde</p>
       <h2 class="reveal">Wir bauen das hier gemeinsam auf.</h2>
@@ -2168,6 +2261,17 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => obs.observe(el));
+
+    // ── STICKY NAV ──
+    (function() {
+      const hero = document.querySelector('.hero');
+      const nav  = document.getElementById('sticky-nav');
+      if (!hero || !nav) return;
+      new IntersectionObserver(
+        ([e]) => nav.classList.toggle('visible', !e.isIntersecting),
+        { threshold: 0 }
+      ).observe(hero);
+    })();
   </script>
 
 </body>
