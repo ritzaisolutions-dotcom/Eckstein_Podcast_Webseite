@@ -1106,6 +1106,77 @@
     }
 
     /* ══════════════════════════════
+       GEMEINSCHAFT SECTION
+    ══════════════════════════════ */
+    .community {
+      padding: 8rem 2rem;
+      background: var(--navy-2);
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+
+    .community-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .community-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .community-sub {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--cream-dim);
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto 4rem;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .community-card {
+      border-left: 2px solid rgba(201,168,76,0.35);
+      padding: 1.8rem 1.5rem;
+      text-align: left;
+      background: rgba(201,168,76,0.03);
+    }
+
+    .community-card p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    .community-cta {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      color: var(--cream-dim);
+      line-height: 1.5;
+    }
+
+    .community-cta em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 768px) {
+      .community-grid { grid-template-columns: 1fr; gap: 1rem; }
+    }
+
+    /* ══════════════════════════════
        GEMEINSCHAFT TEASER
     ══════════════════════════════ */
     .community-teaser {
@@ -1722,6 +1793,37 @@
           <span class="episode-duration">ca. 60 Min</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════ GEMEINSCHAFT ══════════ -->
+  <section class="community">
+    <div class="community-inner">
+      <p class="section-eyebrow reveal" style="justify-content:center;">Für wen das hier ist</p>
+      <h2 class="reveal">Du kennst das Gefühl.</h2>
+      <p class="community-sub reveal">
+        Ambitioniert sein — und dafür schief angeschaut werden.<br>
+        Glauben — und nicht in die Schublade passen.<br>
+        Mehr wollen — und wissen, dass Gott das nicht falsch findet.
+      </p>
+
+      <div class="community-grid">
+        <div class="community-card reveal reveal-delay-1">
+          <p>Du willst aufbauen. Eine Familie, ein Unternehmen, ein Leben das zählt. Nicht nur konsumieren.</p>
+        </div>
+        <div class="community-card reveal reveal-delay-2">
+          <p>Du glaubst — aber du hast Fragen. Echte. Und du weißt, dass echter Glaube das aushält.</p>
+        </div>
+        <div class="community-card reveal reveal-delay-3">
+          <p>Du willst Männer um dich, die dich schärfen. Kein Applaus. Kein Weichspüler. Eisen schärft Eisen.</p>
+        </div>
+      </div>
+
+      <p class="community-cta reveal">
+        Wir bauen das hier gemeinsam auf.<br>
+        <em>Kein Podest. Kein Publikum. Eine Gemeinde — stark unter dem Segen und Schutz Gottes.</em>
+      </p>
+      <p class="reveal" style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; color:var(--cream-dim); text-transform:uppercase; margin-top:2rem;">Gemeinschaft · Kommt bald</p>
     </div>
   </section>
 
