@@ -1106,21 +1106,21 @@
     }
 
     /* ══════════════════════════════
-       GEMEINSCHAFT SECTION
+       GEMEINSCHAFT TEASER
     ══════════════════════════════ */
-    .community {
+    .community-teaser {
       padding: 8rem 2rem;
       background: var(--navy-2);
       border-top: 1px solid rgba(201,168,76,0.08);
-    }
-
-    .community-inner {
-      max-width: 1000px;
-      margin: 0 auto;
       text-align: center;
     }
 
-    .community-inner h2 {
+    .community-teaser-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .community-teaser-inner h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.2rem, 5vw, 3.5rem);
       font-weight: 300;
@@ -1129,51 +1129,13 @@
       line-height: 1.1;
     }
 
-    .community-sub {
+    .community-teaser-inner p {
       font-family: 'EB Garamond', serif;
       font-size: clamp(1.05rem, 2vw, 1.2rem);
       color: var(--cream-dim);
       line-height: 1.8;
-      max-width: 640px;
-      margin: 0 auto 4rem;
-    }
-
-    .community-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .community-card {
-      border-left: 2px solid rgba(201,168,76,0.35);
-      padding: 1.8rem 1.5rem;
-      text-align: left;
-      background: rgba(201,168,76,0.03);
-    }
-
-    .community-card p {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.05rem;
-      color: var(--cream);
-      line-height: 1.6;
-    }
-
-    .community-cta {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 300;
-      color: var(--cream-dim);
-      line-height: 1.5;
-    }
-
-    .community-cta em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    @media (max-width: 768px) {
-      .community-grid { grid-template-columns: 1fr; gap: 1rem; }
+      max-width: 560px;
+      margin: 0 auto 3rem;
     }
 
     /* ══════════════════════════════
@@ -1539,6 +1501,10 @@
           X
         </a>
       </div>
+
+      <div style="margin-top:2rem; opacity:0; animation:fadeUp 0.8s 1.6s forwards;">
+        <a href="fundament/der-sinn-des-lebens.html" style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; color:var(--cream-dim); text-decoration:none; text-transform:uppercase; border-bottom:1px solid rgba(245,238,216,0.2); padding-bottom:2px; transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--cream-dim)'">Das Fundament — Blog →</a>
+      </div>
     </div>
 
     <div class="scroll-hint">
@@ -1713,95 +1679,6 @@
     </div>
   </section>
 
-  <!-- ══════════ GEMEINSCHAFT ══════════ -->
-  <section class="community">
-    <div class="community-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Für wen das hier ist</p>
-      <h2 class="reveal">Du kennst das Gefühl.</h2>
-      <p class="community-sub reveal">
-        Ambitioniert sein — und dafür schief angeschaut werden.<br>
-        Glauben — und nicht in die Schublade passen.<br>
-        Mehr wollen — und wissen, dass Gott das nicht falsch findet.
-      </p>
-
-      <div class="community-grid">
-        <div class="community-card reveal reveal-delay-1">
-          <p>Du willst aufbauen. Eine Familie, ein Unternehmen, ein Leben das zählt. Nicht nur konsumieren.</p>
-        </div>
-        <div class="community-card reveal reveal-delay-2">
-          <p>Du glaubst — aber du hast Fragen. Echte. Und du weißt, dass echter Glaube das aushält.</p>
-        </div>
-        <div class="community-card reveal reveal-delay-3">
-          <p>Du willst Männer um dich, die dich schärfen. Kein Applaus. Kein Weichspüler. Eisen schärft Eisen.</p>
-        </div>
-      </div>
-
-      <p class="community-cta reveal">
-        Wir bauen das hier gemeinsam auf.<br>
-        <em>Kein Podest. Kein Publikum. Eine Gemeinde — stark unter dem Segen und Schutz Gottes.</em>
-      </p>
-      <p class="reveal" style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; color:var(--cream-dim); text-transform:uppercase; margin-top:2rem;">Gemeinschaft · Kommt bald</p>
-    </div>
-  </section>
-
-  <!-- ══════════ DAS FUNDAMENT ══════════ -->
-  <section class="das-fundament">
-    <div class="fundament-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Das Fundament</p>
-      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:300; color:var(--cream); margin-bottom:0.5rem;">Wöchentlich. Ein Gedanke.</h2>
-      <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1rem; color:var(--cream-dim); margin-bottom:3rem;">Jeden Sonntag ein Gedanke — begleitend zur neuen Folge. Auf Substack, auf X, hier.</p>
-
-      <div class="fundament-card reveal">
-        <div class="fundament-card-header" onclick="toggleArtikel('df1', this)">
-          <div>
-            <span class="fundament-kw">Das Fundament · I</span>
-            <p class="fundament-card-title">Der Sinn des Lebens</p>
-            <p class="fundament-card-sub">Ein Beispiel am Apostel Stephanus</p>
-          </div>
-          <button class="fundament-toggle-btn" aria-expanded="false">Lesen ↓</button>
-        </div>
-
-        <div class="fundament-body" id="df1">
-          <div class="fundament-divider"></div>
-
-          <div class="fundament-article-text">
-            <p>Die einfache Antwort auf den Sinn des Lebens findet sich in:</p>
-
-            <div class="fundament-verse">
-              <p>„Während sie ihn steinigten, betete Stephanus: ‚Herr Jesus, nimm meinen Geist auf.' Dann fiel er auf die Knie und rief: ‚Herr, rechne ihnen diese Sünde nicht an.' Und als er das gesagt hatte, entschlief er."</p>
-              <cite>Apostelgeschichte 7,59–60</cite>
-            </div>
-
-            <p>Selbst nachdem die Menge den Apostel Stephanus gesteinigt hatte, weil er Jesus Christus als den Sohn Gottes bekannte,</p>
-
-            <div class="fundament-verse">
-              <p>„Siehe, ich sehe den Himmel offen und den Menschensohn zur Rechten Gottes stehen."</p>
-              <cite>Apostelgeschichte 7,56</cite>
-            </div>
-
-            <p>hatte er noch immer nur die Liebe Gottes in seinem Herzen.</p>
-            <p>Das ist keine Schwäche. <em style="color:var(--gold-light);">Das ist Männlichkeit in ihrer reinsten Form.</em></p>
-            <p>Gott und Seine Schöpfung bedingungslos zu lieben — dieselben Menschen, die ihn gerade töten, für das was sie sind.</p>
-            <p>Für seine „Feinde" zu beten, dass sie Jesus Christus finden, Seine Liebe und Seine Stärke, und lernen sich selbst zu vergeben für all die Fehler, die sie gemacht haben.</p>
-            <p>Das zeigt uns, dass der Sinn des Lebens darin besteht, im Bilde des Sohnes, des Vaters und des Heiligen Geistes zu leben. Die Liebe weiterzugeben, die Er uns jeden Tag schenkt.</p>
-            <p>Zum kompetentesten, rechtschaffensten Mann heranzuwachsen, der man in seiner kurzen menschlichen Existenz werden kann, bis wir aufsteigen und vor Ihm stehen.</p>
-          </div>
-
-          <div class="fundament-divider"></div>
-          <p class="fundament-closing">Wachse. Liebe. Steh fest.</p>
-
-          <div class="fundament-share">
-            <span class="fundament-share-label">Auch lesen auf</span>
-            <a href="https://ecksteinpodcast.substack.com" class="fundament-link" target="_blank" rel="noopener">Substack →</a>
-            <a href="https://x.com/Eckstein_Pod" class="fundament-link" target="_blank" rel="noopener">X →</a>
-          </div>
-        </div>
-      </div>
-
-      <p class="fundament-sub reveal">Kostenlos · Jeden Sonntag · Substack</p>
-    </div>
-  </section>
-
   <!-- ══════════ EPISODEN ══════════ -->
   <section class="episodes">
     <div class="episodes-inner">
@@ -1845,6 +1722,16 @@
           <span class="episode-duration">ca. 60 Min</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════ GEMEINSCHAFT TEASER ══════════ -->
+  <section class="community-teaser">
+    <div class="community-teaser-inner">
+      <p class="section-eyebrow reveal" style="justify-content:center;">Die Gemeinde</p>
+      <h2 class="reveal">Wir bauen das hier gemeinsam auf.</h2>
+      <p class="reveal">Kein Podest. Kein Publikum. Eine Gemeinde — stark unter dem Segen und Schutz Gottes.</p>
+      <a href="gemeinschaft/" class="btn-platform reveal">Zur Gemeinde →</a>
     </div>
   </section>
 
@@ -1914,7 +1801,17 @@
 
         <div class="impressum-item">
           <label>Keine Cookies · Kein Tracking</label>
-          <p>Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools. Es werden keine personenbezogenen Daten durch uns erhoben oder gespeichert.</p>
+          <p>Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools. Abgesehen von der freiwilligen E-Mail-Anmeldung (siehe unten) werden keine personenbezogenen Daten durch uns erhoben.</p>
+        </div>
+
+        <div class="impressum-item">
+          <label>E-Mail-Anmeldung · Gemeinschaft</label>
+          <p>Wenn du dich auf unserer Gemeinschafts-Seite mit deiner E-Mail-Adresse einträgst, speichern wir diese in einer Datenbank bei Supabase (Supabase Inc. — EU-Server Frankfurt, Deutschland).<br><br>
+          Gespeicherte Daten: E-Mail-Adresse, Zeitpunkt der Eintragung, Quelle (Gemeinschaft).<br>
+          Zweck: Benachrichtigung, sobald die Gemeinschaft startet.<br>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).<br>
+          Löschung: Auf Anfrage jederzeit unter kevin@ritz-ai.solutions.<br>
+          Datenschutz Supabase: supabase.com/privacy</p>
         </div>
 
         <div class="impressum-item">

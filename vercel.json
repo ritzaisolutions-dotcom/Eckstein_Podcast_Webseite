@@ -22,6 +22,10 @@
       "dest": "/fundament/$1"
     },
     {
+      "src": "/gemeinschaft/(.*)",
+      "dest": "/gemeinschaft/$1"
+    },
+    {
       "src": "/",
       "dest": "/landingpage.html"
     }
