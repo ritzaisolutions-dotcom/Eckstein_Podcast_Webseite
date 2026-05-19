@@ -199,6 +199,16 @@
       color: var(--cream);
       flex: 1;
       line-height: 1.3;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .hub-article-title em {
+      font-size: 0.75em;
+      font-style: italic;
+      color: var(--cream-dim);
+      font-weight: 300;
     }
 
     .hub-article-meta {
@@ -369,8 +379,8 @@
     <!-- ── ARTIKEL I ── -->
     <div class="hub-article">
       <button class="hub-article-header" onclick="toggleArticle(this)" aria-expanded="false">
-        <span class="hub-num">I</span>
-        <span class="hub-article-title">Der Sinn des Lebens</span>
+        <span class="hub-num">DF1</span>
+        <span class="hub-article-title">Der Sinn des Lebens<em>Nach dem Vorbild des Apostels Stephanus</em></span>
         <span class="hub-article-meta">18. Mai 2026</span>
         <span class="hub-chevron">▾</span>
       </button>
