@@ -18,6 +18,10 @@
       "dest": "/sitemap.xml"
     },
     {
+      "src": "/fundament/(.*)",
+      "dest": "/fundament/$1"
+    },
+    {
       "src": "/",
       "dest": "/landingpage.html"
     }

@@ -6,16 +6,16 @@
   <title>Eckstein Podcast — Das Fundament unter jedem Thema</title>
   <meta name="description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="Kevin Ritz, Maximilian Eckstein">
-  <link rel="canonical" href="https://eckstein-podcast.de/">
+  <meta name="author" content="Kevin Ritz, Florian Spieß">
+  <!-- canonical: domain noch nicht aktiv — eintragen sobald eckstein-podcast.de live ist -->
+  <!-- <link rel="canonical" href="https://eckstein-podcast.de/"> -->
 
   <!-- Open Graph -->
   <meta property="og:title" content="Eckstein Podcast — Das Fundament unter jedem Thema">
   <meta property="og:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.">
-  <meta property="og:url" content="https://eckstein-podcast.de/">
+  <!-- og:url + og:image: absolute URL eintragen sobald Domain/Vercel-URL feststeht -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="https://eckstein-podcast.de/img/Logo.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="1200">
 
@@ -24,7 +24,7 @@
   <meta name="twitter:site" content="@Eckstein_Pod">
   <meta name="twitter:title" content="Eckstein Podcast — Das Fundament unter jedem Thema">
   <meta name="twitter:description" content="Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.">
-  <meta name="twitter:image" content="https://eckstein-podcast.de/img/Logo.png">
+  <!-- twitter:image: absolute URL eintragen sobald Domain/Vercel-URL feststeht -->
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -35,9 +35,9 @@
     "description": "Kein Bibelkurs. Keine Predigten. Zwei ambitionierte Männer über Karriere, Männlichkeit, Geld, und das Fundament dahinter.",
     "author": [
       {"@type": "Person", "name": "Kevin Ritz"},
-      {"@type": "Person", "name": "Maximilian Eckstein"}
+      {"@type": "Person", "name": "Florian Spieß"}
     ],
-    "url": "https://eckstein-podcast.de/"
+    "url": ""
   }
   </script>
 
@@ -1252,6 +1252,136 @@
       text-transform: uppercase;
     }
 
+    .fundament-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      cursor: pointer;
+    }
+
+    .fundament-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin: 0.4rem 0 0.2rem;
+      line-height: 1.2;
+    }
+
+    .fundament-card-sub {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--cream-dim);
+    }
+
+    .fundament-toggle-btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-light);
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+
+    .fundament-toggle-btn:hover {
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+
+    .fundament-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fundament-body.open {
+      max-height: 3000px;
+    }
+
+    .fundament-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .fundament-divider::before,
+    .fundament-divider::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: rgba(201,168,76,0.2);
+    }
+
+    .fundament-divider::after {
+      content: '';
+    }
+
+    .fundament-article-text {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      line-height: 1.88;
+      color: rgba(245,238,216,0.87);
+    }
+
+    .fundament-article-text p { margin-bottom: 1.2rem; }
+    .fundament-article-text p:last-child { margin-bottom: 0; }
+
+    .fundament-verse {
+      border-left: 2px solid rgba(201,168,76,0.35);
+      padding: 0.4rem 0 0.4rem 1.2rem;
+      margin: 1.5rem 0;
+    }
+
+    .fundament-verse p {
+      font-style: italic;
+      color: rgba(245,238,216,0.7);
+      margin-bottom: 0.5rem !important;
+    }
+
+    .fundament-verse cite {
+      font-style: normal;
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      color: rgba(201,168,76,0.6);
+      text-transform: uppercase;
+    }
+
+    .fundament-closing {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: rgba(201,168,76,0.75);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .fundament-share {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .fundament-share-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: var(--cream-dim);
+      text-transform: uppercase;
+    }
+
     /* ══════════════════════════════
        EPISODEN SECTION
     ══════════════════════════════ */
@@ -1622,15 +1752,52 @@
       <p class="reveal" style="font-family:'EB Garamond',serif; font-size:1rem; color:var(--cream-dim); margin-bottom:3rem;">Jeden Sonntag ein Gedanke — begleitend zur neuen Folge. Auf Substack, auf X, hier.</p>
 
       <div class="fundament-card reveal">
-        <span class="fundament-kw">Vorschau · Erscheint ab 18. Mai 2026</span>
-        <p class="fundament-quote">
-          „Das Fundament eines jeden ehrenvollen Mannes sollte sein, Jesus Christus in seinem Herzen zu tragen, seine Worte zu ehren und nach seinem Vorbild zu leben."
-        </p>
-        <p class="fundament-author">— Kevin Ritz</p>
-        <a href="https://ecksteinpodcast.substack.com" class="fundament-link" target="_blank" rel="noopener">
-          Das Fundament abonnieren →
-        </a>
+        <div class="fundament-card-header" onclick="toggleArtikel('df1', this)">
+          <div>
+            <span class="fundament-kw">Das Fundament · I</span>
+            <p class="fundament-card-title">Der Sinn des Lebens</p>
+            <p class="fundament-card-sub">Ein Beispiel am Apostel Stephanus</p>
+          </div>
+          <button class="fundament-toggle-btn" aria-expanded="false">Lesen ↓</button>
+        </div>
+
+        <div class="fundament-body" id="df1">
+          <div class="fundament-divider"></div>
+
+          <div class="fundament-article-text">
+            <p>Die einfache Antwort auf den Sinn des Lebens findet sich in:</p>
+
+            <div class="fundament-verse">
+              <p>„Während sie ihn steinigten, betete Stephanus: ‚Herr Jesus, nimm meinen Geist auf.' Dann fiel er auf die Knie und rief: ‚Herr, rechne ihnen diese Sünde nicht an.' Und als er das gesagt hatte, entschlief er."</p>
+              <cite>Apostelgeschichte 7,59–60</cite>
+            </div>
+
+            <p>Selbst nachdem die Menge den Apostel Stephanus gesteinigt hatte, weil er Jesus Christus als den Sohn Gottes bekannte,</p>
+
+            <div class="fundament-verse">
+              <p>„Siehe, ich sehe den Himmel offen und den Menschensohn zur Rechten Gottes stehen."</p>
+              <cite>Apostelgeschichte 7,56</cite>
+            </div>
+
+            <p>hatte er noch immer nur die Liebe Gottes in seinem Herzen.</p>
+            <p>Das ist keine Schwäche. <em style="color:var(--gold-light);">Das ist Männlichkeit in ihrer reinsten Form.</em></p>
+            <p>Gott und Seine Schöpfung bedingungslos zu lieben — dieselben Menschen, die ihn gerade töten, für das was sie sind.</p>
+            <p>Für seine „Feinde" zu beten, dass sie Jesus Christus finden, Seine Liebe und Seine Stärke, und lernen sich selbst zu vergeben für all die Fehler, die sie gemacht haben.</p>
+            <p>Das zeigt uns, dass der Sinn des Lebens darin besteht, im Bilde des Sohnes, des Vaters und des Heiligen Geistes zu leben. Die Liebe weiterzugeben, die Er uns jeden Tag schenkt.</p>
+            <p>Zum kompetentesten, rechtschaffensten Mann heranzuwachsen, der man in seiner kurzen menschlichen Existenz werden kann, bis wir aufsteigen und vor Ihm stehen.</p>
+          </div>
+
+          <div class="fundament-divider"></div>
+          <p class="fundament-closing">Wachse. Liebe. Steh fest.</p>
+
+          <div class="fundament-share">
+            <span class="fundament-share-label">Auch lesen auf</span>
+            <a href="https://ecksteinpodcast.substack.com" class="fundament-link" target="_blank" rel="noopener">Substack →</a>
+            <a href="https://x.com/Eckstein_Pod" class="fundament-link" target="_blank" rel="noopener">X →</a>
+          </div>
+        </div>
       </div>
+
       <p class="fundament-sub reveal">Kostenlos · Jeden Sonntag · Substack</p>
     </div>
   </section>
@@ -1690,15 +1857,15 @@
       </div>
       <ul class="footer-nav">
         <li><a href="mailto:hallo@eckstein-podcast.de">Kontakt</a></li>
-        <li><a href="javascript:void(0)" onclick="toggleImpressum(true)">Impressum</a></li>
-        <li><a href="javascript:void(0)" onclick="toggleDatenschutz(true)">Datenschutz</a></li>
+        <li><a href="#impressum" onclick="event.preventDefault();toggleImpressum(true)">Impressum</a></li>
+        <li><a href="#datenschutz" onclick="event.preventDefault();toggleDatenschutz(true)">Datenschutz</a></li>
       </ul>
     </div>
     <p class="footer-bottom">© 2026 Eckstein Podcast · Kevin Ritz & Florian Spieß · Alle Rechte vorbehalten</p>
   </footer>
 
   <!-- ══════════ IMPRESSUM OVERLAY ══════════ -->
-  <div id="impressum-overlay">
+  <div id="impressum-overlay" role="dialog" aria-modal="true" aria-label="Impressum">
     <div class="impressum-content">
       <h2>Impressum</h2>
       <div class="impressum-grid">
@@ -1726,7 +1893,7 @@
   </div>
 
   <!-- ══════════ DATENSCHUTZ OVERLAY ══════════ -->
-  <div id="datenschutz-overlay">
+  <div id="datenschutz-overlay" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung">
     <div class="impressum-content">
       <h2>Datenschutzerklärung</h2>
       <div class="impressum-grid">
@@ -1905,6 +2072,15 @@
 
     function toggleImpressum(show)   { toggleOverlay('impressum-overlay', show); }
     function toggleDatenschutz(show) { toggleOverlay('datenschutz-overlay', show); }
+
+    // ── ARTIKEL ACCORDION ──
+    function toggleArtikel(id, header) {
+      const body = document.getElementById(id);
+      const btn  = header.querySelector('.fundament-toggle-btn');
+      const open = body.classList.toggle('open');
+      btn.textContent     = open ? 'Schließen ↑' : 'Lesen ↓';
+      btn.setAttribute('aria-expanded', open);
+    }
 
     // ── COUNTDOWN + POST-LAUNCH SWITCH ──
     (function() {
