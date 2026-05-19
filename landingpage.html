@@ -1420,8 +1420,8 @@
     ══════════════════════════════ */
     .episodes {
       padding: 8rem 2rem;
-      background: var(--navy-2);
-      border-top: 1px solid rgba(201,168,76,0.08);
+      background: var(--cream);
+      border-top: none;
     }
 
     .episodes-inner {
@@ -1429,19 +1429,26 @@
       margin: 0 auto;
     }
 
-    .episode-card {
-      border: 1px solid rgba(201,168,76,0.14);
-      padding: 2.5rem;
-      background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
-      position: relative;
+    .episodes .section-eyebrow {
+      color: var(--gold);
     }
 
-    .episode-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(to right, var(--gold), transparent);
+    .episodes .section-eyebrow::before,
+    .episodes .section-eyebrow::after {
+      background: rgba(201,168,76,0.35);
+    }
+
+    .episodes h2 {
+      color: var(--navy) !important;
+    }
+
+    .episode-card {
+      border: 1px solid rgba(201,168,76,0.35);
+      border-top: 3px solid var(--gold);
+      padding: 2.5rem;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 4px 32px rgba(5,16,31,0.08);
     }
 
     .episode-meta {
@@ -1465,14 +1472,14 @@
       font-family: 'Cinzel', serif;
       font-size: 0.58rem;
       letter-spacing: 0.15em;
-      color: var(--cream-dim);
+      color: rgba(5,16,31,0.45);
     }
 
     .episode-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.4rem, 3vw, 2rem);
       font-weight: 300;
-      color: var(--cream);
+      color: var(--navy);
       margin-bottom: 1.2rem;
       line-height: 1.2;
     }
@@ -1482,8 +1489,8 @@
       font-size: 1.1rem;
       font-style: italic;
       font-weight: 300;
-      color: var(--cream-dim);
-      border-left: 2px solid rgba(201,168,76,0.3);
+      color: rgba(5,16,31,0.6);
+      border-left: 2px solid var(--gold);
       padding-left: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.55;
@@ -1496,13 +1503,41 @@
       flex-wrap: wrap;
     }
 
+    .episodes .btn-platform {
+      background: var(--navy);
+      color: var(--gold-light);
+      border-color: var(--navy);
+    }
+
+    .episodes .btn-platform:hover {
+      background: var(--navy-3);
+      border-color: var(--navy-3);
+      color: var(--gold-pale);
+    }
+
     .episode-duration {
       font-family: 'Cinzel', serif;
       font-size: 0.55rem;
       letter-spacing: 0.2em;
-      color: var(--cream-dim);
+      color: rgba(5,16,31,0.4);
       text-transform: uppercase;
       margin-left: auto;
+    }
+
+    .episode-card .countdown-label {
+      color: var(--gold);
+    }
+
+    .episode-card .cd-num {
+      color: var(--navy);
+    }
+
+    .episode-card .cd-block:not(:last-child)::after {
+      color: rgba(201,168,76,0.5);
+    }
+
+    .episode-card .cd-unit {
+      color: rgba(5,16,31,0.5);
     }
 
     @media (max-width: 480px) {
@@ -1785,7 +1820,7 @@
   <section class="episodes">
     <div class="episodes-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Folgen</p>
-      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--cream); margin-bottom:4rem; text-align:center;">
+      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--navy); margin-bottom:4rem; text-align:center;">
         Jedes Gespräch. Ein Fundament.
       </h2>
 
