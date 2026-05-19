@@ -1705,6 +1705,9 @@
     }
     #sticky-nav.visible { transform: translateY(0); }
     .snav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
       font-family: 'Cinzel', serif;
       font-size: 0.9rem;
       font-weight: 700;
@@ -1736,7 +1739,10 @@
 <body>
 
   <nav id="sticky-nav" aria-label="Seitennavigation">
-    <a href="/" class="snav-logo">ECKSTEIN</a>
+    <a href="/" class="snav-logo">
+      <img src="img/Logo.png" alt="Eckstein" style="height:28px; width:auto; display:block;">
+      ECKSTEIN PODCAST
+    </a>
     <div class="snav-links">
       <a href="#episodes" class="snav-link">Episoden</a>
       <a href="#fundament-teaser" class="snav-link">Das Fundament</a>
