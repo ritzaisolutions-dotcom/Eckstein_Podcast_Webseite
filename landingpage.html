@@ -1031,78 +1031,34 @@
       margin-top: 0.6rem;
     }
 
-    /* ══════════════════════════════
-       BIBELVERS SECTION
-    ══════════════════════════════ */
-    .verse-section {
-      padding: 6rem 2rem;
-      background-image: url('img/kirche.jpg');
-      background-size: cover;
-      background-position: center 30%;
-      border-top: 1px solid rgba(201,168,76,0.08);
-      border-bottom: 1px solid rgba(201,168,76,0.08);
-      text-align: center;
-      position: relative;
+    .about-verse-block {
+      margin-top: 2.5rem;
+      border-left: 2px solid rgba(201,168,76,0.35);
+      padding: 0.6rem 0 0.6rem 1.5rem;
     }
 
-    .verse-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg,
-        rgba(5,16,31,0.88) 0%,
-        rgba(5,16,31,0.80) 50%,
-        rgba(5,16,31,0.88) 100%
-      );
-    }
-
-    .verse-section .verse-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .verse-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .verse-ref {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.35em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-    }
-
-    .verse-text {
+    .about-verse-block p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
-      font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.15rem);
       font-style: italic;
-      color: var(--cream);
+      font-weight: 300;
+      color: rgba(245,238,216,0.72);
       line-height: 1.7;
-      border-left: 2px solid rgba(201,168,76,0.4);
-      padding-left: 2rem;
-      text-align: left;
-      margin: 0 0 1.8rem;
+      margin-bottom: 0.5rem;
     }
 
-    .verse-text em {
+    .about-verse-block p em {
       font-style: normal;
       color: var(--gold-light);
-      font-weight: 400;
     }
 
-    .verse-caption {
+    .about-verse-block cite {
       font-family: 'Cinzel', serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.25em;
-      color: var(--cream-dim);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      color: rgba(201,168,76,0.6);
       text-transform: uppercase;
-      text-align: left;
-      padding-left: 2rem;
-      border-left: 2px solid transparent;
+      font-style: normal;
     }
 
     /* ══════════════════════════════
@@ -1560,50 +1516,77 @@
        EPISODEN SECTION
     ══════════════════════════════ */
     .episodes {
-      padding: 8rem 2rem;
-      background: var(--cream);
-      border-top: none;
+      padding: 7rem 2rem;
+      background: var(--navy-2);
+      border-top: 2px solid rgba(201,168,76,0.2);
     }
 
     .episodes-inner {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
-    .episodes .section-eyebrow {
+    .episode-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .episode-header-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
       color: var(--gold);
+      text-transform: uppercase;
     }
 
-    .episodes .section-eyebrow::before,
-    .episodes .section-eyebrow::after {
-      background: rgba(201,168,76,0.35);
+    .episode-header-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-dim);
     }
 
-    .episodes h2 {
-      color: var(--navy) !important;
+    .episode-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0 2.5rem;
+      align-items: start;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.08);
     }
 
-    .episode-card {
-      border: 1px solid rgba(201,168,76,0.35);
-      border-top: 3px solid var(--gold);
-      padding: 2.5rem;
-      background: #fff;
-      position: relative;
-      box-shadow: 0 4px 32px rgba(5,16,31,0.08);
+    .episode-num-big {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      color: rgba(201,168,76,0.12);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      user-select: none;
+    }
+
+    .episode-body {
+      padding-top: 0.3rem;
     }
 
     .episode-meta {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.2rem;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
       flex-wrap: wrap;
-      gap: 0.5rem;
     }
 
-    .episode-num {
+    .episode-label {
       font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       letter-spacing: 0.3em;
       color: var(--gold);
       text-transform: uppercase;
@@ -1611,78 +1594,72 @@
 
     .episode-date {
       font-family: 'Cinzel', serif;
-      font-size: 0.58rem;
+      font-size: 0.52rem;
       letter-spacing: 0.15em;
-      color: rgba(5,16,31,0.45);
+      color: var(--cream-dim);
     }
 
     .episode-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
       font-weight: 300;
-      color: var(--navy);
-      margin-bottom: 1.2rem;
-      line-height: 1.2;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
     }
 
     .episode-pullquote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
       font-style: italic;
       font-weight: 300;
-      color: rgba(5,16,31,0.6);
-      border-left: 2px solid var(--gold);
-      padding-left: 1.2rem;
-      margin-bottom: 2rem;
-      line-height: 1.55;
+      color: var(--cream-dim);
+      border-left: 2px solid rgba(201,168,76,0.3);
+      padding-left: 1rem;
+      margin-bottom: 0;
+      line-height: 1.6;
     }
 
-    .episode-buttons {
+    .episode-actions {
       display: flex;
-      gap: 1rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .episodes .btn-platform {
-      background: var(--navy);
-      color: var(--gold-light);
-      border-color: var(--navy);
-    }
-
-    .episodes .btn-platform:hover {
-      background: var(--navy-3);
-      border-color: var(--navy-3);
-      color: var(--gold-pale);
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.8rem;
+      padding-top: 0.3rem;
     }
 
     .episode-duration {
       font-family: 'Cinzel', serif;
-      font-size: 0.55rem;
+      font-size: 0.52rem;
       letter-spacing: 0.2em;
-      color: rgba(5,16,31,0.4);
+      color: var(--cream-dim);
       text-transform: uppercase;
-      margin-left: auto;
     }
 
-    .episode-card .countdown-label {
-      color: var(--gold);
+    .episode-buttons {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .episode-card .cd-num {
-      color: var(--navy);
+    .episode-buttons .btn-platform {
+      padding: 0.55rem 1rem;
+      font-size: 0.6rem;
     }
 
-    .episode-card .cd-block:not(:last-child)::after {
-      color: rgba(201,168,76,0.5);
-    }
+    /* Countdown im dunklen Hintergrund */
+    .episode-card .countdown-wrap { margin-bottom: 0; }
+    .episode-card .countdown-label { color: var(--gold); }
+    .episode-card .cd-num { color: var(--gold-light); }
+    .episode-card .cd-unit { color: var(--cream-dim); }
+    .episode-card .cd-block:not(:last-child)::after { color: rgba(201,168,76,0.3); }
 
-    .episode-card .cd-unit {
-      color: rgba(5,16,31,0.5);
-    }
-
-    @media (max-width: 480px) {
-      .episode-duration { margin-left: 0; }
+    @media (max-width: 680px) {
+      .episode-row { grid-template-columns: 1fr; gap: 1.2rem; }
+      .episode-num-big { font-size: 3rem; }
+      .episode-actions { align-items: flex-start; }
+      .episode-buttons { justify-content: flex-start; }
     }
 
     /* ══════════════════════════════
@@ -1828,6 +1805,10 @@
           <h2 class="reveal">Glaube und Ambition sind keine Gegensätze.<br><em>Sie schließen sich nicht aus, sie brauchen einander.</em></h2>
           <p class="reveal">Eckstein ist der Beweis. Die meisten Gespräche enden da, wo es interessant wird. Hier fangen sie an.</p>
           <p class="reveal">Wir reden über Gott. Über Geld. Über Scheitern. So wie es ist.</p>
+          <div class="about-verse-block reveal">
+            <p>„Kommt zu ihm, dem lebendigen Stein… Siehe, ich lege in Zion einen auserwählten, kostbaren <em>Eckstein</em>; wer an ihn glaubt, wird nicht zugrunde gehen."</p>
+            <cite>1. Petrus 2,4–7 · Daher der Name.</cite>
+          </div>
         </div>
 
         <div class="reveal">
@@ -1927,21 +1908,6 @@
     </div>
   </div>
 
-  <!-- ══════════ BIBELVERS ══════════ -->
-  <section class="verse-section">
-    <div class="verse-inner">
-      <p class="verse-ref reveal">1. Petrus 2,4–7</p>
-      <blockquote class="verse-text reveal">
-        „Kommt zu ihm, dem lebendigen Stein, der von den Menschen zwar verworfen,
-        aber von Gott auserwählt und geehrt worden ist! Lasst euch als lebendige
-        Steine zu einem geistigen Haus aufbauen… Denn es heißt in der Schrift:
-        Siehe, ich lege in Zion einen auserwählten, kostbaren
-        <em>Eckstein</em>; wer an ihn glaubt, wird nicht zugrunde gehen."
-      </blockquote>
-      <p class="verse-caption reveal">Daher der Name.</p>
-    </div>
-  </section>
-
   <!-- ══════════ HOSTS ══════════ -->
   <section class="hosts">
     <div class="hosts-cross" aria-hidden="true">
@@ -2019,44 +1985,49 @@
   <!-- ══════════ EPISODEN ══════════ -->
   <section class="episodes" id="episodes">
     <div class="episodes-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Folgen</p>
-      <h2 class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--navy); margin-bottom:4rem; text-align:center;">
-        Jedes Gespräch. Ein Fundament.
-      </h2>
+      <div class="episode-header reveal">
+        <span class="episode-header-title">Folgen</span>
+        <span class="episode-header-sub">Jedes Gespräch. Ein Fundament.</span>
+      </div>
 
-      <div class="episode-card reveal">
-        <div class="episode-meta">
-          <span class="episode-num">Folge 01</span>
-          <span class="episode-date">18. Mai 2026</span>
-        </div>
-        <h3 class="episode-title">Wer wir sind und was uns antreibt</h3>
-        <p class="episode-pullquote">
-          „Der Glaube hat mich nicht weicher gemacht. Er hat mir eine Richtung gegeben."
-        </p>
+      <div class="episode-row reveal episode-card">
+        <div class="episode-num-big">01</div>
 
-        <!-- Countdown (sichtbar vor dem 18. Mai) -->
-        <div id="ep1-countdown" class="countdown-wrap" style="margin-bottom:2rem;">
-          <p class="countdown-label">Erscheint in</p>
-          <div class="countdown">
-            <div class="cd-block"><div class="cd-num" id="cd-days">00</div><div class="cd-unit">Tage</div></div>
-            <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-unit">Stunden</div></div>
-            <div class="cd-block"><div class="cd-num" id="cd-mins">00</div><div class="cd-unit">Minuten</div></div>
-            <div class="cd-block"><div class="cd-num" id="cd-secs">00</div><div class="cd-unit">Sekunden</div></div>
+        <div class="episode-body">
+          <div class="episode-meta">
+            <span class="episode-label">Folge 01</span>
+            <span class="episode-date">18. Mai 2026</span>
           </div>
+          <h3 class="episode-title">Wer wir sind und was uns antreibt</h3>
+          <p class="episode-pullquote">„Der Glaube hat mich nicht weicher gemacht. Er hat mir eine Richtung gegeben."</p>
         </div>
 
-        <!-- Links (sichtbar ab dem 18. Mai) -->
-        <div id="ep1-links" class="episode-buttons" style="display:none;">
-          <a href="https://www.youtube.com/@Eckstein_Pod" class="btn-platform" target="_blank" rel="noopener">
-            <span class="btn-icon">▶</span> YouTube
-          </a>
-          <a href="https://rumble.com/user/Eckstein_Podcast" class="btn-platform" target="_blank" rel="noopener">
-            <span class="btn-icon">◈</span> Rumble
-          </a>
-          <a href="https://x.com/Eckstein_Pod" class="btn-platform" target="_blank" rel="noopener">
-            <span class="btn-icon">𝕏</span> X
-          </a>
+        <div class="episode-actions">
           <span class="episode-duration">ca. 60 Min</span>
+
+          <!-- Countdown (sichtbar vor dem 18. Mai) -->
+          <div id="ep1-countdown" class="countdown-wrap">
+            <p class="countdown-label">Erscheint in</p>
+            <div class="countdown">
+              <div class="cd-block"><div class="cd-num" id="cd-days">00</div><div class="cd-unit">Tage</div></div>
+              <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-unit">Stunden</div></div>
+              <div class="cd-block"><div class="cd-num" id="cd-mins">00</div><div class="cd-unit">Minuten</div></div>
+              <div class="cd-block"><div class="cd-num" id="cd-secs">00</div><div class="cd-unit">Sekunden</div></div>
+            </div>
+          </div>
+
+          <!-- Links (sichtbar ab dem 18. Mai) -->
+          <div id="ep1-links" class="episode-buttons" style="display:none;">
+            <a href="https://www.youtube.com/@Eckstein_Pod" class="btn-platform" target="_blank" rel="noopener">
+              <span class="btn-icon">▶</span> YouTube
+            </a>
+            <a href="https://rumble.com/user/Eckstein_Podcast" class="btn-platform" target="_blank" rel="noopener">
+              <span class="btn-icon">◈</span> Rumble
+            </a>
+            <a href="https://x.com/Eckstein_Pod" class="btn-platform" target="_blank" rel="noopener">
+              <span class="btn-icon">𝕏</span> X
+            </a>
+          </div>
         </div>
       </div>
     </div>
