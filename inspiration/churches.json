@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "veitsdom-prag",
+    "name": "Veitsdom",
+    "location": "Prag, Tschechien",
+    "image": "/img/inspiration/veitsdom-prag.webp",
+    "featured": true,
+    "caption": "Gotische Chevet-Ansicht — Fundament aus Stein."
+  },
+  {
+    "slug": "ludmila-prag",
+    "name": "St. Ludmila",
+    "location": "Prag, Tschechien",
+    "image": "/img/inspiration/ludmila-prag.webp",
+    "featured": true,
+    "caption": "Neugotische Zwillings­türme am Vinohradský."
+  },
+  {
+    "slug": "nikolaus-prag",
+    "name": "St. Nikolaus (Malá Strana)",
+    "location": "Prag, Tschechien",
+    "image": "/img/inspiration/nikolaus-prag.webp",
+    "featured": true,
+    "caption": "Barockes Innenleben — Gold, Schachbrett, Höhe."
+  },
+  {
+    "slug": "vysehrad-prag",
+    "name": "Basilika St. Peter und Paul",
+    "location": "Vyšehrad, Prag",
+    "image": "/img/inspiration/vysehrad-prag.webp",
+    "featured": false,
+    "caption": "Fassade mit Wappen — Geschichte in Stein."
+  },
+  {
+    "slug": "veitsdom-prag-innen",
+    "name": "Veitsdom",
+    "location": "Prag, Tschechien",
+    "image": "/img/inspiration/veitsdom-prag-innen.webp",
+    "featured": false,
+    "caption": "Barocke Kapelle im Dom."
+  },
+  {
+    "slug": "veitsdom-prag-kanzel",
+    "name": "Veitsdom",
+    "location": "Prag, Tschechien",
+    "image": "/img/inspiration/veitsdom-prag-kanzel.webp",
+    "featured": false,
+    "caption": "Gotisches Gewölbe und Kanzel."
+  },
+  {
+    "slug": "kastor-koblenz",
+    "name": "Basilika St. Kastor",
+    "location": "Koblenz, Deutschland",
+    "image": "/img/inspiration/kastor-koblenz.webp",
+    "featured": false,
+    "caption": "Hochaltar — Burgund und Gold."
+  },
+  {
+    "slug": "liebfrauen-koblenz",
+    "name": "Liebfrauenkirche",
+    "location": "Koblenz, Deutschland",
+    "image": "/img/inspiration/liebfrauen-koblenz.webp",
+    "featured": false,
+    "caption": "Apsis mit Bleiglas und Hängekreuz."
+  },
+  {
+    "slug": "dom-trier",
+    "name": "Hohe Domkirche St. Peter",
+    "location": "Trier, Deutschland",
+    "image": "/img/inspiration/dom-trier.webp",
+    "featured": false,
+    "caption": "Langhaus mit burgunderfarbenen Bögen."
+  },
+  {
+    "slug": "dom-trier-schiff",
+    "name": "Hohe Domkirche St. Peter",
+    "location": "Trier, Deutschland",
+    "image": "/img/inspiration/dom-trier-schiff.webp",
+    "featured": false,
+    "caption": "Mittelschiff — Blick zum Chor."
+  },
+  {
+    "slug": "dom-speyer",
+    "name": "Dom zu Speyer",
+    "location": "Speyer, Deutschland",
+    "image": "/img/inspiration/dom-speyer.webp",
+    "featured": false,
+    "caption": "Gewölbe und Gold — der Weg zum Altar."
+  }
+]

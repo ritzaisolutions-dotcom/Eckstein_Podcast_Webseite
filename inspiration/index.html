@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration — Orte die uns geprägt haben · Eckstein Podcast</title>
+  <meta name="description" content="Kirchen und Orte, die Kevin Ritz und Florian Spieß auf dem Weg geprägt haben — kein Reiseführer, sondern Stimmung und Fundament.">
+  <link rel="canonical" href="https://www.eckstein-podcast.de/inspiration/">
+  <meta property="og:title" content="Inspiration — Eckstein Podcast">
+  <meta property="og:description" content="Orte, die uns geprägt haben. Tradition, Ehrfurcht, lebendiger Glaube.">
+  <meta property="og:url" content="https://www.eckstein-podcast.de/inspiration/">
+  <meta property="og:image" content="https://www.eckstein-podcast.de/img/inspiration/veitsdom-prag.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Eckstein_Pod">
+  <meta name="twitter:image" content="https://www.eckstein-podcast.de/img/inspiration/veitsdom-prag.webp">
+  <link rel="icon" type="image/png" href="../img/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #05101f;
+      --navy-2: #081525;
+      --navy-3: #0c1e35;
+      --gold: #c9a84c;
+      --gold-light: #e2c06a;
+      --gold-pale: #f0dca0;
+      --cream: #f5eed8;
+      --cream-dim: rgba(245,238,216,0.55);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--cream);
+      font-family: 'EB Garamond', Georgia, serif;
+      overflow-x: hidden;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.045'/%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    .page-nav {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-back {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      color: var(--cream-dim);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .intro {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+    }
+    .intro-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .intro h1 em { font-style: italic; color: var(--gold-light); }
+    .intro p {
+      font-size: 1.08rem;
+      color: var(--cream-dim);
+      line-height: 1.75;
+    }
+    .gallery-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+    .inspiration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+    .inspiration-card {
+      border: 1px solid rgba(201,168,76,0.2);
+      border-top: 3px solid var(--gold);
+      background: rgba(201,168,76,0.03);
+      overflow: hidden;
+    }
+    .inspiration-card-figure {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      margin: 0;
+    }
+    .inspiration-card-figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .inspiration-card-body { padding: 1.25rem 1.35rem 1.5rem; }
+    .inspiration-card-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 0.35rem;
+    }
+    .inspiration-card-location {
+      font-size: 0.92rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .inspiration-card-caption {
+      font-size: 0.95rem;
+      color: var(--cream-dim);
+      line-height: 1.55;
+    }
+    .inspiration-error {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--cream-dim);
+      padding: 2rem;
+    }
+    .page-footer {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+    .page-footer a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .page-footer small {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--cream-dim);
+      margin-top: 0.3rem;
+    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 900px) {
+      .inspiration-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .inspiration-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body data-inspiration-base="../inspiration/">
+
+  <nav class="page-nav">
+    <a href="../landingpage.html" class="nav-back">← Zurück</a>
+    <a href="../landingpage.html" class="nav-logo">ECKSTEIN</a>
+  </nav>
+
+  <header class="intro">
+    <p class="intro-eyebrow">Inspiration</p>
+    <h1>Orte, die uns <em>geprägt haben.</em></h1>
+    <p>Kein Reiseführer. Kein Ranking. Nur Kirchen, an denen wir gestanden haben — und die uns daran erinnern, dass Glaube Räume hat, nicht nur Gedanken.</p>
+  </header>
+
+  <div class="gallery-wrap">
+    <div class="inspiration-grid" id="inspiration-grid" aria-live="polite"></div>
+  </div>
+
+  <footer class="page-footer">
+    <a href="../landingpage.html">ECKSTEIN PODCAST</a>
+    <small>© 2026 Kevin Ritz & Florian Spieß</small>
+  </footer>
+
+  <script>
+    window.__ecksteinReveal = function () {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+    };
+    window.__ecksteinReveal();
+  </script>
+  <script defer src="../js/eckstein-inspiration.js"></script>
+</body>
+</html>

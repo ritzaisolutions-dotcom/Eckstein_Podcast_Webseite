@@ -97,6 +97,12 @@ Webseite/
 │   └── kommen-reiche-in-den-himmel.html
 ├── gemeinschaft/
 │   └── index.html                # Warteliste → email_consents
+├── inspiration/
+│   ├── index.html                # Kirchen-Galerie
+│   └── churches.json             # Name, Ort, Bild, featured
+├── img/inspiration/              # WebP aus inspirations/ (deploy)
+├── inspirations/                 # Quell-JPGs (gitignored)
+├── BRAND.md                      # Messaging, verbotene Wiederholungen
 ├── n8n/                          # Artikel-Mail-Workflow + SQL
 ├── img/
 ├── vercel.json
@@ -159,4 +165,5 @@ Wenn du an diesem Projekt arbeitest:
 3. **Copy-Ton checken** — direkt, kein Bullshit, kein Prediger-Ton.
 4. **Mobile-first** — die Seite muss auf dem Handy genauso stark sein.
 5. **Kein Build-Step** — Änderungen in den HTML-Dateien; `vercel.json` nur bei Routing-Bedarf.
-6. **Neuer Fundament-Artikel:** Datei unter `fundament/`, Eintrag in `fundament/index.html`, optional Teaser auf `landingpage.html`.
+6. **Neuer Fundament-Artikel:** Datei unter `fundament/`, Eintrag in `fundament/index.html`, Teaser auf `landingpage.html` (Fundament-Sektion + Hero-CTA).
+7. **Neue Inspirations-Fotos:** JPG nach `inspirations/`, `python scripts/build-inspiration-images.py`, Eintrag in `inspiration/churches.json`. Copy-Regeln: `BRAND.md`.

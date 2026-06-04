@@ -1140,8 +1140,133 @@
     }
 
     /* ══════════════════════════════
-       GEMEINSCHAFT TEASER
+       INSPIRATION TEASER
     ══════════════════════════════ */
+    .inspiration-section {
+      padding: 7rem 2rem;
+      background: var(--navy-2);
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+    .inspiration-inner { max-width: 1000px; margin: 0 auto; }
+    .inspiration-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+    .inspiration-intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .inspiration-intro h2 em { font-style: italic; color: var(--gold-light); }
+    .inspiration-intro p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--cream-dim);
+      line-height: 1.7;
+    }
+    .inspiration-teaser-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .inspiration-teaser-card {
+      border: 1px solid rgba(201,168,76,0.2);
+      border-top: 3px solid var(--gold);
+      background: rgba(201,168,76,0.03);
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .inspiration-teaser-card:hover { border-color: rgba(201,168,76,0.45); }
+    .inspiration-teaser-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    .inspiration-teaser-card figcaption {
+      padding: 1rem 1.1rem 1.2rem;
+    }
+    .inspiration-teaser-card strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .inspiration-teaser-card span {
+      font-size: 0.9rem;
+      color: var(--gold-light);
+    }
+    .inspiration-all {
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .inspiration-teaser-grid { grid-template-columns: 1fr; }
+    }
+
+    .fundament-df-num {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: rgba(201,168,76,0.15);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .promises {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .promise-item {
+      border-left: 2px solid rgba(201,168,76,0.4);
+      padding-left: 1.25rem;
+    }
+    .promise-item strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .promise-item span {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--cream-dim);
+      line-height: 1.55;
+    }
+
+    .footer-kanaele {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--cream-dim);
+      text-transform: uppercase;
+      line-height: 2;
+    }
+    .footer-kanaele a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.2s;
+    }
+    .footer-kanaele a:hover { color: var(--gold); }
+
     /* ══════════════════════════════
        DAS FUNDAMENT TEASER — SPLIT
     ══════════════════════════════ */
@@ -1760,10 +1885,10 @@
       ECKSTEIN PODCAST
     </a>
     <div class="snav-links">
-      <a href="fundament/" class="snav-link">Das Fundament</a>
-      <a href="#formate" class="snav-link">Formate</a>
+      <a href="#fundament-teaser" class="snav-link">Das Fundament</a>
+      <a href="#formate" class="snav-link">Podcast</a>
+      <a href="inspiration/" class="snav-link">Inspiration</a>
       <a href="gemeinschaft/" class="snav-link">Gemeinde</a>
-      <a href="#kanaele" class="snav-link">Kanäle</a>
     </div>
   </nav>
 
@@ -1805,11 +1930,11 @@
       <p class="hero-sub">— Podcast —</p>
 
       <p class="hero-manifesto">
-        Wir bauen eine Gemeinde junger Christen — durch Gott zur besten Version ihrer selbst, gemeinsam wachsend.
+        Eckstein ist der Raum für junge Christen, die Glauben und Anspruch nicht trennen — im Podcast, in den Artikeln, bald in der Gemeinde.
       </p>
 
       <p class="hero-sub-manifesto">
-        Traditioneller Glaube, der zu Tugend, Respekt, Verpflichtung, Dankbarkeit und Disziplin führt. Der Glaube ist <span class="manifesto-accent">unser Fundament</span> — in jedem Gespräch und jedem Artikel.
+        Traditioneller Glaube, gelebt mit Respekt, Disziplin und Dankbarkeit. <span class="manifesto-accent">Das Fundament</span> steht unter jedem Gespräch und jedem Sonntags-Artikel.
       </p>
 
       <div class="cta-group hero-cta-stack">
@@ -1829,6 +1954,29 @@
     </div>
   </section>
 
+  <!-- ══════════ DAS FUNDAMENT ══════════ -->
+  <section class="fundament-teaser" id="fundament-teaser">
+    <div class="fundament-split">
+      <div class="fundament-split-left reveal">
+        <p class="section-eyebrow">Das Fundament · Exklusiv</p>
+        <p class="fundament-df-num">DF2</p>
+        <h2 class="fundament-manifest">Kommen Reiche wirklich nicht in den Himmel?<em>Eine Aufklärung des häufigen Irrglaubens</em></h2>
+        <p class="fundament-sub">Nur auf eckstein-podcast.de — jeden Sonntag ein Artikel, der in den Alltag geht. Kein Newsletter-Recycling. Kein Medium der anderen.</p>
+        <a href="fundament/kommen-reiche-in-den-himmel.html" class="btn-platform">Artikel lesen →</a>
+        <a href="fundament/" class="btn-platform" style="margin-left:0.75rem;background:transparent;border:1px solid rgba(201,168,76,0.45);color:var(--cream);">Alle Artikel</a>
+      </div>
+      <div class="fundament-split-right reveal reveal-delay-1">
+        <div class="fundament-card-label">
+          <span>DF2 · 25. Mai 2026</span>
+          <span>Drucken als PDF</span>
+        </div>
+        <p class="fundament-card-excerpt">„Der feine aber entscheidende Unterschied ist: WARUM bestrebst du den finanziellen weltlichen Erfolg? Die richtige Frage ist nicht ob — sondern für wen."</p>
+        <p class="fundament-card-sub" style="margin-top:1rem;">Im Browser drucken → PDF. Fundament-Artikel leben hier — nicht auf Spotify, nicht auf YouTube.</p>
+        <a href="fundament/kommen-reiche-in-den-himmel.html?drucken=1" class="fundament-card-link">PDF / Drucken →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════ WORUM GEHT'S ══════════ -->
   <section class="about" id="about">
     <div class="about-inner">
@@ -1845,30 +1993,18 @@
         </div>
 
         <div class="reveal">
-          <div class="manifest">
-            <div class="manifest-item">
-              <span class="m-tag yes">Ja,</span>
-              <span class="m-text">Tugend, Respekt und Verpflichtung — gelebt, nicht gepredigt.</span>
+          <div class="promises">
+            <div class="promise-item">
+              <strong>Langform ohne Filter</strong>
+              <span>LFC auf YouTube und Spotify — Gespräche, die da weitermachen, wo andere aufhören.</span>
             </div>
-            <div class="manifest-item">
-              <span class="m-tag yes">Ja,</span>
-              <span class="m-text">Biblische Klarheit und ehrliche Lehre.</span>
+            <div class="promise-item">
+              <strong>Artikel nur hier</strong>
+              <span>Das Fundament jeden Sonntag — Gedanken, die du nirgends sonst in dieser Form findest.</span>
             </div>
-            <div class="manifest-item">
-              <span class="m-tag yes">Ja,</span>
-              <span class="m-text">Gemeinsames Wachsen in einer Gemeinde junger Christen.</span>
-            </div>
-            <div class="manifest-item">
-              <span class="m-tag yes">Ja,</span>
-              <span class="m-text">Traditionelle Vorbilder und Disziplin im Alltag.</span>
-            </div>
-            <div class="manifest-item">
-              <span class="m-tag yes">Ja,</span>
-              <span class="m-text">Dankbarkeit als Haltung — nicht als Floskel.</span>
-            </div>
-            <div class="manifest-item">
-              <span class="m-tag yes">Ja,</span>
-              <span class="m-text">Ambition und Glaube schließen einander nicht aus.</span>
+            <div class="promise-item">
+              <strong>Gemeinschaft, die schärft</strong>
+              <span>Eine Gemeinde junger Christen entsteht — Warteliste jetzt, Start bald.</span>
             </div>
           </div>
         </div>
@@ -1941,81 +2077,6 @@
     </div>
   </div>
 
-  <!-- ══════════ HOSTS ══════════ -->
-  <section class="hosts">
-    <div class="hosts-cross" aria-hidden="true">
-      <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
-        <rect x="34" y="0" width="12" height="120" fill="#c9a84c" rx="1"/>
-        <rect x="0" y="28" width="80" height="12" fill="#c9a84c" rx="1"/>
-      </svg>
-    </div>
-    <div class="hosts-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Wer wir sind</p>
-      <h2 class="reveal">Zwei Männer. Eine Haltung.</h2>
-      <p class="reveal">Keine Masken. Kein Podest. So wie wir sind.</p>
-
-      <div class="hosts-grid">
-        <div class="host-card reveal reveal-delay-1">
-          <div class="host-bg-letter">K</div>
-          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_kevin.jpg" alt="Kevin Ritz" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-          <p class="host-name">Kevin Ritz</p>
-          <p class="host-title">Unternehmer · Gründer · Fragender</p>
-          <p class="host-quote">„Es kann kein Licht ohne Dunkelheit geben."</p>
-          <p class="host-bio">Kevin baut Unternehmen und glaubt an Gott. Für viele ein Widerspruch. Für ihn das Fundament. Angetrieben von Dankbarkeit und dem Drang, bedeutsam zu existieren — nicht trotz dem Glauben, sondern durch ihn.</p>
-          <div class="host-links">
-            <span>Schreib mir</span>
-            <a href="https://t.me/Kevin_Ritz" target="_blank" rel="noopener">Telegram</a>
-            <a href="https://x.com/kevin_ritz1" target="_blank" rel="noopener">X</a>
-          </div>
-        </div>
-        <div class="host-card reveal reveal-delay-2">
-          <div class="host-bg-letter">F</div>
-          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_florian.png" alt="Florian Spieß" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-          <p class="host-name">Florian Spieß</p>
-          <p class="host-title">Sportler · Denker · Gradaus</p>
-          <p class="host-quote">„Eisen schärft Eisen, ebenso schärft ein Mensch den anderen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
-          <p class="host-bio">Florian trennt Sport, Disziplin und Glauben nicht. Für ihn ist Stärke kein Selbstzweck. Er sagt was er denkt. Auch wenn es wehtut. Besonders dann.</p>
-          <div class="host-links">
-            <span>Schreib mir</span>
-            <a href="https://www.instagram.com/florian_fs67/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ GEMEINSCHAFT ══════════ -->
-  <section class="community">
-    <div class="community-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Für wen das hier ist</p>
-      <h2 class="reveal">Du kennst das Gefühl.</h2>
-      <p class="community-sub reveal">
-        Ambitioniert sein — und dafür schief angeschaut werden.<br>
-        Glauben — und nicht in die Schublade passen.<br>
-        Mehr wollen — und wissen, dass Gott das nicht falsch findet.
-      </p>
-
-      <div class="community-grid">
-        <div class="community-card reveal reveal-delay-1">
-          <p>Du willst aufbauen. Eine Familie, ein Unternehmen, ein Leben das zählt. Nicht nur konsumieren.</p>
-        </div>
-        <div class="community-card reveal reveal-delay-2">
-          <p>Du glaubst — aber du hast Fragen. Echte. Und du weißt, dass echter Glaube das aushält.</p>
-        </div>
-        <div class="community-card reveal reveal-delay-3">
-          <p>Du willst Männer um dich, die dich schärfen. Kein Applaus. Kein Weichspüler. Eisen schärft Eisen.</p>
-        </div>
-      </div>
-
-      <p class="community-cta reveal">
-        Wir bauen das hier gemeinsam auf.<br>
-        <em>Kein Podest. Kein Publikum. Eine Gemeinde — stark unter dem Segen und Schutz Gottes.</em>
-      </p>
-      <p class="reveal" style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; color:var(--cream-dim); text-transform:uppercase; margin-top:2rem;">Gemeinschaft · Kommt bald</p>
-    </div>
-  </section>
-
-
   <!-- ══════════ FORMATE ══════════ -->
   <section class="formate-section" id="formate">
     <div class="formate-inner">
@@ -2050,7 +2111,7 @@
     <div class="episodes-inner">
       <div class="episode-header reveal">
         <span class="episode-header-title">Folgen</span>
-        <span class="episode-header-sub">Jedes Gespräch. Ein Fundament.</span>
+        <span class="episode-header-sub">Langform · YouTube &amp; Spotify</span>
       </div>
 
       <div class="episode-row reveal episode-card">
@@ -2083,57 +2144,141 @@
           <div id="ep1-links" class="episode-buttons" style="display:flex;"><a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener"><span class="btn-icon">▶</span> YouTube</a><a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a></div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ══════════ DAS FUNDAMENT TEASER ══════════ -->
-  <section class="fundament-teaser" id="fundament-teaser">
-    <div class="fundament-split">
-      <div class="fundament-split-left reveal">
-        <p class="section-eyebrow">Das Fundament</p>
-        <h2 class="fundament-manifest">Ein Gedanke.<em>Wöchentlich. Der trägt.</em></h2>
-        <p class="fundament-sub">Exklusiv auf eckstein-podcast.de.  Jeden Sonntag ein Artikel — ein Gedanke, der sich in deinen Alltag einbrennt.</p>
-        <a href="fundament/" class="btn-platform">Alle Artikel →</a>
-      </div>
-      <div class="fundament-split-right reveal reveal-delay-1">
-        <div class="fundament-card-label">
-          <span>DF2 · Neuester Artikel</span>
-          <span>25. Mai 2026</span>
+      <div class="episode-row reveal episode-card" style="margin-top:2rem;opacity:0.85;">
+        <div class="episode-num-big">02</div>
+        <div class="episode-body">
+          <div class="episode-meta">
+            <span class="episode-label">LFC · Folge 02</span>
+            <span class="episode-date">Demnächst</span>
+          </div>
+          <h3 class="episode-title">In Vorbereitung</h3>
+          <p class="episode-pullquote">Neue Folge — gleiche Tiefe, neues Thema.</p>
         </div>
-        <p class="fundament-card-title">Kommen Reiche wirklich nicht in den Himmel?</p>
-        <p class="fundament-card-sub">Eine Aufklärung des häufigen Irrglaubens</p>
-        <p class="fundament-card-excerpt">„Der feine aber entscheidende Unterschied ist: WARUM bestrebst du den finanziellen weltlichen Erfolg? Die richtige Frage ist nicht ob — sondern für wen."</p>
-        <a href="fundament/kommen-reiche-in-den-himmel.html" class="fundament-card-link">Artikel lesen →</a>
+        <div class="episode-actions">
+          <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a>
+        </div>
+      </div>
+
+      <div class="episode-row reveal episode-card" style="margin-top:1.5rem;opacity:0.7;">
+        <div class="episode-num-big">03</div>
+        <div class="episode-body">
+          <div class="episode-meta">
+            <span class="episode-label">LFC · Folge 03</span>
+            <span class="episode-date">Geplant</span>
+          </div>
+          <h3 class="episode-title">In Vorbereitung</h3>
+          <p class="episode-pullquote">Archiv wächst mit jeder Veröffentlichung.</p>
+        </div>
+        <div class="episode-actions">
+          <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════ GEMEINSCHAFT TEASER ══════════ -->
-  <section class="community-teaser" id="gemeinschaft-teaser">
-    <div class="community-teaser-inner">
+  <!-- ══════════ INSPIRATION TEASER ══════════ -->
+  <section class="inspiration-section" id="inspiration">
+    <div class="inspiration-inner">
+      <div class="inspiration-intro reveal">
+        <p class="section-eyebrow" style="justify-content:center;">Inspiration</p>
+        <h2>Orte, die uns <em>geprägt haben.</em></h2>
+        <p>Kirchen, an denen wir gestanden haben — Stimmung und Ehrfurcht, kein Tourismus.</p>
+      </div>
+      <div class="inspiration-teaser-grid reveal">
+        <a class="inspiration-teaser-card" href="inspiration/">
+          <img src="img/inspiration/veitsdom-prag.webp" alt="Veitsdom, Prag" width="800" height="600" loading="lazy">
+          <figcaption><strong>Veitsdom</strong><span>Prag, Tschechien</span></figcaption>
+        </a>
+        <a class="inspiration-teaser-card" href="inspiration/">
+          <img src="img/inspiration/ludmila-prag.webp" alt="St. Ludmila, Prag" width="800" height="600" loading="lazy">
+          <figcaption><strong>St. Ludmila</strong><span>Prag, Tschechien</span></figcaption>
+        </a>
+        <a class="inspiration-teaser-card" href="inspiration/">
+          <img src="img/inspiration/nikolaus-prag.webp" alt="St. Nikolaus Malá Strana, Prag" width="800" height="600" loading="lazy">
+          <figcaption><strong>St. Nikolaus</strong><span>Malá Strana, Prag</span></figcaption>
+        </a>
+      </div>
+      <p class="inspiration-all reveal"><a href="inspiration/" class="btn-platform">Alle Orte →</a></p>
+    </div>
+  </section>
+
+  <!-- ══════════ GEMEINSCHAFT ══════════ -->
+  <section class="community" id="gemeinde">
+    <div class="community-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Die Gemeinde</p>
-      <h2 class="reveal">Wir bauen das hier<br>gemeinsam auf.</h2>
-      <p class="reveal">Kein Podest. Kein Publikum. Eine Gemeinde — stark unter dem Segen und Schutz Gottes.</p>
-      <a href="gemeinschaft/" class="btn-platform reveal">Zur Gemeinde →</a>
+      <h2 class="reveal">Du kennst das Gefühl.</h2>
+      <p class="community-sub reveal">
+        Ambitioniert sein — und dafür schief angeschaut werden.<br>
+        Glauben — und nicht in die Schublade passen.<br>
+        Mehr wollen — und wissen, dass Gott das nicht falsch findet.
+      </p>
+
+      <div class="community-grid">
+        <div class="community-card reveal reveal-delay-1">
+          <p>Du willst aufbauen. Eine Familie, ein Unternehmen, ein Leben das zählt. Nicht nur konsumieren.</p>
+        </div>
+        <div class="community-card reveal reveal-delay-2">
+          <p>Du glaubst — aber du hast Fragen. Echte. Und du weißt, dass echter Glaube das aushält.</p>
+        </div>
+        <div class="community-card reveal reveal-delay-3">
+          <p>Du willst Männer um dich, die dich schärfen — ohne Applaus, ohne Weichspüler.</p>
+        </div>
+      </div>
+
+      <p class="community-cta reveal">
+        Wir bauen eine Gemeinde junger Christen — <em>stark unter dem Segen und Schutz Gottes.</em>
+      </p>
+      <p class="reveal" style="text-align:center;margin-top:2rem;">
+        <a href="gemeinschaft/" class="btn-platform">Auf die Warteliste →</a>
+      </p>
     </div>
   </section>
 
+  <!-- ══════════ HOSTS ══════════ -->
+  <section class="hosts">
+    <div class="hosts-cross" aria-hidden="true">
+      <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="0" width="12" height="120" fill="#c9a84c" rx="1"/>
+        <rect x="0" y="28" width="80" height="12" fill="#c9a84c" rx="1"/>
+      </svg>
+    </div>
+    <div class="hosts-inner">
+      <p class="section-eyebrow reveal" style="justify-content:center;">Wer wir sind</p>
+      <h2 class="reveal">Zwei Männer. Eine Haltung.</h2>
+      <p class="reveal">Keine Masken. So wie wir sind.</p>
 
-  <!-- ══════════ KANÄLE ══════════ -->
-  <section class="kanaele-section" id="kanaele">
-    <div class="formate-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Kanäle</p>
-      <h2 class="reveal" style="text-align:center;">Überall hören. <em>Ein Fundament.</em></h2>
-      <div class="kanaele-grid reveal">
-        <div class="kanal-row"><span>LFC</span><a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener">YouTube — Episoden</a></div>
-        <div class="kanal-row"><span>LFC</span><a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener">Spotify</a></div>
-        <div class="kanal-row"><span>SF</span><a href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener">YouTube</a></div>
-        <div class="kanal-row"><span>SF</span><a href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener">Instagram</a></div>
-        <div class="kanal-row"><span>SF</span><a href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener">TikTok</a></div>
-        <div class="kanal-row"><span>Kontakt</span><a href="mailto:hallo@eckstein-podcast.de">hallo@eckstein-podcast.de</a></div>
+      <div class="hosts-grid">
+        <div class="host-card reveal reveal-delay-1">
+          <div class="host-bg-letter">K</div>
+          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_kevin.jpg" alt="Kevin Ritz" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <p class="host-name">Kevin Ritz</p>
+          <p class="host-title">Unternehmer · Gründer · Fragender</p>
+          <p class="host-quote">„Es kann kein Licht ohne Dunkelheit geben."</p>
+          <p class="host-bio">Kevin baut Unternehmen und glaubt an Gott. Für viele ein Widerspruch. Für ihn der Eckstein. Angetrieben von Dankbarkeit und dem Drang, bedeutsam zu existieren — durch den Glauben, nicht trotz ihm.</p>
+          <div class="host-links">
+            <span>Schreib mir</span>
+            <a href="https://www.instagram.com/kevin_ritz1/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="host-card reveal reveal-delay-2">
+          <div class="host-bg-letter">F</div>
+          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_florian.png" alt="Florian Spieß" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <p class="host-name">Florian Spieß</p>
+          <p class="host-title">Sportler · Denker · Gradaus</p>
+          <p class="host-quote">„Eisen schärft Eisen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
+          <p class="host-bio">Florian trennt Sport, Disziplin und Glauben nicht. Er sagt, was er denkt — auch wenn es wehtut. Besonders dann.</p>
+          <div class="host-links">
+            <span>Schreib mir</span>
+            <a href="https://www.instagram.com/florian_fs67/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
   <!-- ══════════ FOOTER ══════════ -->
   <footer>
     <div class="footer-row">
@@ -2142,10 +2287,22 @@
         <small>Podcast · Est. 2026</small>
       </div>
       <ul class="footer-nav">
+        <li><a href="fundament/">Das Fundament</a></li>
+        <li><a href="inspiration/">Inspiration</a></li>
+        <li><a href="gemeinschaft/">Gemeinde</a></li>
         <li><a href="mailto:hallo@eckstein-podcast.de">Kontakt</a></li>
         <li><a href="#impressum" onclick="event.preventDefault();toggleImpressum(true)">Impressum</a></li>
         <li><a href="#datenschutz" onclick="event.preventDefault();toggleDatenschutz(true)">Datenschutz</a></li>
       </ul>
+      <p class="footer-kanaele">
+        LFC:
+        <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener">Spotify</a>
+        · SF:
+        <a href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener">TikTok</a>
+      </p>
     </div>
     <p class="footer-bottom">© 2026 Eckstein Podcast · Kevin Ritz & Florian Spieß · Alle Rechte vorbehalten</p>
   </footer>
@@ -2326,8 +2483,8 @@
               precision highp float;
               varying vec3 vPosition;
               void main(void){
-                float opacity=(96.-length(vPosition))/256.*0.28;
-                gl_FragColor=vec4(0.788,0.659,0.298,opacity);
+                float opacity=(96.-length(vPosition))/256.*0.32;
+                gl_FragColor=vec4(0.82,0.66,0.31,opacity);
               }
             `
           })

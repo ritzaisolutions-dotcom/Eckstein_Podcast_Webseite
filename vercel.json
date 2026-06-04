@@ -26,6 +26,10 @@
       "dest": "/gemeinschaft/$1"
     },
     {
+      "src": "/inspiration/(.*)",
+      "dest": "/inspiration/$1"
+    },
+    {
       "src": "/",
       "dest": "/landingpage.html"
     }
