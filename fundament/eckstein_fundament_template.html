@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eckstein Podcast — Das Fundament</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #05080f;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .post {
+      width: 680px;
+      background: #0a0f1e;
+      padding: 52px 60px 60px;
+      position: relative;
+      overflow: hidden;
+      font-family: 'EB Garamond', Georgia, serif;
+    }
+
+    .border-o {
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(212, 172, 73, 0.35);
+      border-radius: 3px;
+      pointer-events: none;
+    }
+    .border-i {
+      position: absolute;
+      inset: 17px;
+      border: 0.5px solid rgba(212, 172, 73, 0.13);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    .cn { position: absolute; width: 16px; height: 16px; border-color: #d4ac49; border-style: solid; opacity: 0.65; }
+    .tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
+    .tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
+    .bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
+    .br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
+
+    .series {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: rgba(212, 172, 73, 0.5);
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .title-main {
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+      color: #d4ac49;
+      text-align: center;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .title-sub {
+      font-family: 'EB Garamond', serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: rgba(212, 172, 73, 0.55);
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 26px;
+    }
+
+    .divider { display: flex; align-items: center; gap: 10px; margin: 18px 0; }
+    .divider-line { flex: 1; height: 0.5px; background: rgba(212, 172, 73, 0.28); }
+    .divider-diamond { width: 5px; height: 5px; background: #d4ac49; transform: rotate(45deg); opacity: 0.55; flex-shrink: 0; }
+
+    .quote-block {
+      border-left: 1.5px solid rgba(212, 172, 73, 0.38);
+      padding-left: 18px;
+      margin-bottom: 20px;
+    }
+    .quote-text {
+      font-size: 15px;
+      line-height: 1.78;
+      color: rgba(255, 255, 255, 0.72);
+      font-style: italic;
+    }
+    .quote-ref {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: rgba(212, 172, 73, 0.7);
+      margin-top: 8px;
+    }
+
+    .body { font-size: 16.5px; line-height: 1.88; color: rgba(255, 255, 255, 0.87); }
+    .body p { margin-bottom: 16px; }
+    .body p:last-child { margin-bottom: 0; }
+    .highlight { color: #d4ac49; font-style: italic; }
+
+    .closing {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 0.13em;
+      color: rgba(212, 172, 73, 0.78);
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .logo-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 32px; }
+    .logo-txt { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.22em; color: rgba(212, 172, 73, 0.48); text-transform: uppercase; }
+    .logo-dot { width: 3px; height: 3px; background: rgba(212, 172, 73, 0.38); border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <div class="border-o"></div>
+    <div class="border-i"></div>
+    <div class="cn tl"></div>
+    <div class="cn tr"></div>
+    <div class="cn bl"></div>
+    <div class="cn br"></div>
+
+    <!-- z.B. "Das Fundament · II" -->
+    <p class="series">Das Fundament · [NUMMER]</p>
+
+    <!-- Haupttitel der Episode -->
+    <p class="title-main">[HAUPTTITEL]</p>
+
+    <!-- Untertitel der Episode -->
+    <p class="title-sub">[UNTERTITEL]</p>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="body">
+
+      <!-- Einleitungssatz -->
+      <p>[EINLEITUNG]</p>
+
+      <!-- Bibelvers 1 — bei Bedarf weitere quote-blocks kopieren -->
+      <div class="quote-block">
+        <p class="quote-text">"[BIBELVERS 1]"</p>
+        <p class="quote-ref">[BUCH KAPITEL:VERS]</p>
+      </div>
+
+      <!-- Fliesstext — weitere <p> Tags nach Bedarf hinzufügen -->
+      <p>[ABSATZ 1]</p>
+
+      <!-- Bibelvers 2 — optional, löschen wenn nicht benötigt -->
+      <div class="quote-block">
+        <p class="quote-text">"[BIBELVERS 2]"</p>
+        <p class="quote-ref">[BUCH KAPITEL:VERS]</p>
+      </div>
+
+      <p>[ABSATZ 2]</p>
+
+      <!-- Kernsatz der Episode — wird gold hervorgehoben -->
+      <p>[ABSATZ 3] <span class="highlight">[HERVORGEHOBENER SATZ]</span></p>
+
+      <p>[ABSATZ 4]</p>
+
+      <p>[ABSATZ 5]</p>
+
+      <p>[ABSATZ 6]</p>
+
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Abschluss-Motto der Episode -->
+    <p class="closing">[MOTTO. IN. DIESEM. FORMAT.]</p>
+
+    <div class="logo-row">
+      <div class="logo-dot"></div>
+      <span class="logo-txt">Eckstein Podcast</span>
+      <div class="logo-dot"></div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -25,7 +25,7 @@ Kein christlicher Podcast. Ein Podcast von zwei Männern die ihren Glauben leben
 | X         | [@Eckstein_Pod](https://x.com/Eckstein_Pod) |
 | Rumble    | [Eckstein_Podcast](https://rumble.com/user/Eckstein_Podcast) |
 
-> **Kein Spotify. Kein Apple Podcasts.** Alle drei Plattformen sind gleichwertig — keine hervorheben.
+> **Kein Spotify. Kein Apple Podcasts.** Alle drei Plattformen sind gleichwertig — in Hero, Episoden und CTAs immer alle drei zeigen, keine hervorheben.
 
 ---
 
@@ -33,10 +33,12 @@ Kein christlicher Podcast. Ein Podcast von zwei Männern die ihren Glauben leben
 
 | Layer        | Tool                        |
 |--------------|-----------------------------|
-| Hosting      | Antigravity (kostenlose Quota) |
-| Deploy       | Vercel                      |
-| Future CI/CD | GitHub → Vercel auto-deploy |
-| AI Dev       | Claude Code                 |
+| Hosting      | Vercel (Produktion)         |
+| Deploy       | `git push` → Vercel Auto-Deploy |
+| Optional     | Antigravity (kostenlose Quota) |
+| AI Dev       | Claude Code / Cursor        |
+
+**Produktions-Domain:** `https://www.eckstein-podcast.de` (apex `eckstein-podcast.de` → www)
 
 ---
 
@@ -75,21 +77,40 @@ Das Logo: schwarzer Obelisk, Goldstrahlen, Navy-Hintergrund. Alles leitet sich d
 ## Dateistruktur
 
 ```
-eckstein/
-├── index.html          # Visitenkarte / über uns
-├── landingpage.html    # Launch-Landingpage mit Countdown
-├── CLAUDE.md           # Diese Datei
-└── antigravity.md      # Deployment-Anleitung
+Webseite/
+├── landingpage.html              # Hauptseite (Vercel: /)
+├── fundament/
+│   ├── index.html                # Blog-Hub „Das Fundament“
+│   └── der-sinn-des-lebens.html  # Artikel DF1
+├── gemeinschaft/
+│   └── index.html                # Gemeinde-Seite
+├── img/                          # Logo, Host-Fotos, Assets
+├── vercel.json                   # Routing (/ → landingpage.html)
+├── sitemap.xml, robots.txt
+├── CLAUDE.md                     # Diese Datei
+└── antigravity.md                # Deployment-Anleitung
 ```
+
+**Nicht deployen:** `CLAUDE.md`, `antigravity.md`, lokale Entwürfe.
+
+---
+
+## Launch-Status
+
+- **Folge 01 live seit:** 18. Mai 2026, 18:00 (Countdown-JS: `2026-05-18T18:00:00` in `landingpage.html`)
+- Nach Ablauf: Episoden-Plattform-Links sichtbar, Countdown ausgeblendet
+- Neues Release: `target`-Datum in JS + Datums-Labels in HTML anpassen
 
 ---
 
 ## Aktuelle Prioritäten
 
-1. Landingpage live deployen vor Samstag (erste Folge)
-2. Countdown läuft auf Samstag 08:00 — Datum in JS prüfen
-3. Impressum mit echter Adresse vervollständigen
-4. Später: E-Mail-Liste aufbauen (Beehiiv empfohlen)
+1. **Inhalt pflegen** — neue Folgen, Fundament-Artikel, Gemeinde-Updates
+2. **SEO & Sharing** — Metadaten und Sitemap bei neuen Seiten mitziehen
+3. **Rechtliches** — Impressum/Datenschutz bei neuen Diensten (Analytics, Newsletter) anpassen
+4. **Später:** E-Mail-Liste (Beehiiv empfohlen)
+
+**Erledigt:** Launch-Landing live, Impressum-Adresse (Koblenz), Domain-Metadaten.
 
 ---
 
@@ -99,15 +120,16 @@ eckstein/
 - Kein generisches AI-Design (kein Inter, kein lila Gradient)
 - Keine Predigten, kein christlicher Jargon im Copy
 - Keine Schuldgefühle-Rhetorik
-- Kein Over-Engineering — wir fangen schlank an
+- Kein Over-Engineering — statisches HTML, kein Build-Step ohne expliziten Auftrag
 
 ---
 
-## Kontakt (Platzhalter — bitte ausfüllen)
+## Kontakt
 
 ```
-E-Mail:    hallo@eckstein-podcast.de  ← bestätigen/ersetzen
-Instagram: noch nicht aktiv
+Öffentlich:  hallo@eckstein-podcast.de  (Footer, mailto)
+Impressum:   hallo@eckstein-podcast.de  (gleiche Adresse wie Footer)
+Instagram:   noch nicht aktiv
 ```
 
 ---
@@ -117,7 +139,8 @@ Instagram: noch nicht aktiv
 Wenn du an diesem Projekt arbeitest:
 
 1. **Designentscheidungen immer gegen das Design System prüfen** — Gold/Navy/Cream, keine anderen Farben einführen ohne Grund.
-2. **Alle drei Plattformen gleich behandeln** — nie eine hervorheben.
+2. **Alle drei Plattformen gleich behandeln** — Hero, Episoden und CTAs: YouTube, Rumble, X.
 3. **Copy-Ton checken** — direkt, kein Bullshit, kein Prediger-Ton.
 4. **Mobile-first** — die Seite muss auf dem Handy genauso stark sein.
-5. **Eine Datei deploybar halten** — kein Build-Step ohne expliziten Auftrag.
+5. **Kein Build-Step** — Änderungen in den HTML-Dateien; `vercel.json` nur bei Routing-Bedarf.
+6. **Neuer Fundament-Artikel:** Datei unter `fundament/`, Eintrag in `fundament/index.html`, optional Teaser auf `landingpage.html`.

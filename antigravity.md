@@ -87,7 +87,7 @@ Deploy a single-file static HTML website with no build step required.
 
 Files:
 - landingpage.html → serve at /
-- index.html → serve at /ueber (optional)
+- fundament/, gemeinschaft/ → Unterseiten (siehe vercel.json)
 
 Requirements:
 - Static hosting, no server-side rendering needed
@@ -121,8 +121,9 @@ Workflow:
 
 | Datei | Zweck | Priorität |
 |-------|-------|-----------|
-| `landingpage.html` | Launch-Page mit Countdown | JETZT |
-| `index.html` | Visitenkarte / Über uns | Später |
+| `landingpage.html` | Hauptseite (Hero, Episoden, Impressum) | Live |
+| `fundament/` | Blog „Das Fundament“ | Live |
+| `gemeinschaft/` | Gemeinde-Seite | Live |
 | `CLAUDE.md` | Nicht deployen — nur für Dev | — |
 
 ---
@@ -131,10 +132,10 @@ Workflow:
 
 In `landingpage.html` Zeile suchen:
 ```javascript
-const launch = new Date('2025-05-17T08:00:00');
+const target = new Date('2026-05-18T18:00:00');
 ```
-→ Datum und Uhrzeit auf den echten Launch-Zeitpunkt setzen.
-→ Wenn Countdown abläuft, erscheint automatisch "JETZT LIVE".
+→ Datum und Uhrzeit auf den nächsten Release-Zeitpunkt setzen (Folge 01: 18. Mai 2026, 18:00).
+→ Wenn Countdown abläuft: Countdown ausgeblendet, Plattform-Links in `#ep1-links` sichtbar.
 
 ---
 

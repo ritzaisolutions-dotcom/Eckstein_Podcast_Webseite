@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eckstein-podcast.de/sitemap.xml
+Sitemap: https://www.eckstein-podcast.de/sitemap.xml
