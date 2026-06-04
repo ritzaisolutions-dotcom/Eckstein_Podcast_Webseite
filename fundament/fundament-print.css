@@ -1,0 +1,40 @@
+@media print {
+  body::after,
+  .article-nav,
+  .article-hero,
+  .article-share,
+  .article-footer,
+  .article-back,
+  .card-border-o,
+  .card-border-i,
+  .cn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .article-wrap,
+  .article-card,
+  .article-body {
+    color: #111 !important;
+    max-width: 100% !important;
+  }
+
+  .article-title,
+  .article-highlight,
+  .article-series {
+    color: #111 !important;
+  }
+
+  .article-verse {
+    border-left-color: #333 !important;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+}

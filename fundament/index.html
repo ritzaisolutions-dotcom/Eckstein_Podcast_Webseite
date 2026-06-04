@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Das Fundament — Blog · Eckstein Podcast</title>
-  <meta name="description" content="Wöchentlich. Ein Gedanke. Der trägt. Alle Artikel aus dem Das Fundament Blog von Eckstein Podcast.">
+  <meta name="description" content="Das Fundament — wöchentliche Artikel exklusiv auf eckstein-podcast.de. PDF-Downloads, Dropdown, alle DF-Artikel.">
   <link rel="canonical" href="https://www.eckstein-podcast.de/fundament/">
   <meta property="og:title" content="Das Fundament — Eckstein Podcast">
   <meta property="og:description" content="Wöchentlich ein Artikel über Glaube, Männlichkeit und das Leben das zählt.">
@@ -351,6 +351,35 @@
       margin-top: 0.3rem;
     }
 
+    .hub-select-wrap {
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .hub-select-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      color: var(--cream-dim);
+      text-transform: uppercase;
+    }
+
+    .hub-select {
+      width: 100%;
+      max-width: 520px;
+      background: var(--navy-2);
+      color: var(--cream);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 0.75rem 1rem;
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+    }
+
     @media (max-width: 600px) {
       .hub-header-inner { padding: 2.5rem 1.5rem; }
       .hub-article-content { padding-left: 0; }
@@ -374,14 +403,22 @@
       <div class="cn br"></div>
       <p class="hub-series">Eckstein Podcast</p>
       <h1 class="hub-title">Das Fundament</h1>
-      <p class="hub-subtitle">Wöchentlich. Ein Gedanke. Der trägt.</p>
+      <p class="hub-subtitle">Exklusiv auf eckstein-podcast.de · Wöchentlich. Ein Gedanke. Der trägt.</p>
     </div>
   </header>
+
+  <div class="hub-select-wrap">
+    <label for="fundament-select" class="hub-select-label">Artikel wählen</label>
+    <select id="fundament-select" class="hub-select" aria-label="Artikel wählen">
+      <option value="df2">DF2 — Kommen Reiche wirklich nicht in den Himmel?</option>
+      <option value="df1">DF1 — Der Sinn des Lebens</option>
+    </select>
+  </div>
 
   <main class="hub-wrap">
 
     <!-- ── ARTIKEL I ── -->
-    <div class="hub-article">
+    <div class="hub-article" id="df1">
       <button class="hub-article-header" onclick="toggleArticle(this)" aria-expanded="false">
         <span class="hub-num">DF1</span>
         <span class="hub-article-title">Der Sinn des Lebens<em>Nach dem Vorbild des Apostels Stephanus</em></span>
@@ -420,12 +457,13 @@
         </div>
         <div class="hub-article-links">
           <a href="der-sinn-des-lebens.html" class="hub-link">Vollständiger Artikel →</a>
+          <a href="der-sinn-des-lebens.html?drucken=1" class="hub-link">Als PDF speichern (Drucken)</a>
         </div>
       </div>
     </div>
 
     <!-- ── ARTIKEL II ── -->
-    <div class="hub-article">
+    <div class="hub-article" id="df2">
       <button class="hub-article-header" onclick="toggleArticle(this)" aria-expanded="false">
         <span class="hub-num">DF2</span>
         <span class="hub-article-title">Kommen Reiche wirklich nicht in den Himmel?<em>Eine Aufklärung des häufigen Irrglaubens</em></span>
@@ -455,6 +493,7 @@
         </div>
         <div class="hub-article-links">
           <a href="kommen-reiche-in-den-himmel.html" class="hub-link">Vollständiger Artikel →</a>
+          <a href="kommen-reiche-in-den-himmel.html?drucken=1" class="hub-link">Als PDF speichern (Drucken)</a>
         </div>
       </div>
     </div>
@@ -481,6 +520,14 @@
         btn.setAttribute('aria-expanded', 'true');
       }
     }
+
+    document.getElementById('fundament-select')?.addEventListener('change', function (e) {
+      const article = document.getElementById(e.target.value);
+      if (!article) return;
+      const btn = article.querySelector('.hub-article-header');
+      if (btn) toggleArticle(btn);
+      article.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   </script>
 
 </body>

@@ -6,10 +6,11 @@
 
 Kein christlicher Podcast. Ein Podcast von zwei Männern die ihren Glauben leben — in der Karriere, im Sport, in Beziehungen, in der Krise. Der Glaube ist nicht das Thema. Der Glaube ist das Fundament unter jedem Thema.
 
-**Positionierung:**
-- Kein Bibelkurs. Keine Predigten. Keine Schuldgefühle.
-- Für ambitionierte Menschen die mehr wollen — und dafür beschämt werden.
-- Offene Gespräche über Glaube, Männlichkeit, Selbstverbesserung, Geopolitik, Selbstständingkeit, Dankbarkeit, Angst.
+**Positionierung (Iteration 3):**
+- Gemeinde junger Christen — traditioneller Glaube, Tugend, Respekt, Verpflichtung, Dankbarkeit, Disziplin.
+- Für ambitionierte Menschen die mehr wollen und ihren Glauben leben.
+- Offene Gespräche über Glaube, Männlichkeit, Selbstverbesserung, Geopolitik, Selbstständigkeit, Dankbarkeit, Angst.
+- **Das Fundament** (Blog) ist **exklusiv** auf eckstein-podcast.de — wöchentliche Artikel + PDFs.
 
 **Hosts:**
 - Kevin Ritz (Co-Founder)
@@ -19,13 +20,15 @@ Kein christlicher Podcast. Ein Podcast von zwei Männern die ihren Glauben leben
 
 ## Plattformen
 
-| Plattform | Handle / URL |
-|-----------|-------------|
-| YouTube   | [@Eckstein_Pod](https://www.youtube.com/@Eckstein_Pod) |
-| X         | [@Eckstein_Pod](https://x.com/Eckstein_Pod) |
-| Rumble    | [Eckstein_Podcast](https://rumble.com/user/Eckstein_Podcast) |
+| Format | Plattform | URL |
+|--------|-----------|-----|
+| **LFC** (Langform) | YouTube Playlist | [LFC-Playlist](https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw) |
+| **LFC** | Spotify | [Eckstein Podcast Show](https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP) |
+| **SF** (Shortform) | YouTube | [@Eckstein_Pod](https://www.youtube.com/@Eckstein_Pod) |
+| **SF** | Instagram | [@eckstein_podcast](https://www.instagram.com/eckstein_podcast/) |
+| **SF** | TikTok | [@Eckstein_Podcast](https://www.tiktok.com/@Eckstein_Podcast) |
 
-> **Kein Spotify. Kein Apple Podcasts.** Alle drei Plattformen sind gleichwertig — in Hero, Episoden und CTAs immer alle drei zeigen, keine hervorheben.
+> **Kein Rumble. Kein X (Podcast-Kanal).** LFC nur YouTube + Spotify. SF nur YouTube, Instagram, TikTok — keine Embeds auf der Website. Hero-CTAs: Fundament zuerst, dann Gemeinde, dann Formate.
 
 ---
 
@@ -79,16 +82,28 @@ Das Logo: schwarzer Obelisk, Goldstrahlen, Navy-Hintergrund. Alles leitet sich d
 ```
 Webseite/
 ├── landingpage.html              # Hauptseite (Vercel: /)
+├── api/
+│   ├── youtube-latest-lfc.js     # LFC-Playlist RSS → neuestes Video
+│   └── log-consent.js            # Klaro-Consent → Supabase
+├── js/
+│   ├── eckstein-klaro.js
+│   ├── eckstein-privacy.js
+│   ├── eckstein-lfc-player.js
+│   └── site-config.example.js    # → site-config.js (gitignored)
 ├── fundament/
-│   ├── index.html                # Blog-Hub „Das Fundament“
-│   └── der-sinn-des-lebens.html  # Artikel DF1
+│   ├── index.html                # Hub + Dropdown + PDF-Links
+│   ├── downloads/                # df1.pdf, df2.pdf
+│   ├── der-sinn-des-lebens.html
+│   └── kommen-reiche-in-den-himmel.html
 ├── gemeinschaft/
-│   └── index.html                # Gemeinde-Seite
-├── img/                          # Logo, Host-Fotos, Assets
-├── vercel.json                   # Routing (/ → landingpage.html)
+│   └── index.html                # Warteliste → email_consents
+├── n8n/                          # Artikel-Mail-Workflow + SQL
+├── img/
+├── vercel.json
 ├── sitemap.xml, robots.txt
-├── CLAUDE.md                     # Diese Datei
-└── antigravity.md                # Deployment-Anleitung
+├── iteration3.md                 # Pivot + n8n-Doku
+├── CLAUDE.md
+└── antigravity.md
 ```
 
 **Nicht deployen:** `CLAUDE.md`, `antigravity.md`, lokale Entwürfe.
@@ -108,7 +123,8 @@ Webseite/
 1. **Inhalt pflegen** — neue Folgen, Fundament-Artikel, Gemeinde-Updates
 2. **SEO & Sharing** — Metadaten und Sitemap bei neuen Seiten mitziehen
 3. **Rechtliches** — Impressum/Datenschutz bei neuen Diensten (Analytics, Newsletter) anpassen
-4. **Später:** E-Mail-Liste (Beehiiv empfohlen)
+4. **Supabase** — Vercel Env + `js/site-config.js` (siehe unten in Sessions)
+5. **E-Mail / n8n** — verschoben → [`backlog.md`](backlog.md)
 
 **Erledigt:** Launch-Landing live, Impressum-Adresse (Koblenz), Domain-Metadaten.
 
@@ -116,7 +132,7 @@ Webseite/
 
 ## Was wir NICHT wollen
 
-- Keine Plattform vor der anderen hervorheben (YouTube ≠ Primary)
+- Kein Rumble/X als Podcast-Kanal; LFC und SF getrennt kommunizieren
 - Kein generisches AI-Design (kein Inter, kein lila Gradient)
 - Keine Predigten, kein christlicher Jargon im Copy
 - Keine Schuldgefühle-Rhetorik
@@ -129,7 +145,7 @@ Webseite/
 ```
 Öffentlich:  hallo@eckstein-podcast.de  (Footer, mailto)
 Impressum:   hallo@eckstein-podcast.de  (gleiche Adresse wie Footer)
-Instagram:   noch nicht aktiv
+Instagram:   @eckstein_podcast (SF)
 ```
 
 ---
@@ -139,7 +155,7 @@ Instagram:   noch nicht aktiv
 Wenn du an diesem Projekt arbeitest:
 
 1. **Designentscheidungen immer gegen das Design System prüfen** — Gold/Navy/Cream, keine anderen Farben einführen ohne Grund.
-2. **Alle drei Plattformen gleich behandeln** — Hero, Episoden und CTAs: YouTube, Rumble, X.
+2. **Formate trennen** — LFC (YT+Spotify), SF (YT+IG+TikTok); Fundament-CTAs vor Plattform-Links.
 3. **Copy-Ton checken** — direkt, kein Bullshit, kein Prediger-Ton.
 4. **Mobile-first** — die Seite muss auf dem Handy genauso stark sein.
 5. **Kein Build-Step** — Änderungen in den HTML-Dateien; `vercel.json` nur bei Routing-Bedarf.

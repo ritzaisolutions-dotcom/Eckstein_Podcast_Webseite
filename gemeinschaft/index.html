@@ -455,40 +455,59 @@
     <small>Die Gemeinde · Est. 2026</small>
   </footer>
 
+  <script src="../js/site-config.js"></script>
   <script>
-    const SUPABASE_URL = 'https://pxryuhoqmlqyplfyjoyq.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4cnl1aG9xbWxxeXBsZnlqb3lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwMDUwOTUsImV4cCI6MjA5NDU4MTA5NX0.2QlTwTfolboSkBCf6e2_oKaNEMxnQTb_vFPRYK33G1A';
+    function getSupabaseConfig() {
+      const cfg = window.ECKSTEIN_SITE_CONFIG;
+      if (!cfg || !cfg.supabaseUrl || !cfg.supabaseAnonKey) return null;
+      if (cfg.supabaseUrl.includes('YOUR_PROJECT')) return null;
+      return cfg;
+    }
 
     async function handleSignup(e) {
       e.preventDefault();
       const email = document.getElementById('emailInput').value.trim();
       const btn   = document.getElementById('signupBtn');
       const msg   = document.getElementById('signupMessage');
+      const cfg   = getSupabaseConfig();
 
       btn.disabled = true;
       btn.textContent = '...';
       msg.className = 'signup-message';
-      msg.style.display = 'none';
+      msg.style.display = 'block';
+
+      if (!cfg) {
+        msg.textContent = 'Anmeldung ist noch nicht konfiguriert. Bitte später erneut versuchen.';
+        msg.className = 'signup-message error';
+        btn.disabled = false;
+        btn.textContent = 'Dabei sein';
+        return;
+      }
 
       try {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/email_signups`, {
+        const res = await fetch(`${cfg.supabaseUrl}/rest/v1/email_consents`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'apikey': cfg.supabaseAnonKey,
+            'Authorization': `Bearer ${cfg.supabaseAnonKey}`,
             'Prefer': 'return=minimal'
           },
-          body: JSON.stringify({ email, source: 'gemeinschaft' })
+          body: JSON.stringify({
+            email,
+            purpose: 'gemeinschaft_waitlist',
+            status: 'pending',
+            privacy_version: '2026-06-04',
+            source: 'gemeinschaft'
+          })
         });
 
         if (res.ok) {
-          msg.textContent = 'Eingetragen — wir melden uns.';
+          msg.textContent = 'Eingetragen — wir melden uns, sobald die Gemeinde startet.';
           msg.className = 'signup-message success';
           document.getElementById('signupForm').reset();
         } else {
           const data = await res.json().catch(() => ({}));
-          // Duplicate E-Mail (23505 = unique violation)
           if (data.code === '23505') {
             msg.textContent = 'Diese E-Mail ist bereits eingetragen.';
           } else {

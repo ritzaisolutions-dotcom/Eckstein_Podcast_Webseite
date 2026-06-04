@@ -1,0 +1,48 @@
+name: Notify Fundament Article
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "fundament/*.html"
+
+jobs:
+  notify:
+    if: ${{ secrets.N8N_WEBHOOK_URL != '' && secrets.N8N_WEBHOOK_SECRET != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect new article HTML
+        id: article
+        run: |
+          set -e
+          CHANGED=$(git diff --name-only HEAD^ HEAD -- 'fundament/*.html' | grep -v '^fundament/index\.html$' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          FILE=$(echo "$CHANGED" | head -n1)
+          SLUG=$(basename "$FILE" .html)
+          case "$SLUG" in
+            kommen-reiche-in-den-himmel) DF=2; TITLE="Kommen Reiche wirklich nicht in den Himmel?" ;;
+            der-sinn-des-lebens) DF=1; TITLE="Der Sinn des Lebens" ;;
+            *) DF=0; TITLE="$SLUG" ;;
+          esac
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "df=$DF" >> "$GITHUB_OUTPUT"
+          echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger n8n release workflow
+        if: steps.article.outputs.skip == 'false' && steps.article.outputs.df != '0'
+        env:
+          N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
+          N8N_WEBHOOK_SECRET: ${{ secrets.N8N_WEBHOOK_SECRET }}
+        run: |
+          curl -fsS -X POST "$N8N_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Secret: $N8N_WEBHOOK_SECRET" \
+            -d "{\"slug\":\"${{ steps.article.outputs.slug }}\",\"df\":${{ steps.article.outputs.df }},\"title\":\"${{ steps.article.outputs.title }}\",\"teaser\":\"Neuer Fundament-Artikel — exklusiv auf eckstein-podcast.de.\"}"

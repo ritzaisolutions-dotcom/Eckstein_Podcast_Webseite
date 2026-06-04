@@ -142,7 +142,9 @@ const target = new Date('2026-05-18T18:00:00');
 ## Checkliste vor Go-Live
 
 - [ ] Countdown-Datum korrekt gesetzt
-- [ ] YouTube / X / Rumble Links funktionieren (klick-test)
+- [ ] LFC: YouTube-Playlist + Spotify · SF: YouTube, Instagram, TikTok (klick-test)
+- [ ] `js/site-config.js` aus Example · Supabase-Schema · Vercel Env für APIs
+- [ ] Klaro → YouTube-Embed nur nach Consent · `fundament/downloads/*.pdf` vorhanden
 - [ ] Impressum-Adresse ist eine echte Adresse (Pflicht DE)
 - [ ] E-Mail `hallo@eckstein-podcast.de` existiert und empfängt
 - [ ] Mobile-Test auf echtem Gerät

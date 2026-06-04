@@ -265,11 +265,14 @@
       margin-top: 0.3rem;
     }
 
+    .share-link-print { cursor: pointer; background: none; border: none; font: inherit; padding: 0; }
+
     @media (max-width: 480px) {
       .article-wrap { padding: 3rem 1.2rem 4rem; }
       .article-share { flex-direction: column; align-items: flex-start; gap: 1rem; }
     }
   </style>
+  <link rel="stylesheet" href="fundament-print.css">
 </head>
 <body>
 
@@ -319,9 +322,8 @@
     <p class="article-closing">Wachse. Liebe. Steh fest.</p>
 
     <div class="article-share">
-      <span class="share-label">Auch lesen auf</span>
-      <a href="https://ecksteinpodcast.substack.com" class="share-link" target="_blank" rel="noopener">Substack →</a>
-      <a href="https://x.com/Eckstein_Pod" class="share-link" target="_blank" rel="noopener">X →</a>
+      <button type="button" class="share-link share-link-print" data-fundament-print>Als PDF speichern (Drucken) →</button>
+      <a href="index.html" class="share-link">Alle Artikel →</a>
     </div>
 
   </article>
@@ -331,5 +333,6 @@
     <small>Das Fundament · Wöchentlich · Est. 2026</small>
   </footer>
 
+  <script src="fundament-print.js"></script>
 </body>
 </html>
