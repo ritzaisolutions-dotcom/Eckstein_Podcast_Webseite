@@ -100,6 +100,7 @@ Webseite/
 ├── inspiration/
 │   ├── index.html                # Kirchen-Galerie
 │   └── churches.json             # Name, Ort, Bild, featured
+├── css/site.css                    # Tokens, Nav/Footer (Subpages)
 ├── img/inspiration/              # WebP aus inspirations/ (deploy)
 ├── inspirations/                 # Quell-JPGs (gitignored)
 ├── BRAND.md                      # Messaging, verbotene Wiederholungen

@@ -68,6 +68,7 @@
       --cream:      #f5eed8;
       --cream-dim:  rgba(245,238,216,0.55);
       --cream-faint:rgba(245,238,216,0.1);
+      --section-y:  7rem;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -651,6 +652,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2.5rem;
+      align-items: stretch;
     }
 
     .host-card {
@@ -1224,9 +1226,12 @@
     }
 
     .promises {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .promises { grid-template-columns: 1fr; }
     }
     .promise-item {
       border-left: 2px solid rgba(201,168,76,0.4);
@@ -1248,51 +1253,117 @@
       line-height: 1.55;
     }
 
-    .footer-kanaele {
+    .footer-kanaele-wrap {
       margin-top: 1.5rem;
       padding-top: 1.5rem;
       border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .footer-kanaele-row {
       font-family: 'Cinzel', serif;
       font-size: 0.55rem;
       letter-spacing: 0.15em;
       color: var(--cream-dim);
       text-transform: uppercase;
       line-height: 2;
+      margin: 0.25rem 0;
     }
-    .footer-kanaele a {
+    .footer-kanaele-row span {
+      color: var(--gold);
+      margin-right: 0.75rem;
+    }
+    .footer-kanaele-row a {
       color: var(--cream-dim);
       text-decoration: none;
       margin: 0 0.5rem;
       transition: color 0.2s;
     }
-    .footer-kanaele a:hover { color: var(--gold); }
+    .footer-kanaele-row a:hover { color: var(--gold); }
 
     /* ══════════════════════════════
        DAS FUNDAMENT TEASER — SPLIT
     ══════════════════════════════ */
     .fundament-teaser {
-      padding: 7rem 2rem;
+      padding: var(--section-y) 2rem;
       background: var(--navy-3);
       border-top: 2px solid rgba(201,168,76,0.2);
     }
 
-    .fundament-split {
+    .fundament-product {
       max-width: 1000px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .fundament-split-left {
+    .fundament-product-main {
       border-left: 2px solid rgba(201,168,76,0.35);
       padding-left: 2rem;
     }
 
-    .fundament-split-left .section-eyebrow {
+    .fundament-product-main .section-eyebrow {
       justify-content: flex-start;
       margin-bottom: 1.5rem;
+    }
+
+    .fundament-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .fundament-cta-row .btn-fundament-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .fundament-cta-row .btn-fundament-secondary {
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.45);
+      color: var(--cream);
+    }
+    .fundament-print-hint {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .fundament-print-hint a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.35);
+    }
+    .fundament-print-hint a:hover { color: var(--gold); }
+
+    .fundament-aside {
+      border: 1px solid rgba(201,168,76,0.2);
+      border-top: 3px solid var(--gold);
+      padding: 2rem 1.75rem;
+      background: rgba(201,168,76,0.03);
+    }
+    .fundament-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+    .fundament-archiv-link {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-light);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .fundament-archiv-link:hover { color: var(--gold-pale); }
+
+    @media (max-width: 768px) {
+      .fundament-product { grid-template-columns: 1fr; gap: 2rem; }
+      .fundament-cta-row { flex-direction: column; }
+      .fundament-cta-row .btn-platform { width: 100%; text-align: center; }
     }
 
     .fundament-manifest {
@@ -1378,8 +1449,6 @@
     .fundament-card-link:hover { color: var(--gold-pale); border-color: var(--gold); }
 
     @media (max-width: 768px) {
-      .fundament-split { grid-template-columns: 1fr; gap: 2.5rem; }
-      .fundament-split-left { border-left: none; padding-left: 0; border-top: 2px solid rgba(201,168,76,0.35); padding-top: 1.5rem; }
     }
 
     /* ══════════════════════════════
@@ -1835,9 +1904,38 @@
       transition: color 0.2s;
     }
     .snav-link:hover { color: var(--gold); }
+    .snav-link.active { color: var(--gold); }
     @media (max-width: 600px) {
       .snav-links { display: none; }
     }
+
+    .episode-row--upcoming {
+      border: 1px dashed rgba(201,168,76,0.25);
+      background: rgba(8,21,37,0.4);
+      padding: 1.25rem;
+    }
+    .episode-badge-soon {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 0.35rem 0.65rem;
+      display: inline-block;
+    }
+    .episode-actions--muted .btn-platform {
+      pointer-events: none;
+      opacity: 0.45;
+      cursor: default;
+    }
+
+    .format-card--lfc .format-btns a { flex: 1; text-align: center; min-width: 7rem; }
+    .format-card--sf { opacity: 0.92; border-color: rgba(201,168,76,0.12); }
+
+    .host-card { display: flex; flex-direction: column; height: 100%; }
+    .host-bio { flex: 1; }
+    .host-links { margin-top: auto; }
 
     /* ══════════════════════════════
        DAS FUNDAMENT TEASER
@@ -1885,10 +1983,10 @@
       ECKSTEIN PODCAST
     </a>
     <div class="snav-links">
-      <a href="#fundament-teaser" class="snav-link">Das Fundament</a>
-      <a href="#formate" class="snav-link">Podcast</a>
-      <a href="inspiration/" class="snav-link">Inspiration</a>
-      <a href="gemeinschaft/" class="snav-link">Gemeinde</a>
+      <a href="#fundament-teaser" class="snav-link" data-nav="fundament-teaser">Das Fundament</a>
+      <a href="#formate" class="snav-link" data-nav="formate">Podcast</a>
+      <a href="#inspiration" class="snav-link" data-nav="inspiration">Inspiration</a>
+      <a href="#gemeinde" class="snav-link" data-nav="gemeinde">Gemeinde</a>
     </div>
   </nav>
 
@@ -1923,7 +2021,7 @@
     <div class="hero-inner">
       <div class="launch-badge">
         <div class="badge-dot"></div>
-        <span>Gemeinde · Podcast · Das Fundament</span>
+        <span>Das Fundament · Podcast · Gemeinde</span>
       </div>
 
       <h1 class="hero-title">ECKSTEIN</h1>
@@ -1943,7 +2041,7 @@
         <p class="hero-cta-micro">Das Fundament · Nur hier · Jeden Sonntag</p>
         <div class="hero-cta-tertiary">
           <a href="gemeinschaft/">Der Gemeinde beitreten</a>
-          <a href="#formate">Podcast anhören ↓</a>
+          <a href="#formate">Podcast ↓</a>
         </div>
       </div>
     </div>
@@ -1955,25 +2053,23 @@
   </section>
 
   <!-- ══════════ DAS FUNDAMENT ══════════ -->
-  <section class="fundament-teaser" id="fundament-teaser">
-    <div class="fundament-split">
-      <div class="fundament-split-left reveal">
+  <section class="fundament-teaser" id="fundament-teaser" data-nav-section>
+    <div class="fundament-product">
+      <div class="fundament-product-main reveal">
         <p class="section-eyebrow">Das Fundament · Exklusiv</p>
         <p class="fundament-df-num">DF2</p>
         <h2 class="fundament-manifest">Kommen Reiche wirklich nicht in den Himmel?<em>Eine Aufklärung des häufigen Irrglaubens</em></h2>
-        <p class="fundament-sub">Nur auf eckstein-podcast.de — jeden Sonntag ein Artikel, der in den Alltag geht. Kein Newsletter-Recycling. Kein Medium der anderen.</p>
-        <a href="fundament/kommen-reiche-in-den-himmel.html" class="btn-platform">Artikel lesen →</a>
-        <a href="fundament/" class="btn-platform" style="margin-left:0.75rem;background:transparent;border:1px solid rgba(201,168,76,0.45);color:var(--cream);">Alle Artikel</a>
-      </div>
-      <div class="fundament-split-right reveal reveal-delay-1">
-        <div class="fundament-card-label">
-          <span>DF2 · 25. Mai 2026</span>
-          <span>Drucken als PDF</span>
+        <p class="fundament-sub">Nur auf eckstein-podcast.de — jeden Sonntag ein Artikel, der in den Alltag geht. Kein Newsletter-Recycling.</p>
+        <div class="fundament-cta-row">
+          <a href="fundament/kommen-reiche-in-den-himmel.html" class="btn-platform btn-fundament-primary">Artikel lesen →</a>
+          <a href="fundament/" class="btn-platform btn-fundament-secondary">Alle Artikel</a>
         </div>
-        <p class="fundament-card-excerpt">„Der feine aber entscheidende Unterschied ist: WARUM bestrebst du den finanziellen weltlichen Erfolg? Die richtige Frage ist nicht ob — sondern für wen."</p>
-        <p class="fundament-card-sub" style="margin-top:1rem;">Im Browser drucken → PDF. Fundament-Artikel leben hier — nicht auf Spotify, nicht auf YouTube.</p>
-        <a href="fundament/kommen-reiche-in-den-himmel.html?drucken=1" class="fundament-card-link">PDF / Drucken →</a>
+        <p class="fundament-print-hint"><a href="fundament/kommen-reiche-in-den-himmel.html?drucken=1">PDF / Drucken im Browser →</a></p>
       </div>
+      <aside class="fundament-aside reveal reveal-delay-1">
+        <p class="fundament-quote">„Der feine aber entscheidende Unterschied ist: WARUM bestrebst du den finanziellen weltlichen Erfolg? Die richtige Frage ist nicht ob — sondern für wen."</p>
+        <a href="fundament/#df1" class="fundament-archiv-link">DF1 · Der Sinn des Lebens →</a>
+      </aside>
     </div>
   </section>
 
@@ -1986,10 +2082,6 @@
           <h2 class="reveal">Glaube und Ambition sind keine Gegensätze.<br><em>Sie schließen sich nicht aus, sie brauchen einander.</em></h2>
           <p class="reveal">Eckstein ist der Beweis. Die meisten Gespräche enden da, wo es interessant wird. Hier fangen sie an.</p>
           <p class="reveal">Wir reden über Gott. Über Geld. Über Scheitern. So wie es ist.</p>
-          <div class="about-verse-block reveal">
-            <p>„Kommt zu ihm, dem lebendigen Stein… Siehe, ich lege in Zion einen auserwählten, kostbaren <em>Eckstein</em>; wer an ihn glaubt, wird nicht zugrunde gehen."</p>
-            <cite>1. Petrus 2,4–7 · Daher der Name.</cite>
-          </div>
         </div>
 
         <div class="reveal">
@@ -2006,6 +2098,10 @@
               <strong>Gemeinschaft, die schärft</strong>
               <span>Eine Gemeinde junger Christen entsteht — Warteliste jetzt, Start bald.</span>
             </div>
+          </div>
+          <div class="about-verse-block reveal" style="margin-top:2.5rem;">
+            <p>„Kommt zu ihm, dem lebendigen Stein… Siehe, ich lege in Zion einen auserwählten, kostbaren <em>Eckstein</em>; wer an ihn glaubt, wird nicht zugrunde gehen."</p>
+            <cite>1. Petrus 2,4–7 · Daher der Name.</cite>
           </div>
         </div>
       </div>
@@ -2078,12 +2174,12 @@
   </div>
 
   <!-- ══════════ FORMATE ══════════ -->
-  <section class="formate-section" id="formate">
+  <section class="formate-section" id="formate" data-nav-section>
     <div class="formate-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Formate</p>
       <h2 class="reveal" style="text-align:center;">Zwei Formate. <em>Eine Haltung.</em></h2>
       <div class="formate-grid">
-        <div class="format-card reveal">
+        <div class="format-card format-card--lfc reveal">
           <p class="format-badge">LFC · Langform</p>
           <h3>Die Gespräche</h3>
           <p>Langform-Folgen — tief, ungefiltert. Nur auf YouTube und Spotify.</p>
@@ -2093,7 +2189,7 @@
             <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a>
           </div>
         </div>
-        <div class="format-card reveal reveal-delay-1">
+        <div class="format-card format-card--sf reveal reveal-delay-1">
           <p class="format-badge">SF · Shortform</p>
           <h3>Kurz &amp; direkt</h3>
           <p>Shorts und Reels — kein Embed hier, nur auf den Kanälen.</p>
@@ -2145,42 +2241,42 @@
         </div>
       </div>
 
-      <div class="episode-row reveal episode-card" style="margin-top:2rem;opacity:0.85;">
+      <div class="episode-row reveal episode-card episode-row--upcoming" style="margin-top:2rem;">
         <div class="episode-num-big">02</div>
         <div class="episode-body">
           <div class="episode-meta">
             <span class="episode-label">LFC · Folge 02</span>
-            <span class="episode-date">Demnächst</span>
+            <span class="episode-badge-soon">Demnächst</span>
           </div>
           <h3 class="episode-title">In Vorbereitung</h3>
           <p class="episode-pullquote">Neue Folge — gleiche Tiefe, neues Thema.</p>
         </div>
-        <div class="episode-actions">
-          <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a>
+        <div class="episode-actions episode-actions--muted">
+          <span class="btn-platform">YouTube</span>
+          <span class="btn-platform">Spotify</span>
         </div>
       </div>
 
-      <div class="episode-row reveal episode-card" style="margin-top:1.5rem;opacity:0.7;">
+      <div class="episode-row reveal episode-card episode-row--upcoming" style="margin-top:1.5rem;">
         <div class="episode-num-big">03</div>
         <div class="episode-body">
           <div class="episode-meta">
             <span class="episode-label">LFC · Folge 03</span>
-            <span class="episode-date">Geplant</span>
+            <span class="episode-badge-soon">Geplant</span>
           </div>
           <h3 class="episode-title">In Vorbereitung</h3>
           <p class="episode-pullquote">Archiv wächst mit jeder Veröffentlichung.</p>
         </div>
-        <div class="episode-actions">
-          <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a>
+        <div class="episode-actions episode-actions--muted">
+          <span class="btn-platform">YouTube</span>
+          <span class="btn-platform">Spotify</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ══════════ INSPIRATION TEASER ══════════ -->
-  <section class="inspiration-section" id="inspiration">
+  <section class="inspiration-section" id="inspiration" data-nav-section>
     <div class="inspiration-inner">
       <div class="inspiration-intro reveal">
         <p class="section-eyebrow" style="justify-content:center;">Inspiration</p>
@@ -2188,15 +2284,15 @@
         <p>Kirchen, an denen wir gestanden haben — Stimmung und Ehrfurcht, kein Tourismus.</p>
       </div>
       <div class="inspiration-teaser-grid reveal">
-        <a class="inspiration-teaser-card" href="inspiration/">
+        <a class="inspiration-teaser-card" href="inspiration/#veitsdom-prag">
           <img src="img/inspiration/veitsdom-prag.webp" alt="Veitsdom, Prag" width="800" height="600" loading="lazy">
           <figcaption><strong>Veitsdom</strong><span>Prag, Tschechien</span></figcaption>
         </a>
-        <a class="inspiration-teaser-card" href="inspiration/">
+        <a class="inspiration-teaser-card" href="inspiration/#ludmila-prag">
           <img src="img/inspiration/ludmila-prag.webp" alt="St. Ludmila, Prag" width="800" height="600" loading="lazy">
           <figcaption><strong>St. Ludmila</strong><span>Prag, Tschechien</span></figcaption>
         </a>
-        <a class="inspiration-teaser-card" href="inspiration/">
+        <a class="inspiration-teaser-card" href="inspiration/#nikolaus-prag">
           <img src="img/inspiration/nikolaus-prag.webp" alt="St. Nikolaus Malá Strana, Prag" width="800" height="600" loading="lazy">
           <figcaption><strong>St. Nikolaus</strong><span>Malá Strana, Prag</span></figcaption>
         </a>
@@ -2206,7 +2302,7 @@
   </section>
 
   <!-- ══════════ GEMEINSCHAFT ══════════ -->
-  <section class="community" id="gemeinde">
+  <section class="community" id="gemeinde" data-nav-section>
     <div class="community-inner">
       <p class="section-eyebrow reveal" style="justify-content:center;">Die Gemeinde</p>
       <h2 class="reveal">Du kennst das Gefühl.</h2>
@@ -2294,15 +2390,17 @@
         <li><a href="#impressum" onclick="event.preventDefault();toggleImpressum(true)">Impressum</a></li>
         <li><a href="#datenschutz" onclick="event.preventDefault();toggleDatenschutz(true)">Datenschutz</a></li>
       </ul>
-      <p class="footer-kanaele">
-        LFC:
-        <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener">Spotify</a>
-        · SF:
-        <a href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener">TikTok</a>
-      </p>
+      <div class="footer-kanaele-wrap">
+        <p class="footer-kanaele-row"><span>LFC</span>
+          <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener">Spotify</a>
+        </p>
+        <p class="footer-kanaele-row"><span>SF</span>
+          <a href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener">TikTok</a>
+        </p>
+      </div>
     </div>
     <p class="footer-bottom">© 2026 Eckstein Podcast · Kevin Ritz & Florian Spieß · Alle Rechte vorbehalten</p>
   </footer>
@@ -2345,7 +2443,7 @@
           <label>Verantwortlicher</label>
           <p>Kevin Ritz & Florian Spieß<br>
           Von-Cohausenstrasse 9, 56076 Koblenz<br>
-          E-Mail: hallo@eckstein-podcast.de</p>
+          E-Mail: info@eckstein-podcast.de</p>
         </div>
 
         <div class="impressum-item">
@@ -2357,7 +2455,7 @@
 
         <div class="impressum-item">
           <label>Cookies · Einwilligung · YouTube</label>
-          <p>Wir setzen Klaro ein, um deine Einwilligung zu speichern. YouTube-Einbettungen (Langform-Folgen) laden wir erst nach deiner Einwilligung. Dabei können Daten an Google übermittelt werden. Consent-Nachweise speichern wir in Supabase (Frankfurt). Widerruf jederzeit über die Cookie-Einstellungen (erneut öffnen über den Hinweis am Seitenrand) oder per E-Mail.</p>
+          <p>Wir setzen Klaro ein, um deine Einwilligung zu speichern. YouTube-Einbettungen (Langform-Folgen) laden wir erst nach deiner Einwilligung. Dabei können Daten an Google übermittelt werden. Consent-Nachweise speichern wir in Supabase (Frankfurt). Widerruf jederzeit über die Cookie-Einstellungen (erneut öffnen über den Hinweis am Seitenrand) oder per E-Mail an info@eckstein-podcast.de.</p>
         </div>
 
         <div class="impressum-item">
@@ -2366,7 +2464,7 @@
           Gespeicherte Daten: E-Mail-Adresse, Zeitpunkt der Eintragung, Quelle (Gemeinschaft).<br>
           Zweck: Benachrichtigung, sobald die Gemeinschaft startet.<br>
           Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).<br>
-          Löschung: Auf Anfrage jederzeit unter hallo@eckstein-podcast.de.<br>
+          Löschung: Auf Anfrage jederzeit unter info@eckstein-podcast.de.<br>
           Datenschutz Supabase: supabase.com/privacy</p>
         </div>
 
@@ -2378,7 +2476,7 @@
         <div class="impressum-item">
           <label>Eure Rechte gemäß DSGVO</label>
           <p>Auskunft (Art. 15) · Berichtigung (Art. 16) · Löschung (Art. 17) · Einschränkung (Art. 18) · Widerspruch (Art. 21) · Beschwerde bei der zuständigen Aufsichtsbehörde (Art. 77).<br><br>
-          Zur Ausübung eurer Rechte: hallo@eckstein-podcast.de</p>
+          Zur Ausübung eurer Rechte: info@eckstein-podcast.de</p>
         </div>
 
         <div class="impressum-item">
@@ -2594,7 +2692,7 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => obs.observe(el));
 
-    // ── STICKY NAV ──
+    // ── STICKY NAV + ACTIVE SECTION ──
     (function() {
       const hero = document.querySelector('.hero');
       const nav  = document.getElementById('sticky-nav');
@@ -2603,6 +2701,25 @@
         ([e]) => nav.classList.toggle('visible', !e.isIntersecting),
         { threshold: 0 }
       ).observe(hero);
+
+      const links = nav.querySelectorAll('.snav-link[data-nav]');
+      const sections = document.querySelectorAll('[data-nav-section]');
+      if (!links.length || !sections.length) return;
+
+      const byId = {};
+      links.forEach(function (a) { byId[a.getAttribute('data-nav')] = a; });
+
+      const obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('active'); });
+            const link = byId[e.target.id];
+            if (link) link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+      sections.forEach(function (s) { obs.observe(s); });
     })();
   </script>
 

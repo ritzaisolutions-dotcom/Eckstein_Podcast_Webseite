@@ -19,58 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
   <style>
-    :root {
-      --navy: #05101f;
-      --navy-2: #081525;
-      --navy-3: #0c1e35;
-      --gold: #c9a84c;
-      --gold-light: #e2c06a;
-      --gold-pale: #f0dca0;
-      --cream: #f5eed8;
-      --cream-dim: rgba(245,238,216,0.55);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--navy);
-      color: var(--cream);
-      font-family: 'EB Garamond', Georgia, serif;
-      overflow-x: hidden;
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.045'/%3E%3C/svg%3E");
-      opacity: 0.5;
-    }
-    .page-nav {
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid rgba(201,168,76,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-back {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      color: var(--cream-dim);
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    .nav-back:hover { color: var(--gold); }
-    .nav-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-decoration: none;
-    }
     .intro {
       max-width: 720px;
       margin: 0 auto;
@@ -124,7 +74,9 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      cursor: zoom-in;
     }
+    .inspiration-card { scroll-margin-top: 5rem; }
     .inspiration-card-body { padding: 1.25rem 1.35rem 1.5rem; }
     .inspiration-card-name {
       font-family: 'Cinzel', serif;
@@ -149,24 +101,51 @@
       color: var(--cream-dim);
       padding: 2rem;
     }
-    .page-footer {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      border-top: 1px solid rgba(201,168,76,0.08);
+    #inspiration-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(5, 16, 31, 0.92);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
     }
-    .page-footer a {
+    #inspiration-lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #inspiration-lightbox img {
+      max-width: min(100%, 1100px);
+      max-height: 75vh;
+      object-fit: contain;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+    }
+    .inspiration-lightbox-caption {
+      margin-top: 1rem;
       font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      text-transform: uppercase;
     }
-    .page-footer small {
-      display: block;
-      font-size: 0.78rem;
+    .inspiration-lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
       color: var(--cream-dim);
-      margin-top: 0.3rem;
+      background: none;
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      padding: 0.5rem 0.85rem;
+      cursor: pointer;
+      text-transform: uppercase;
     }
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -193,6 +172,12 @@
 
   <div class="gallery-wrap">
     <div class="inspiration-grid" id="inspiration-grid" aria-live="polite"></div>
+  </div>
+
+  <div id="inspiration-lightbox" aria-hidden="true" role="dialog" aria-label="Bild vergrößern">
+    <button type="button" class="inspiration-lightbox-close" data-lightbox-close>Schließen</button>
+    <img src="" alt="">
+    <p class="inspiration-lightbox-caption"></p>
   </div>
 
   <footer class="page-footer">

@@ -19,68 +19,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
 
   <style>
-    :root {
-      --navy:       #05101f;
-      --navy-2:     #081525;
-      --navy-3:     #0c1e35;
-      --gold:       #c9a84c;
-      --gold-light: #e2c06a;
-      --gold-pale:  #f0dca0;
-      --gold-dim:   rgba(201,168,76,0.08);
-      --cream:      #f5eed8;
-      --cream-dim:  rgba(245,238,216,0.55);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--navy);
-      color: var(--cream);
-      font-family: 'EB Garamond', Georgia, serif;
-      overflow-x: hidden;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.045'/%3E%3C/svg%3E");
-      opacity: 0.5;
-    }
-
-    /* ── NAV ── */
-    .page-nav {
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid rgba(201,168,76,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-back {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      color: var(--cream-dim);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--gold); }
-
-    .nav-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-decoration: none;
-    }
 
     /* ── HERO ── */
     .hero {
@@ -350,29 +291,6 @@
       .signup-input { border-right: 1px solid rgba(201,168,76,0.3); border-bottom: none; }
     }
 
-    /* ── FOOTER ── */
-    .page-footer {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      border-top: 1px solid rgba(201,168,76,0.08);
-    }
-
-    .page-footer a {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    .page-footer small {
-      display: block;
-      font-family: 'EB Garamond', serif;
-      font-size: 0.78rem;
-      color: var(--cream-dim);
-      margin-top: 0.3rem;
-    }
   </style>
 </head>
 <body>
