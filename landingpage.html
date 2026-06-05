@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eckstein Podcast — Gemeinde. Glaube. Wachstum.</title>
-  <meta name="description" content="Gemeinschaft junger Christen. Langform auf YouTube und Spotify. Das Fundament — wöchentliche Artikel nur auf eckstein-podcast.de.">
+  <title>Eckstein Podcast — Glaube. Ambition. Langform.</title>
+  <meta name="description" content="Podcast für junge Christen, die Glauben und Anspruch nicht trennen. Langform auf YouTube und Spotify — ehrlich, ohne Filter. Das Fundament: Vertiefung jeden Sonntag.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Kevin Ritz, Florian Spieß">
   <link rel="canonical" href="https://www.eckstein-podcast.de/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Eckstein Podcast — Gemeinde. Glaube. Wachstum.">
-  <meta property="og:description" content="Gemeinschaft junger Christen. Langform auf YouTube und Spotify. Das Fundament — wöchentliche Artikel nur auf eckstein-podcast.de.">
+  <meta property="og:title" content="Eckstein Podcast — Glaube. Ambition. Langform.">
+  <meta property="og:description" content="Podcast für junge Christen, die Glauben und Anspruch nicht trennen. Langform auf YouTube und Spotify — ehrlich, ohne Filter.">
   <meta property="og:url" content="https://www.eckstein-podcast.de/">
   <meta property="og:image" content="https://www.eckstein-podcast.de/img/Logo.png">
   <meta property="og:type" content="website">
@@ -22,8 +22,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@eckstein_podcast">
-  <meta name="twitter:title" content="Eckstein Podcast — Gemeinde. Glaube. Wachstum.">
-  <meta name="twitter:description" content="Gemeinschaft junger Christen. Langform auf YouTube und Spotify. Das Fundament — wöchentliche Artikel nur auf eckstein-podcast.de.">
+  <meta name="twitter:title" content="Eckstein Podcast — Glaube. Ambition. Langform.">
+  <meta name="twitter:description" content="Podcast für junge Christen, die Glauben und Anspruch nicht trennen. Langform auf YouTube und Spotify — ehrlich, ohne Filter.">
   <meta name="twitter:image" content="https://www.eckstein-podcast.de/img/Logo.png">
 
   <!-- Structured Data -->
@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "PodcastSeries",
     "name": "Eckstein Podcast",
-    "description": "Gemeinschaft junger Christen. Langform auf YouTube und Spotify. Das Fundament — wöchentliche Artikel nur auf eckstein-podcast.de.",
+    "description": "Podcast für junge Christen, die Glauben und Anspruch nicht trennen. Langform auf YouTube und Spotify — ehrlich, ohne Filter.",
     "author": [
       {"@type": "Person", "name": "Kevin Ritz"},
       {"@type": "Person", "name": "Florian Spieß"}
@@ -1973,6 +1973,243 @@
     .kanal-row a { color: var(--cream); text-decoration: none; font-size: 1.05rem; }
     .kanal-row a:hover { color: var(--gold-light); }
     .fundament-teaser { padding: 7rem 2rem !important; }
+  }
+
+  /* ── PROBLEM ── */
+  .problem-section {
+    padding: 6rem 2rem;
+    background: var(--navy-2);
+    border-top: 1px solid rgba(201,168,76,0.12);
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+  }
+  .problem-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .problem-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+  }
+  .problem-inner h2 em { color: var(--gold-light); font-style: italic; }
+  .problem-lead {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--cream-dim);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .problem-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .problem-bullets li {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--cream-dim);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .problem-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  /* ── EPISODE PREVIEW ── */
+  .episode-preview-section {
+    padding: 6rem 2rem;
+    background: var(--navy);
+  }
+  .episode-preview-inner { max-width: 900px; margin: 0 auto; }
+  .episode-preview-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .episode-preview-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: var(--navy-2);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 1.5rem;
+  }
+  .episode-preview-thumb {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .episode-preview-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .episode-preview-thumb:hover img { transform: scale(1.03); }
+  .episode-preview-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--cream);
+    background: rgba(5,16,31,0.35);
+    transition: background 0.3s;
+  }
+  .episode-preview-thumb:hover .episode-preview-play {
+    background: rgba(5,16,31,0.5);
+  }
+  .episode-preview-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    color: var(--cream);
+    margin: 0.5rem 0 1rem;
+    line-height: 1.2;
+  }
+  .episode-preview-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+  @media (max-width: 768px) {
+    .episode-preview-card { grid-template-columns: 1fr; }
+  }
+
+  /* ── PLATFORMS STRIP ── */
+  .platforms-section {
+    padding: 4rem 2rem;
+    background: var(--navy-3);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .platforms-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .platforms-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .platforms-inner > p {
+    font-family: 'EB Garamond', serif;
+    color: var(--cream-dim);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  .platforms-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .platforms-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+  }
+  .platforms-row > span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    min-width: 2.5rem;
+    text-align: right;
+  }
+  .platforms-row a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .platforms-row a:hover { color: var(--gold-light); border-color: var(--gold); }
+
+  /* ── FUNDAMENT DEEPENING ── */
+  .fundament-teaser--deep .fundament-product {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .fundament-teaser--deep .fundament-aside { display: none; }
+  .fundament-teaser--deep .fundament-cta-row { justify-content: center; }
+  .btn-fundament-outline {
+    background: transparent !important;
+    border: 1px solid rgba(201,168,76,0.45) !important;
+    color: var(--gold-light) !important;
+    box-shadow: none !important;
+  }
+  .btn-fundament-outline:hover {
+    border-color: var(--gold) !important;
+    color: var(--cream) !important;
+  }
+  .fundament-archiv-links {
+    margin-top: 1.5rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--cream-dim);
+  }
+  .fundament-archiv-links a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    margin: 0 0.5rem;
+  }
+  .fundament-archiv-links a:hover { color: var(--gold-light); }
+
+  /* ── FINAL CTA ── */
+  .final-cta-section {
+    padding: 5rem 2rem;
+    background: var(--navy-2);
+    text-align: center;
+    border-top: 1px solid rgba(201,168,76,0.12);
+  }
+  .final-cta-inner { max-width: 560px; margin: 0 auto; }
+  .final-cta-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+  .final-cta-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  #hosts { scroll-margin-top: 5rem; }
+  #episode-preview { scroll-margin-top: 5rem; }
+  #podcast { scroll-margin-top: 5rem; }
   </style>
 </head>
 <body>
@@ -1983,9 +2220,9 @@
       ECKSTEIN PODCAST
     </a>
     <div class="snav-links">
-      <a href="#fundament-teaser" class="snav-link" data-nav="fundament-teaser">Das Fundament</a>
-      <a href="#formate" class="snav-link" data-nav="formate">Podcast</a>
-      <a href="#inspiration" class="snav-link" data-nav="inspiration">Inspiration</a>
+      <a href="#podcast" class="snav-link" data-nav="podcast">Podcast</a>
+      <a href="#episode-preview" class="snav-link" data-nav="episode-preview">Folge</a>
+      <a href="#fundament-teaser" class="snav-link" data-nav="fundament-teaser">Fundament</a>
       <a href="#gemeinde" class="snav-link" data-nav="gemeinde">Gemeinde</a>
     </div>
   </nav>
@@ -2021,27 +2258,26 @@
     <div class="hero-inner">
       <div class="launch-badge">
         <div class="badge-dot"></div>
-        <span>Das Fundament · Podcast · Gemeinde</span>
+        <span>Podcast · Das Fundament · Gemeinde</span>
       </div>
 
       <h1 class="hero-title">ECKSTEIN</h1>
       <p class="hero-sub">— Podcast —</p>
 
       <p class="hero-manifesto">
-        Eckstein ist der Raum für junge Christen, die Glauben und Anspruch nicht trennen — im Podcast, in den Artikeln, bald in der Gemeinde.
+        Für junge Christen, die glauben und mehr wollen — ohne sich dafür zu entschuldigen. Langform-Gespräche über Glaube, Ambition und alles dazwischen.
       </p>
 
       <p class="hero-sub-manifesto">
-        Traditioneller Glaube, gelebt mit Respekt, Disziplin und Dankbarkeit. <span class="manifesto-accent">Das Fundament</span> steht unter jedem Gespräch und jedem Sonntags-Artikel.
+        Ehrlich. Ungefiltert. Kein Bibelkurs, keine Predigt — zwei Männer, die ihren Glauben leben und darüber reden, wie es wirklich ist.
       </p>
 
       <div class="cta-group hero-cta-stack">
-        <a href="fundament/kommen-reiche-in-den-himmel.html" class="btn-platform btn-hero-primary">Neuester Artikel lesen</a>
-        <a href="fundament/" class="btn-platform btn-hero-secondary">Alle Artikel</a>
-        <p class="hero-cta-micro">Das Fundament · Nur hier · Jeden Sonntag</p>
+        <a href="#episode-preview" class="btn-platform btn-hero-primary">Jetzt reinhören</a>
+        <a href="#episode-preview" class="btn-platform btn-hero-secondary">Alle Folgen ↓</a>
+        <p class="hero-cta-micro">YouTube · Spotify · Langform</p>
         <div class="hero-cta-tertiary">
           <a href="gemeinschaft/">Der Gemeinde beitreten</a>
-          <a href="#formate">Podcast ↓</a>
         </div>
       </div>
     </div>
@@ -2052,54 +2288,32 @@
     </div>
   </section>
 
-  <!-- ══════════ DAS FUNDAMENT ══════════ -->
-  <section class="fundament-teaser" id="fundament-teaser" data-nav-section>
-    <div class="fundament-product">
-      <div class="fundament-product-main reveal">
-        <p class="section-eyebrow">Das Fundament · Exklusiv</p>
-        <p class="fundament-df-num">DF2</p>
-        <h2 class="fundament-manifest">Kommen Reiche wirklich nicht in den Himmel?<em>Eine Aufklärung des häufigen Irrglaubens</em></h2>
-        <p class="fundament-sub">Nur auf eckstein-podcast.de — jeden Sonntag ein Artikel, der in den Alltag geht. Kein Newsletter-Recycling.</p>
-        <div class="fundament-cta-row">
-          <a href="fundament/kommen-reiche-in-den-himmel.html" class="btn-platform btn-fundament-primary">Artikel lesen →</a>
-          <a href="fundament/" class="btn-platform btn-fundament-secondary">Alle Artikel</a>
-        </div>
-        <p class="fundament-print-hint"><a href="fundament/kommen-reiche-in-den-himmel.html?drucken=1">PDF / Drucken im Browser →</a></p>
-      </div>
-      <aside class="fundament-aside reveal reveal-delay-1">
-        <p class="fundament-quote">„Der feine aber entscheidende Unterschied ist: WARUM bestrebst du den finanziellen weltlichen Erfolg? Die richtige Frage ist nicht ob — sondern für wen."</p>
-        <a href="fundament/#df1" class="fundament-archiv-link">DF1 · Der Sinn des Lebens →</a>
-      </aside>
+  <!-- ══════════ PROBLEM / EMPATHY ══════════ -->
+  <section class="problem-section" id="problem">
+    <div class="problem-inner">
+      <p class="section-eyebrow reveal">Du kennst das</p>
+      <h2 class="reveal">Ambitioniert glauben — und nirgends <em>reinpassen.</em></h2>
+      <p class="problem-lead reveal">Glaube und Anspruch gehören zusammen. Die meisten trennen sie — oder scheitern daran, beides unter einen Hut zu bringen.</p>
+      <ul class="problem-bullets reveal">
+        <li>Du willst mehr — und wirst dafür beschämt.</li>
+        <li>Du glaubst — aber die Schubladen passen nicht.</li>
+        <li>Du suchst Tiefe — und findest nur Oberfläche.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- ══════════ WORUM GEHT'S ══════════ -->
-  <section class="about" id="about">
+  <!-- ══════════ ÜBER DEN PODCAST ══════════ -->
+  <section class="about" id="podcast" data-nav-section>
     <div class="about-inner">
       <div class="about-layout">
         <div class="about-left">
           <p class="section-eyebrow reveal">Der Podcast</p>
-          <h2 class="reveal">Glaube und Ambition sind keine Gegensätze.<br><em>Sie schließen sich nicht aus, sie brauchen einander.</em></h2>
-          <p class="reveal">Eckstein ist der Beweis. Die meisten Gespräche enden da, wo es interessant wird. Hier fangen sie an.</p>
-          <p class="reveal">Wir reden über Gott. Über Geld. Über Scheitern. So wie es ist.</p>
+          <h2 class="reveal">Gespräche, die da weitermachen,<br><em>wo andere aufhören.</em></h2>
+          <p class="reveal">LFC — Langform. Kein Schnitt nach zehn Minuten, kein Filter für die Kamera. Über Gott, Geld, Scheitern und alles, was im Alltag wirklich zählt.</p>
+          <p class="reveal">Dazu SF: Kurzform auf YouTube, Instagram und TikTok — gleiche Haltung, kompakter.</p>
         </div>
-
         <div class="reveal">
-          <div class="promises">
-            <div class="promise-item">
-              <strong>Langform ohne Filter</strong>
-              <span>LFC auf YouTube und Spotify — Gespräche, die da weitermachen, wo andere aufhören.</span>
-            </div>
-            <div class="promise-item">
-              <strong>Artikel nur hier</strong>
-              <span>Das Fundament jeden Sonntag — Gedanken, die du nirgends sonst in dieser Form findest.</span>
-            </div>
-            <div class="promise-item">
-              <strong>Gemeinschaft, die schärft</strong>
-              <span>Eine Gemeinde junger Christen entsteht — Warteliste jetzt, Start bald.</span>
-            </div>
-          </div>
-          <div class="about-verse-block reveal" style="margin-top:2.5rem;">
+          <div class="about-verse-block" style="margin-top:0;">
             <p>„Kommt zu ihm, dem lebendigen Stein… Siehe, ich lege in Zion einen auserwählten, kostbaren <em>Eckstein</em>; wer an ihn glaubt, wird nicht zugrunde gehen."</p>
             <cite>1. Petrus 2,4–7 · Daher der Name.</cite>
           </div>
@@ -2108,196 +2322,96 @@
     </div>
   </section>
 
-  <!-- ══════════ THEMEN MARQUEE ══════════ -->
-  <div class="topics-strip">
-    <h3 class="reveal">Worüber wir reden. <em>Alles was zählt.</em></h3>
-
-    <div class="marquee-wrap">
-      <div class="marquee-track">
-        <span class="topic-chip gold">Karriere</span>
-        <span class="topic-chip">Männlichkeit</span>
-        <span class="topic-chip gold">Geld & Finanzen</span>
-        <span class="topic-chip">Dankbarkeit</span>
-        <span class="topic-chip gold">Angst</span>
-        <span class="topic-chip">Geopolitik</span>
-        <span class="topic-chip gold">Beziehungen</span>
-        <span class="topic-chip">Glaube</span>
-        <span class="topic-chip gold">Sport</span>
-        <span class="topic-chip">Krise</span>
-        <span class="topic-chip gold">Identität</span>
-        <span class="topic-chip">Führung</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="topic-chip gold">Karriere</span>
-        <span class="topic-chip">Männlichkeit</span>
-        <span class="topic-chip gold">Geld & Finanzen</span>
-        <span class="topic-chip">Dankbarkeit</span>
-        <span class="topic-chip gold">Angst</span>
-        <span class="topic-chip">Geopolitik</span>
-        <span class="topic-chip gold">Beziehungen</span>
-        <span class="topic-chip">Glaube</span>
-        <span class="topic-chip gold">Sport</span>
-        <span class="topic-chip">Krise</span>
-        <span class="topic-chip gold">Identität</span>
-        <span class="topic-chip">Führung</span>
-      </div>
+  <!-- ══════════ HOSTS ══════════ -->
+  <section class="hosts" id="hosts">
+    <div class="hosts-cross" aria-hidden="true">
+      <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="0" width="12" height="120" fill="#c9a84c" rx="1"/>
+        <rect x="0" y="28" width="80" height="12" fill="#c9a84c" rx="1"/>
+      </svg>
     </div>
+    <div class="hosts-inner">
+      <p class="section-eyebrow reveal" style="justify-content:center;">Wer wir sind</p>
+      <h2 class="reveal">Zwei Männer. Eine Haltung.</h2>
 
-    <div class="marquee-wrap" style="margin-top:1rem;">
-      <div class="marquee-track marquee-track-rev">
-        <span class="topic-chip">Mental Health</span>
-        <span class="topic-chip gold">Gesellschaft</span>
-        <span class="topic-chip">Ambition</span>
-        <span class="topic-chip gold">Verantwortung</span>
-        <span class="topic-chip">Freundschaft</span>
-        <span class="topic-chip gold">Stärke</span>
-        <span class="topic-chip">Selbstbild</span>
-        <span class="topic-chip gold">Zweck</span>
-        <span class="topic-chip">Freiheit</span>
-        <span class="topic-chip gold">Vertrauen</span>
-        <span class="topic-chip">Wachstum</span>
-        <span class="topic-chip gold">Fundament</span>
-        <!-- Duplicate -->
-        <span class="topic-chip">Mental Health</span>
-        <span class="topic-chip gold">Gesellschaft</span>
-        <span class="topic-chip">Ambition</span>
-        <span class="topic-chip gold">Verantwortung</span>
-        <span class="topic-chip">Freundschaft</span>
-        <span class="topic-chip gold">Stärke</span>
-        <span class="topic-chip">Selbstbild</span>
-        <span class="topic-chip gold">Zweck</span>
-        <span class="topic-chip">Freiheit</span>
-        <span class="topic-chip gold">Vertrauen</span>
-        <span class="topic-chip">Wachstum</span>
-        <span class="topic-chip gold">Fundament</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════ FORMATE ══════════ -->
-  <section class="formate-section" id="formate" data-nav-section>
-    <div class="formate-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Formate</p>
-      <h2 class="reveal" style="text-align:center;">Zwei Formate. <em>Eine Haltung.</em></h2>
-      <div class="formate-grid">
-        <div class="format-card format-card--lfc reveal">
-          <p class="format-badge">LFC · Langform</p>
-          <h3>Die Gespräche</h3>
-          <p>Langform-Folgen — tief, ungefiltert. Nur auf YouTube und Spotify.</p>
-          <div data-lfc-player></div>
-          <div class="format-btns">
-            <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a>
+      <div class="hosts-grid">
+        <div class="host-card reveal reveal-delay-1">
+          <div class="host-bg-letter">K</div>
+          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_kevin.jpg" alt="Kevin Ritz" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <p class="host-name">Kevin Ritz</p>
+          <p class="host-title">Unternehmer · Gründer</p>
+          <p class="host-quote">„Es kann kein Licht ohne Dunkelheit geben."</p>
+          <p class="host-bio">Kevin baut Unternehmen und glaubt an Gott — für viele ein Widerspruch, für ihn der Eckstein. Angetrieben von Dankbarkeit und dem Drang, bedeutsam zu existieren.</p>
+          <div class="host-links">
+            <span>Schreib mir</span>
+            <a href="https://www.instagram.com/kevin_ritz1/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
-        <div class="format-card format-card--sf reveal reveal-delay-1">
-          <p class="format-badge">SF · Shortform</p>
-          <h3>Kurz &amp; direkt</h3>
-          <p>Shorts und Reels — kein Embed hier, nur auf den Kanälen.</p>
-          <div class="format-btns">
-            <a href="https://www.youtube.com/@Eckstein_Pod" class="btn-platform" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://www.instagram.com/eckstein_podcast/" class="btn-platform" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.tiktok.com/@Eckstein_Podcast" class="btn-platform" target="_blank" rel="noopener">TikTok</a>
+        <div class="host-card reveal reveal-delay-2">
+          <div class="host-bg-letter">F</div>
+          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_florian.png" alt="Florian Spieß" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <p class="host-name">Florian Spieß</p>
+          <p class="host-title">Sportler · Denker</p>
+          <p class="host-quote">„Eisen schärft Eisen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
+          <p class="host-bio">Florian trennt Sport, Disziplin und Glauben nicht. Er sagt, was er denkt — auch wenn es wehtut. Besonders dann.</p>
+          <div class="host-links">
+            <span>Schreib mir</span>
+            <a href="https://www.instagram.com/florian_fs67/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- ══════════ EPISODEN ══════════ -->
-  <section class="episodes" id="episodes">
-    <div class="episodes-inner">
-      <div class="episode-header reveal">
-        <span class="episode-header-title">Folgen</span>
-        <span class="episode-header-sub">Langform · YouTube &amp; Spotify</span>
+
+  <!-- ══════════ EPISODE PREVIEW ══════════ -->
+  <section class="episode-preview-section" id="episode-preview" data-nav-section>
+    <div class="episode-preview-inner">
+      <div class="episode-preview-header reveal">
+        <p class="section-eyebrow" style="justify-content:center;">Aktuelle Folge</p>
+        <h2 style="text-align:center;font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--cream);">Jetzt <em style="color:var(--gold-light);font-style:italic;">reinhören.</em></h2>
       </div>
+      <div id="episode-preview-mount"></div>
+    </div>
+  </section>
 
-      <div class="episode-row reveal episode-card">
-        <div class="episode-num-big">01</div>
-
-        <div class="episode-body">
-          <div class="episode-meta">
-            <span class="episode-label">LFC · Folge 01</span>
-            <span class="episode-date">18. Mai 2026</span>
-          </div>
-          <h3 class="episode-title">Wer wir sind und was uns antreibt</h3>
-          <p class="episode-pullquote">„Der Glaube hat mich nicht weicher gemacht. Er hat mir eine Richtung gegeben."</p>
-        </div>
-
-        <div class="episode-actions">
-          <span class="episode-duration">ca. 60 Min</span>
-
-          <!-- Countdown (sichtbar vor dem 18. Mai) -->
-          <div id="ep1-countdown" class="countdown-wrap">
-            <p class="countdown-label">Erscheint in</p>
-            <div class="countdown">
-              <div class="cd-block"><div class="cd-num" id="cd-days">00</div><div class="cd-unit">Tage</div></div>
-              <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-unit">Stunden</div></div>
-              <div class="cd-block"><div class="cd-num" id="cd-mins">00</div><div class="cd-unit">Minuten</div></div>
-              <div class="cd-block"><div class="cd-num" id="cd-secs">00</div><div class="cd-unit">Sekunden</div></div>
-            </div>
-          </div>
-
-          <!-- Links (sichtbar ab dem 18. Mai) -->
-          <div id="ep1-links" class="episode-buttons" style="display:flex;"><a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener"><span class="btn-icon">▶</span> YouTube</a><a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a></div>
-        </div>
-      </div>
-
-      <div class="episode-row reveal episode-card episode-row--upcoming" style="margin-top:2rem;">
-        <div class="episode-num-big">02</div>
-        <div class="episode-body">
-          <div class="episode-meta">
-            <span class="episode-label">LFC · Folge 02</span>
-            <span class="episode-badge-soon">Demnächst</span>
-          </div>
-          <h3 class="episode-title">In Vorbereitung</h3>
-          <p class="episode-pullquote">Neue Folge — gleiche Tiefe, neues Thema.</p>
-        </div>
-        <div class="episode-actions episode-actions--muted">
-          <span class="btn-platform">YouTube</span>
-          <span class="btn-platform">Spotify</span>
-        </div>
-      </div>
-
-      <div class="episode-row reveal episode-card episode-row--upcoming" style="margin-top:1.5rem;">
-        <div class="episode-num-big">03</div>
-        <div class="episode-body">
-          <div class="episode-meta">
-            <span class="episode-label">LFC · Folge 03</span>
-            <span class="episode-badge-soon">Geplant</span>
-          </div>
-          <h3 class="episode-title">In Vorbereitung</h3>
-          <p class="episode-pullquote">Archiv wächst mit jeder Veröffentlichung.</p>
-        </div>
-        <div class="episode-actions episode-actions--muted">
-          <span class="btn-platform">YouTube</span>
-          <span class="btn-platform">Spotify</span>
-        </div>
+  <!-- ══════════ PLATTFORMEN ══════════ -->
+  <section class="platforms-section" id="platforms">
+    <div class="platforms-inner">
+      <h2 class="reveal">Wo ihr uns findet</h2>
+      <p class="reveal">Langform und Kurzform — auf den Kanälen, die zu euch passen.</p>
+      <div class="platforms-rows reveal">
+        <p class="platforms-row">
+          <span>LFC</span>
+          <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener">Spotify</a>
+        </p>
+        <p class="platforms-row">
+          <span>SF</span>
+          <a href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener">TikTok</a>
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ══════════ INSPIRATION TEASER ══════════ -->
-  <section class="inspiration-section" id="inspiration" data-nav-section>
-    <div class="inspiration-inner">
-      <div class="inspiration-intro reveal">
-        <p class="section-eyebrow" style="justify-content:center;">Inspiration</p>
-        <h2>Orte, die uns <em>geprägt haben.</em></h2>
-        <p>Kirchen, an denen wir gestanden haben — Stimmung und Ehrfurcht, kein Tourismus.</p>
+  <!-- ══════════ DAS FUNDAMENT ══════════ -->
+  <section class="fundament-teaser fundament-teaser--deep" id="fundament-teaser" data-nav-section>
+    <div class="fundament-product">
+      <div class="fundament-product-main reveal">
+        <p class="section-eyebrow">Das Fundament · Vertiefung</p>
+        <p class="fundament-df-num">DF2</p>
+        <h2 class="fundament-manifest">Kommen Reiche wirklich nicht in den Himmel?<em>Eine Aufklärung des häufigen Irrglaubens</em></h2>
+        <p class="fundament-sub">Geh tiefer — jeden Sonntag ein Artikel, der in den Alltag geht. Nur auf eckstein-podcast.de.</p>
+        <div class="fundament-cta-row">
+          <a href="fundament/kommen-reiche-in-den-himmel.html" class="btn-platform btn-fundament-outline">Artikel lesen →</a>
+        </div>
+        <p class="fundament-archiv-links">
+          <a href="fundament/">Alle Artikel</a>
+          ·
+          <a href="fundament/der-sinn-des-lebens.html">DF1 →</a>
+        </p>
       </div>
-      <div class="inspiration-teaser-grid reveal">
-        <a class="inspiration-teaser-card" href="inspiration/#veitsdom-prag">
-          <img src="img/inspiration/veitsdom-prag.webp" alt="Veitsdom, Prag" width="800" height="600" loading="lazy">
-          <figcaption><strong>Veitsdom</strong><span>Prag, Tschechien</span></figcaption>
-        </a>
-        <a class="inspiration-teaser-card" href="inspiration/#ludmila-prag">
-          <img src="img/inspiration/ludmila-prag.webp" alt="St. Ludmila, Prag" width="800" height="600" loading="lazy">
-          <figcaption><strong>St. Ludmila</strong><span>Prag, Tschechien</span></figcaption>
-        </a>
-        <a class="inspiration-teaser-card" href="inspiration/#nikolaus-prag">
-          <img src="img/inspiration/nikolaus-prag.webp" alt="St. Nikolaus Malá Strana, Prag" width="800" height="600" loading="lazy">
-          <figcaption><strong>St. Nikolaus</strong><span>Malá Strana, Prag</span></figcaption>
-        </a>
-      </div>
-      <p class="inspiration-all reveal"><a href="inspiration/" class="btn-platform">Alle Orte →</a></p>
     </div>
   </section>
 
@@ -2328,49 +2442,18 @@
         Wir bauen eine Gemeinde junger Christen — <em>stark unter dem Segen und Schutz Gottes.</em>
       </p>
       <p class="reveal" style="text-align:center;margin-top:2rem;">
-        <a href="gemeinschaft/" class="btn-platform">Auf die Warteliste →</a>
+        <a href="gemeinschaft/" class="btn-platform btn-hero-primary">Auf die Warteliste →</a>
       </p>
     </div>
   </section>
 
-  <!-- ══════════ HOSTS ══════════ -->
-  <section class="hosts">
-    <div class="hosts-cross" aria-hidden="true">
-      <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
-        <rect x="34" y="0" width="12" height="120" fill="#c9a84c" rx="1"/>
-        <rect x="0" y="28" width="80" height="12" fill="#c9a84c" rx="1"/>
-      </svg>
-    </div>
-    <div class="hosts-inner">
-      <p class="section-eyebrow reveal" style="justify-content:center;">Wer wir sind</p>
-      <h2 class="reveal">Zwei Männer. Eine Haltung.</h2>
-      <p class="reveal">Keine Masken. So wie wir sind.</p>
-
-      <div class="hosts-grid">
-        <div class="host-card reveal reveal-delay-1">
-          <div class="host-bg-letter">K</div>
-          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_kevin.jpg" alt="Kevin Ritz" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-          <p class="host-name">Kevin Ritz</p>
-          <p class="host-title">Unternehmer · Gründer · Fragender</p>
-          <p class="host-quote">„Es kann kein Licht ohne Dunkelheit geben."</p>
-          <p class="host-bio">Kevin baut Unternehmen und glaubt an Gott. Für viele ein Widerspruch. Für ihn der Eckstein. Angetrieben von Dankbarkeit und dem Drang, bedeutsam zu existieren — durch den Glauben, nicht trotz ihm.</p>
-          <div class="host-links">
-            <span>Schreib mir</span>
-            <a href="https://www.instagram.com/kevin_ritz1/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
-        <div class="host-card reveal reveal-delay-2">
-          <div class="host-bg-letter">F</div>
-          <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_florian.png" alt="Florian Spieß" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-          <p class="host-name">Florian Spieß</p>
-          <p class="host-title">Sportler · Denker · Gradaus</p>
-          <p class="host-quote">„Eisen schärft Eisen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
-          <p class="host-bio">Florian trennt Sport, Disziplin und Glauben nicht. Er sagt, was er denkt — auch wenn es wehtut. Besonders dann.</p>
-          <div class="host-links">
-            <span>Schreib mir</span>
-            <a href="https://www.instagram.com/florian_fs67/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
+  <!-- ══════════ FINAL CTA ══════════ -->
+  <section class="final-cta-section" id="final-cta">
+    <div class="final-cta-inner reveal">
+      <h2>Episode jetzt anhören</h2>
+      <div class="final-cta-btns">
+        <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-platform" target="_blank" rel="noopener"><span class="btn-icon">▶</span> YouTube</a>
+        <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-platform" target="_blank" rel="noopener">Spotify</a>
       </div>
     </div>
   </section>
@@ -2496,7 +2579,7 @@
   <script defer src="https://cdn.kiprotect.com/klaro/latest/klaro.js"></script>
   <script defer src="js/eckstein-klaro.js"></script>
   <script defer src="js/eckstein-privacy.js"></script>
-  <script defer src="js/eckstein-lfc-player.js"></script>
+  <script defer src="js/eckstein-episode-preview.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script>
     // ── GLSL HILLS BACKGROUND ──
