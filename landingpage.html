@@ -277,17 +277,6 @@
       font-weight: 400;
     }
 
-    .hero-sub-manifesto {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.05rem;
-      color: var(--cream-dim);
-      max-width: 500px;
-      margin: 0 auto 4rem;
-      line-height: 1.65;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.05s forwards;
-    }
-
     /* ── CTA BUTTONS ── */
     .cta-group {
       display: flex;
@@ -1889,12 +1878,10 @@
 
     /* ITERATION 3 */
     .hero-cta-stack { flex-direction: column; align-items: center; max-width: 320px; margin: 0 auto; gap: 0.75rem; }
-    .btn-hero-primary { width: 100%; text-align: center; padding: 0.85rem 1.5rem !important; min-height: 48px; background: var(--gold) !important; color: var(--navy) !important; border-color: var(--gold) !important; }
-    .btn-hero-secondary { width: 100%; text-align: center; background: transparent !important; border: 1px solid rgba(201,168,76,0.5) !important; }
-    .hero-cta-micro { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.2em; color: var(--cream-dim); text-transform: uppercase; margin: 0.25rem 0 0; }
-    .hero-cta-tertiary { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem; }
-    .hero-cta-tertiary a { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--cream-dim); text-decoration: none; text-transform: uppercase; }
-    .hero-cta-tertiary a:hover { color: var(--gold); }
+    .btn-hero-primary { width: 100%; justify-content: center; padding: 0.85rem 1.5rem !important; min-height: 48px; background: var(--gold) !important; color: var(--navy) !important; border-color: var(--gold) !important; }
+    .btn-hero-secondary { width: 100%; justify-content: center; background: transparent !important; border: 1px solid rgba(201,168,76,0.5) !important; }
+    .btn-with-icon { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-with-icon svg { width: 18px; height: 18px; flex-shrink: 0; }
     .formate-section { padding: 6rem 2rem; background: var(--navy-2); border-top: 2px solid rgba(201,168,76,0.2); }
     .formate-inner { max-width: 960px; margin: 0 auto; }
     .formate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
@@ -1997,37 +1984,43 @@
   .platform-logo-link--tiktok img {
     filter: brightness(0) invert(1);
   }
-  .platforms-fallback {
-    max-width: 480px;
+  .platforms-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+    max-width: 640px;
     margin: 0 auto;
     padding: 1.25rem 1.5rem;
     border: 1px solid rgba(201,168,76,0.2);
     background: rgba(5,16,31,0.4);
-    text-align: left;
   }
-  .platforms-fallback-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.5rem 1rem;
-    margin-bottom: 0.6rem;
+  .platform-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     font-family: 'EB Garamond', serif;
     font-size: 0.95rem;
-  }
-  .platforms-fallback-row:last-child { margin-bottom: 0; }
-  .platforms-fallback-row > span {
-    font-family: 'Cinzel', serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    min-width: 2rem;
-  }
-  .platforms-fallback-row a {
     color: var(--cream-dim);
     text-decoration: none;
-    border-bottom: 1px solid rgba(201,168,76,0.3);
+    padding: 0.35rem 0.6rem;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: color 0.2s, border-color 0.2s;
   }
-  .platforms-fallback-row a:hover { color: var(--gold-light); }
+  .platform-chip:hover {
+    color: var(--gold-light);
+    border-color: rgba(201,168,76,0.35);
+  }
+  .platform-chip img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
+  }
+  .platform-chip--tiktok img {
+    filter: brightness(0) invert(1);
+  }
 
   /* ── FUNDAMENT HYBRID PAPER ── */
   .fundament-teaser--hybrid {
@@ -2153,10 +2146,11 @@
     transform: translateY(-2px);
     box-shadow: 0 0 32px rgba(255,0,0,0.5);
   }
-  .btn-youtube img {
+  .btn-youtube img,
+  .btn-spotify-brand img {
     width: 22px;
     height: 22px;
-    filter: brightness(0) invert(1);
+    flex-shrink: 0;
   }
   .btn-spotify-brand {
     display: inline-flex;
@@ -2179,7 +2173,6 @@
     transform: translateY(-2px);
     box-shadow: 0 0 32px rgba(29,185,84,0.45);
   }
-  .btn-spotify-brand img { width: 22px; height: 22px; }
 
   .community-teaser .community-inner { position: relative; z-index: 2; }
 
@@ -2242,20 +2235,18 @@
       <p class="hero-sub">— Podcast —</p>
 
       <p class="hero-manifesto">
-        Für junge Christen, die glauben und mehr wollen — ohne sich dafür zu entschuldigen. Langform-Gespräche über Glaube, Ambition und alles dazwischen.
-      </p>
-
-      <p class="hero-sub-manifesto">
-        Ehrlich. Ungefiltert. Kein Bibelkurs, keine Predigt — zwei Männer, die ihren Glauben leben und darüber reden, wie es wirklich ist.
+        Für junge Christen, die mehr wollen — ohne sich dafür zu entschuldigen. Wir sprechen über Glaube, Ambition und wie der Herr uns zur besten Version unserer Selbst macht.
       </p>
 
       <div class="cta-group hero-cta-stack">
-        <a href="#platforms" class="btn-platform btn-hero-primary">Jetzt reinhören</a>
-        <a href="fundament/" class="btn-platform btn-hero-secondary">Das Fundament</a>
-        <p class="hero-cta-micro">YouTube · Spotify · Langform</p>
-        <div class="hero-cta-tertiary">
-          <a href="gemeinschaft/">Der Gemeinde beitreten</a>
-        </div>
+        <a href="#platforms" class="btn-platform btn-hero-primary btn-with-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          Jetzt reinhören
+        </a>
+        <a href="fundament/" class="btn-platform btn-hero-secondary btn-with-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Das Fundament
+        </a>
       </div>
     </div>
 
@@ -2279,16 +2270,16 @@
         <div class="reveal">
           <div class="promises">
             <div class="promise-item">
-              <strong>Langform ohne Filter</strong>
-              <span>LFC auf YouTube und Spotify — Gespräche, die da weitermachen, wo andere aufhören.</span>
+              <strong>Eckstein Podcast</strong>
+              <span>Unsere intensiven Gespräche darüber, wie Gott dich zu deiner besten Version macht.</span>
             </div>
             <div class="promise-item">
-              <strong>Artikel nur hier</strong>
-              <span>Das Fundament jeden Sonntag — Gedanken, die du nirgends sonst in dieser Form findest.</span>
+              <strong>Das Fundament</strong>
+              <span>Ein Blog mit fundamentalen Perspektiven und Glaubenssätzen, die dir helfen, die alltäglichen Hürden des Lebens durch Christus hindurch zu navigieren.</span>
             </div>
             <div class="promise-item">
-              <strong>Gemeinschaft, die schärft</strong>
-              <span>Eine Gemeinde junger Christen entsteht — Warteliste jetzt, Start bald.</span>
+              <strong>Gemeinschaft</strong>
+              <span>Gemeinschaft schärft. Allein kann Hoffnung schnell verfliegen — gemeinsam als Bund unter Christus kann nur der Herr selbst einen aufhalten. Eine Gemeinschaft junger, tugendhafter Christen.</span>
             </div>
           </div>
           <div class="about-verse-block reveal" style="margin-top:2.5rem;">
@@ -2330,7 +2321,7 @@
           <div class="host-avatar" style="width:80px;height:80px;"><img src="img/pic_florian.png" alt="Florian Spieß" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
           <p class="host-name">Florian Spieß</p>
           <p class="host-title">Sportler · Denker · Gradaus</p>
-          <p class="host-quote">„Eisen schärft Eisen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
+          <p class="host-quote">„Eisen schärft Eisen; ebenso schärft ein Mann den anderen." <span style="font-style:normal;font-size:0.85rem;color:var(--cream-dim);">— Sprüche 27:17</span></p>
           <p class="host-bio">Florian trennt Sport, Disziplin und Glauben nicht. Er sagt, was er denkt — auch wenn es wehtut. Besonders dann.</p>
           <div class="host-links">
             <span>Schreib mir</span>
@@ -2362,16 +2353,12 @@
           </div>
         </div>
       </div>
-      <div class="platforms-fallback reveal">
-        <p class="platforms-fallback-row"><span>LFC</span>
-          <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener">Spotify</a>
-        </p>
-        <p class="platforms-fallback-row"><span>SF</span>
-          <a href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener">TikTok</a>
-        </p>
+      <div class="platforms-links reveal">
+        <a class="platform-chip" href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener" title="LFC · YouTube"><img src="img/platforms/youtube.svg" alt="" width="18" height="18"> YouTube</a>
+        <a class="platform-chip" href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener" title="LFC · Spotify"><img src="img/platforms/spotify.svg" alt="" width="18" height="18"> Spotify</a>
+        <a class="platform-chip" href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener" title="SF · YouTube"><img src="img/platforms/youtube.svg" alt="" width="18" height="18"> YouTube</a>
+        <a class="platform-chip" href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener" title="Instagram"><img src="img/platforms/instagram.svg" alt="" width="18" height="18"> Instagram</a>
+        <a class="platform-chip platform-chip--tiktok" href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener" title="TikTok"><img src="img/platforms/tiktok.svg" alt="" width="18" height="18"> TikTok</a>
       </div>
     </div>
   </section>
@@ -2441,8 +2428,8 @@
       <h2>Hör jetzt rein. Kein Filter. Kein Schnitt.</h2>
       <p class="final-cta-sub">YouTube oder Spotify — gleiche Tiefe.</p>
       <div class="final-cta-btns">
-        <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-youtube" target="_blank" rel="noopener"><img src="img/platforms/youtube.svg" alt="" width="22" height="22"> YouTube</a>
-        <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-spotify-brand" target="_blank" rel="noopener"><img src="img/platforms/spotify.svg" alt="" width="22" height="22"> Spotify</a>
+        <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-youtube" target="_blank" rel="noopener"><img src="img/platforms/youtube-play-white.svg" alt="" width="22" height="22"> YouTube</a>
+        <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-spotify-brand" target="_blank" rel="noopener"><img src="img/platforms/spotify-mark-green.svg" alt="" width="22" height="22"> Spotify</a>
       </div>
     </div>
   </section>
