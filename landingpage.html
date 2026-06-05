@@ -1931,58 +1931,8 @@
   .platforms-inner > p {
     font-family: 'EB Garamond', serif;
     color: var(--cream-dim);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 1rem;
-  }
-  .platforms-carousel-wrap {
-    margin: 0 -2rem 2rem;
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  }
-  .platforms-carousel { overflow: hidden; }
-  .platforms-carousel-track {
-    display: flex;
-    align-items: center;
-    gap: 3.5rem;
-    width: max-content;
-    animation: platformScroll 28s linear infinite;
-  }
-  .platforms-carousel:hover .platforms-carousel-track {
-    animation-play-state: paused;
-  }
-  @keyframes platformScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .platforms-carousel-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
-  }
-  .platform-logo-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(201,168,76,0.2);
-    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-    flex-shrink: 0;
-  }
-  .platform-logo-link:hover {
-    transform: scale(1.08);
-    border-color: var(--gold);
-    box-shadow: 0 0 20px rgba(201,168,76,0.2);
-  }
-  .platform-logo-link img {
-    width: 28px;
-    height: 28px;
-    display: block;
-  }
-  .platform-logo-link--tiktok {
-    background: rgba(255,255,255,0.12);
-  }
-  .platform-logo-link--tiktok img {
-    filter: brightness(0) invert(1);
   }
   .platforms-links {
     display: flex;
@@ -2151,6 +2101,12 @@
     width: 22px;
     height: 22px;
     flex-shrink: 0;
+    object-fit: contain;
+  }
+  .btn-youtube img {
+    background: #fff;
+    border-radius: 3px;
+    padding: 2px;
   }
   .btn-spotify-brand {
     display: inline-flex;
@@ -2263,7 +2219,7 @@
       <div class="about-layout">
         <div class="about-left">
           <p class="section-eyebrow reveal">Der Podcast</p>
-          <h2 class="reveal">Glaube und Ambition sind keine Gegensätze.<br><em>Sie schließen sich nicht aus, sie brauchen einander.</em></h2>
+          <h2 class="reveal">Eckstein Podcast — <em>unsere intensiven Gespräche darüber, wie Gott dich zu deiner besten Version macht.</em></h2>
           <p class="reveal">Eckstein ist der Beweis. Die meisten Gespräche enden da, wo es interessant wird. Hier fangen sie an.</p>
           <p class="reveal">Wir reden über Gott. Über Geld. Über Scheitern. So wie es ist.</p>
         </div>
@@ -2337,26 +2293,10 @@
     <div class="platforms-inner">
       <h2 class="reveal">Wo ihr uns findet</h2>
       <p class="reveal">Langform und Kurzform — auf den Kanälen, die zu euch passen.</p>
-      <div class="platforms-carousel-wrap reveal">
-        <div class="platforms-carousel">
-          <div class="platforms-carousel-track">
-            <a class="platform-logo-link" href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener" title="LFC · YouTube"><img src="img/platforms/youtube.svg" alt="YouTube LFC" width="28" height="28"></a>
-            <a class="platform-logo-link" href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener" title="LFC · Spotify"><img src="img/platforms/spotify.svg" alt="Spotify" width="28" height="28"></a>
-            <a class="platform-logo-link" href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener" title="SF · YouTube"><img src="img/platforms/youtube.svg" alt="YouTube Shortform" width="28" height="28"></a>
-            <a class="platform-logo-link" href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener" title="Instagram"><img src="img/platforms/instagram.svg" alt="Instagram" width="28" height="28"></a>
-            <a class="platform-logo-link platform-logo-link--tiktok" href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener" title="TikTok"><img src="img/platforms/tiktok.svg" alt="TikTok" width="28" height="28"></a>
-            <a class="platform-logo-link" href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener" title="LFC · YouTube" aria-hidden="true" tabindex="-1"><img src="img/platforms/youtube.svg" alt="" width="28" height="28"></a>
-            <a class="platform-logo-link" href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener" title="LFC · Spotify" aria-hidden="true" tabindex="-1"><img src="img/platforms/spotify.svg" alt="" width="28" height="28"></a>
-            <a class="platform-logo-link" href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener" title="SF · YouTube" aria-hidden="true" tabindex="-1"><img src="img/platforms/youtube.svg" alt="" width="28" height="28"></a>
-            <a class="platform-logo-link" href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener" title="Instagram" aria-hidden="true" tabindex="-1"><img src="img/platforms/instagram.svg" alt="" width="28" height="28"></a>
-            <a class="platform-logo-link platform-logo-link--tiktok" href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener" title="TikTok" aria-hidden="true" tabindex="-1"><img src="img/platforms/tiktok.svg" alt="" width="28" height="28"></a>
-          </div>
-        </div>
-      </div>
       <div class="platforms-links reveal">
-        <a class="platform-chip" href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener" title="LFC · YouTube"><img src="img/platforms/youtube.svg" alt="" width="18" height="18"> YouTube</a>
-        <a class="platform-chip" href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener" title="LFC · Spotify"><img src="img/platforms/spotify.svg" alt="" width="18" height="18"> Spotify</a>
-        <a class="platform-chip" href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener" title="SF · YouTube"><img src="img/platforms/youtube.svg" alt="" width="18" height="18"> YouTube</a>
+        <a class="platform-chip" href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" target="_blank" rel="noopener" title="LFC · YouTube"><img src="img/platforms/youtube-streamline.png" alt="" width="18" height="18"> YouTube LFC</a>
+        <a class="platform-chip" href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" target="_blank" rel="noopener" title="LFC · Spotify"><img src="img/platforms/spotify-streamline.svg" alt="" width="18" height="18"> Spotify</a>
+        <a class="platform-chip" href="https://www.youtube.com/@Eckstein_Pod" target="_blank" rel="noopener" title="SF · YouTube"><img src="img/platforms/youtube-streamline.png" alt="" width="18" height="18"> YouTube SF</a>
         <a class="platform-chip" href="https://www.instagram.com/eckstein_podcast/" target="_blank" rel="noopener" title="Instagram"><img src="img/platforms/instagram.svg" alt="" width="18" height="18"> Instagram</a>
         <a class="platform-chip platform-chip--tiktok" href="https://www.tiktok.com/@Eckstein_Podcast" target="_blank" rel="noopener" title="TikTok"><img src="img/platforms/tiktok.svg" alt="" width="18" height="18"> TikTok</a>
       </div>
@@ -2428,8 +2368,8 @@
       <h2>Hör jetzt rein. Kein Filter. Kein Schnitt.</h2>
       <p class="final-cta-sub">YouTube oder Spotify — gleiche Tiefe.</p>
       <div class="final-cta-btns">
-        <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-youtube" target="_blank" rel="noopener"><img src="img/platforms/youtube-play-white.svg" alt="" width="22" height="22"> YouTube</a>
-        <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-spotify-brand" target="_blank" rel="noopener"><img src="img/platforms/spotify-mark-green.svg" alt="" width="22" height="22"> Spotify</a>
+        <a href="https://www.youtube.com/playlist?list=PLx_pldXvpOEuPuQ2VFNcbyy14MmXhPtUw" class="btn-youtube" target="_blank" rel="noopener"><img src="img/platforms/youtube-streamline.png" alt="" width="22" height="22"> YouTube</a>
+        <a href="https://open.spotify.com/show/7ukegsEnslel1gM0r5hubP" class="btn-spotify-brand" target="_blank" rel="noopener"><img src="img/platforms/spotify-streamline.svg" alt="" width="22" height="22"> Spotify</a>
       </div>
     </div>
   </section>
