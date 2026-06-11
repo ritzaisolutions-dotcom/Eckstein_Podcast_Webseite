@@ -40,14 +40,15 @@ Eckstein ist der Podcast für junge Christen, die Glauben und Anspruch nicht tre
 3. Fundament: Text/Outline-Link — nicht konkurrierend mit Podcast  
 4. Gemeinde: ein Gold-CTA Warteliste unten im Funnel  
 
-## Das Fundament (Stand: 2 Artikel)
+## Das Fundament (Stand: 3 Artikel)
 
 | DF | Quelle | HTML |
 |----|--------|------|
 | DF1 | — | `fundament/der-sinn-des-lebens.html` |
 | DF2 | `fundament/DF 2.md` | `fundament/kommen-reiche-in-den-himmel.html` |
+| DF3 | `fundament/DF3.md` | `fundament/beziehung-zu-gott-hat-ihren-preis.html` |
 
-Landing-Teaser: immer nur **neuester DF** (aktuell DF2). Ältere über Archiv-Link oder Hub.
+Landing-Teaser: immer nur **neuester DF** (aktuell DF3). Ältere über Archiv-Link oder Hub.
 
 ## Inspiration
 
